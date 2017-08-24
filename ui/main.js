@@ -1,4 +1,6 @@
-function myFunction() {
+var cli=Document.getElementById("user");
+cli.onclick=function myFunction() 
+{
             var strk = document.getElementById("user");
             var str1=strk.value;
             var str2 = "dpaknov20";
