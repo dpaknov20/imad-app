@@ -34,10 +34,20 @@
     <label><b>Re-enter Password</b></label>
     <input type="Password" placeholder="Password" id="repass" required>
     <br>
-    <div></div><button id="click">Sign Up</button>
+    <div></div><button onclick="myFunction()">Sign Up</button>
 
-        <script type="javascript" src="ui/main.js">
-        
+        <script>
+        function myFunction() {
+            var strk = document.getElementById("user");
+            var str1=strk.value;
+            var str2 = "dpaknov20";
+            var n = str1.localeCompare(str2);
+            if(n!==0)
+            {
+                document.getElementById("user").innerHTML="";
+                alert("please enter a valid username");
+            }
+        }
         </script>
     </div>
     </body>
