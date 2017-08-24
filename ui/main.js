@@ -10,4 +10,4 @@ cli.onclick=function myFunction()
                 document.getElementById("user").innerHTML="";
                 alert("please enter a valid username");
             }
-        }
+        };
