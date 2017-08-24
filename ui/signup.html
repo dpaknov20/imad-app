@@ -23,6 +23,7 @@
     <div></div> 
     <label><b>Choose Username</b></label>
     <input type="text" placeholder="Username" id="user" required>
+    <p id="demo"></p>
     <br>
     
     <div></div>
@@ -44,9 +45,10 @@
             var n = str1.localeCompare(str2);
             if(n!==0)
             {
-                document.getElementById("user").innerHTML="";
                 alert("please enter a valid username");
             }
+            else
+                document.getElementById("demo").innerHTML="username matched";
         }
         </script>
     </div>
