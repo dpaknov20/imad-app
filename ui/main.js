@@ -5,6 +5,6 @@ check.onClick=function() {
     var n = str1.localeCompare(str2);
     if(n!==0)
     document.getElementById("demo").innerHTML = "please enter a valid username";
-}
+};
 
 
