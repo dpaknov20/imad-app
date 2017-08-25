@@ -99,8 +99,8 @@ app.get('/database', function (req, res) {
     });
 });
 
-app.get('/about_us', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
+app.get('/:about_us', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', '"req.params.about_us".html'));
 });
 
 app.get('/home', function (req, res) {
