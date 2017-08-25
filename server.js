@@ -29,7 +29,7 @@ function createTemplate(data) {
                 <link href="/ui/style.css" rel="stylesheet" />
             </head>
             <body>
-                <div class ="container">
+                <div align="center">
                     <h3>
                     ${name}</h3>
                     <div>
