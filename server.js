@@ -32,12 +32,15 @@ function createTemplate(data) {
                 <div align="center">
                     <h3>
                     ${name}</h3>
+                    <hr/>
                     <div>
                         ${date.toDateString()}
                     </div>
+                    <hr/>
                     <div>
                         ${content}
                     </div>
+                    <hr/>
                     <div>
                         ${category}
                     </div>
