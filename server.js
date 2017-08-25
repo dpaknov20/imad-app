@@ -5,12 +5,12 @@ var path = require('path');
 var Pool = require('pg').Pool;
 //configuraton for the database
 var config = {
-    user: 'adeepak269'
-    database: 'adeepak269'
-    host: 'db-adeepak269-41332'
-    port: '5432'
-    paswword: 
-}
+    user: 'adeepak269',
+    database: 'adeepak269',
+    host: 'db-adeepak269-41332',
+    port: '5432',
+    paswword: process.env.DB_PASSWORD
+};
 
 var app = express();
 app.use(morgan('combined'));
@@ -23,6 +23,10 @@ app.get('/counter', function (req, res) {
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/database', function (req, res) {
+    
 });
 
 app.get('/home', function (req, res) {
@@ -40,11 +44,6 @@ app.get('/home/signup', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
-
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
