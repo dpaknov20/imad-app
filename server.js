@@ -29,6 +29,11 @@ var pool = new Pool(config);
 app.get('/database', function (req, res) {
     //make a select request
     //return the rrsponse with results
+    pool.query('SELECT * from authors',function(err,result) {
+        if(err) {
+            
+        }
+    });
 });
 
 app.get('/home', function (req, res) {
