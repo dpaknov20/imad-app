@@ -27,7 +27,8 @@ app.get('/', function (req, res) {
 
 var pool = new Pool(config);
 app.get('/database', function (req, res) {
-    
+    //make a select request
+    //return the rrsponse with results
 });
 
 app.get('/home', function (req, res) {
