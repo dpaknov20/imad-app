@@ -9,7 +9,8 @@ var config = {
     database: 'adeepak269',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    paswword: process.env.DB_PASSWORD
+    //paswword: process.env.DB_PASSWORD
+    password: 'db-adeepak269-41332'
 };
 
 var app = express();
