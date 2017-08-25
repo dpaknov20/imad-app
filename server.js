@@ -31,7 +31,7 @@ app.get('/database', function (req, res) {
     //return the rrsponse with results
     pool.query('SELECT * from authors',function(err,result) {
         if(err) {
-            
+            res.status(500).send(err.toString());
         }
     });
 });
