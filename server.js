@@ -14,9 +14,9 @@ var config = {
 };
 
 function createTemplate(data) {
-    var title=data.title;
-    var name=data.name;
-    var date=data.date;
+    var title=data.article_name;
+    var name=data.article_name;
+    var date=data.issued_on;
     var content=data.content;
     var category=data.category;
     
@@ -76,8 +76,7 @@ app.get('/articles/:articleName', function (req, res) {
             else
             {
                 var articleData = result.rows[0];
-                res.send(JSON.stringify(result.rows[0]));
-                //res.send(createTemplate(articleData));
+                res.send(createTemplate(articleData));
             }
         }  
   });
