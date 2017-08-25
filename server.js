@@ -61,8 +61,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/articles/piezoelectricity', function (req, res) {
-  pool.query('SELECT * FROM articles WHERE category = kckjndv', function(err,result) {
+app.get('/articles/:articleName', function (req, res) {
+  pool.query('SELECT * FROM articles WHERE article_name = $1',[req.params.articleName], function(err,result) {
     if(err)
     {
             res.status(500).send(err.toString());
