@@ -100,7 +100,7 @@ app.get('/database', function (req, res) {
 });
 
 app.get('/about_us', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'about_us.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
 app.get('/home', function (req, res) {
