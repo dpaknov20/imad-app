@@ -1,8 +1,13 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+
+//for the encryption of the password 
+var crypto = require('crypto');
+
 //this is for the database connection
 var Pool = require('pg').Pool;
+
 //configuraton for the database
 var config = {
     user: 'adeepak269',
@@ -62,6 +67,18 @@ app.get('/counter', function (req, res) {
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+//function for the encryption of the passsword
+function hash (input,salt) {
+    var hashed=crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
+    return hashed.toString('hex');
+}
+
+app.get('/hash/:input', function (req, res) {
+   var hashedString = hash(req.params.input,'this-is-some-random-string');
+   res.send(hashedString);
+    
 });
 
 app.get('/articles/:articleName', function (req, res) {
