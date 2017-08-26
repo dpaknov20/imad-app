@@ -18,6 +18,10 @@ submit.onclick = function() {
         {
             alert('username/password is incorrect');
         }
+        else if(request.status === 404)
+        {
+            alert('main.js file not found');
+        }
     }
   };
   var username = document.getElementById('usr').value;
