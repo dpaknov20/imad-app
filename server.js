@@ -83,6 +83,29 @@ app.get('/hash/:input', function (req, res) {
     
 });
 
+app.post('/login/submit',function(req,res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    pool.query('SELECT FROM "user" WHERE username = $1', [username], function(err,result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else
+        {
+            if(result.rows.length === 0)
+            {
+                res.status(403).send('username/password is invalid');
+            }
+            else
+            {
+                var dbstring = result.rows[0].password;
+                var salt = dbstring.split('$')[2];
+                res.send(createTemplate(articleData));
+            }
+        }
+    });
+});
+
 app.post('/home/signup/register',function(req,res) {
     //we already have a username and password for now
     var username = req.body.username;
