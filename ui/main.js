@@ -24,5 +24,6 @@ submit.onclick = function() {
   var username = document.getElementById('user').value;
   var password = document.getElementById('psw').value;
   request.open('POST','http://adeepak269.imad.hasura-app.io/home/login/submit',true);
+  request.setRequestHeader('Content-Type','application/json');
   request.send(JSON.stringify({username: username,password: password}));
 };
