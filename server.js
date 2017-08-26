@@ -188,18 +188,6 @@ app.get('/about_us', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
-app.get('/home', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'home.html'));
-});
-
-app.get('/home/login', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
-});
-
-app.get('/home/signup', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'signup.html'));
-});
-
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
