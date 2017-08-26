@@ -100,7 +100,11 @@ app.post('/login/submit',function(req,res) {
             {
                 var dbstring = result.rows[0].password;
                 var salt = dbstring.split('$')[2];
-                res.send(createTemplate(articleData));
+                var hashedPassword = hash(password , salt);
+                if(hashedPassword === dbstring)
+                    res.send('credentials correct !');
+                else
+                    res.status(403).send('username/password is invalid');
             }
         }
     });
