@@ -1,12 +1,12 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 //for the encryption of the password 
 var crypto = require('crypto');
-
 //this is for the database connection
 var Pool = require('pg').Pool;
+//for the body parsing(using JSON method)
+var bodyParser = require('body-parser');
 
 //configuraton for the database
 var config = {
@@ -58,6 +58,8 @@ function createTemplate(data) {
 
 var app = express();
 app.use(morgan('combined'));
+//for the JSON file to load 
+app.use(bodyParser.json());
 
 var count=0;
 app.get('/counter', function (req, res) {
@@ -81,9 +83,12 @@ app.get('/hash/:input', function (req, res) {
     
 });
 
-app.get('/home/register',function(req,res) {
+app.post('/home/register',function(req,res) {
     //we already have a username and password for now
-    var salt = crypto.getRandomBytes(128).toString('hex');
+    var username = req.body.username;
+    var password = req.body.password;
+    
+    var salt = crypto.randomBytes(128).toString('hex');
     var dbstring = hash(password, salt);
     pool.query('INSERT INTO "user" (username, password) VALUES ($1,$2)', [username,dbstring], function(err,result) {
         if(err) {
