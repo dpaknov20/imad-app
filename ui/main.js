@@ -21,8 +21,8 @@ submit_click.onclick = function() {
         }
     }
   };
-  var username = document.getElementById('name').value;
-  var password = document.getElementById('psw').value;
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
   console.log(username);
   console.log(password);
   request.open('POST','http://adeepak269.imad.hasura-app.io/home/login/submit', true);
