@@ -7,6 +7,7 @@ var crypto = require('crypto');
 var Pool = require('pg').Pool;
 //for the body parsing(using JSON method)
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 //configuraton for the database
 var config = {
@@ -60,6 +61,11 @@ var app = express();
 app.use(morgan('combined'));
 //for the JSON file to load 
 app.use(bodyParser.json());
+app.use(session({
+    secret: 'someRandomSecretValue', 
+    cookie: {maxAge: 1000*60*60*24*30}
+}))
+
 
 var count=0;
 app.get('/counter', function (req, res) {
@@ -102,7 +108,11 @@ app.post('/login',function(req,res) {
                 var salt = dbstring.split('$')[2];
                 var hashedPassword = hash(password , salt);
                 if(hashedPassword === dbstring)
+                {
+                    //set the session
+                    req.session.outh={userId: result.rows[0].username };
                     res.send('credentials correct !');
+                }
                 else
                     res.status(403).send('username/password is invalid');
             }
@@ -125,6 +135,13 @@ app.post('/home/signup/register',function(req,res) {
             res.send('user successfully created: ' + username);
         }
     });
+});
+
+app.get('/check-login',function(req,res) {
+   if(req.session && req.session.outh && req.session.outh.userId) 
+        res.send('you are logged in' + req.session.outh.userId.toString());
+   else
+        res.send('you are not logged in');
 });
 
 app.get('/articles/:articleName', function (req, res) {
