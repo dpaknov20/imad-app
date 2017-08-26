@@ -28,7 +28,7 @@ submit.onclick = function() {
   var password = document.getElementById('psd').value;
   console.log(username);
   console.log(password);
-  request.open('POST', 'http://adeepak269.imad.hasura-app.io/home/login/submit', true);
+  request.open('POST', 'http://adeepak269.imad.hasura-app.io/login', true);
   request.setRequestHeader('Content-Type','application/json');
   request.send(JSON.stringify({username: username,password: password}));
 };
