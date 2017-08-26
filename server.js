@@ -81,6 +81,20 @@ app.get('/hash/:input', function (req, res) {
     
 });
 
+app.get('/home/register',function(req,res) {
+    //we already have a username and password for now
+    var salt = crypto.getRandomBytes(128).toString('hex');
+    var dbstring = hash(password, salt);
+    pool.query('INSERT INTO "user" (username, password) VALUES ($1,$2)', [username,dbstring], function(err,result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send('user successfully created: ' + username);
+        }
+    });
+});
+
 app.get('/articles/:articleName', function (req, res) {
   pool.query("SELECT * FROM articles WHERE article_name = $1" ,[req.params.articleName], function(err,result) {
         if(err)
