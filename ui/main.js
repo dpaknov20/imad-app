@@ -29,7 +29,6 @@
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/login', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
-                  submit.value='logging in...';
             };
                  var register=document.getElementById('register_btn');
                  register.onclick = function() {
@@ -62,5 +61,4 @@
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/home/signup/register', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
-                  register.value='registering....';
                 };
