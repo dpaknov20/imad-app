@@ -20,7 +20,7 @@
                         }
                         else if(request.status === 404)
                         {
-                            alert('main.js file not found');
+                            alert('file not found');
                         }
                     }
                   };
