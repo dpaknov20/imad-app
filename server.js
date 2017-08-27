@@ -196,7 +196,7 @@ app.get('/ui/main.js', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/ui/myapp', function(req, res){
+app.get('/myapp', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'myapp.js'));
 });
 
