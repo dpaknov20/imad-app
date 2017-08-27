@@ -1,5 +1,5 @@
  var submit=document.getElementById('submit_btn');
-                 submit.onClick = function() {
+                 submit.onclick = function() {
                   //create a request
                   var request = new XMLHttpRequest();
                   //capture the response and store it in the variable
