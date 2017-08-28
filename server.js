@@ -149,7 +149,7 @@ app.get('/logout',function(req,res) {
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
 });
 
-app.post('/myappregister',function(req,res) {
+app.post('/myapp/register',function(req,res) {
     //we already have a username and password for now
     var name = req.body.name;
     var email = req.body.email;
@@ -246,10 +246,6 @@ app.get('/myapp', function(req, res){
 
 app.get('/ui/myappmain.js', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'myappmain.js'));
-});
-
-app.get('/myapp/register', function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'register.html'));
 });
 
 app.get('/myappregister', function(req, res){
