@@ -155,11 +155,11 @@ app.post('/registration',function(req,res) {
     var name = req.body.name;
     var email = req.body.email;
     var contact = req.body.contact;
-    var flight = req.body.flight_no;
+    var flight = req.body.flight;
     var from = req.body.from;
     var to = req.body.to;
     var date = req.body.date;
-    var booking = req.body.booking_id;
+    var booking = req.body.booking;
     var pnr = req.body.pnr;
     var tag = req.body.tag;
     
