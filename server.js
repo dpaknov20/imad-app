@@ -167,7 +167,7 @@ app.post('/registration',function(req,res) {
             res.status(500).send(err.toString());
         }
         else {
-            res.send('user successfully registered: ' + booking_id);
+            res.send('user successfully registered: ' + booking);
         }
     });
 });
