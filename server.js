@@ -244,6 +244,10 @@ app.get('/myapp', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'myapp.html'));
 });
 
+app.get('/ui/myappmain.js', function(req, res){
+   res.sendFile(path.join(__dirname, 'ui', 'myappmain.js'));
+});
+
 app.get('/myapp/register', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'register.html'));
 });
