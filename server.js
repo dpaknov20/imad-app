@@ -150,7 +150,7 @@ app.get('/logout',function(req,res) {
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
 });
 
-app.post('/myapp/register',function(req,res) {
+app.post('/myapp/registration',function(req,res) {
     //we already have a username and password for now
     var name = req.body.name;
     var email = req.body.email;
