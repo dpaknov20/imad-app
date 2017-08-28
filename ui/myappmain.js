@@ -70,5 +70,5 @@ var submit=document.getElementById('myapp_submit');
     
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/register', true);
                   request.setRequestHeader('Content-Type','application/json');
-                  request.send(JSON.stringify({"username": username, "email": email, "contact": contact, "flight_no": flight, "from": from, "id": id, "date": date, "booking_id": bookid, "pnr": pnr, "tag": tag,}));
+                  request.send(JSON.stringify({"name": username, "email": email, "contact": contact, "flight_no": flight, "from": from, "to": to, "date": date, "booking_id": bookid, "pnr": pnr, "tag": tag}));
                 };
