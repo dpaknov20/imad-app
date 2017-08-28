@@ -1,4 +1,4 @@
-var submit=document.getElementById('myapp_submit');
+/*var submit=document.getElementById('myapp_submit');
                  submit.onclick = function() {
                   //create a request
                   var request = new XMLHttpRequest();
@@ -29,7 +29,7 @@ var submit=document.getElementById('myapp_submit');
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/login', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
-            };
+            }; */
                  var register=document.getElementById('myapp_register');
                  register.onclick = function() {
                   //create a request
