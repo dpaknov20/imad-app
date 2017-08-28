@@ -16,7 +16,7 @@ var config = {
     host: 'db.imad.hasura-app.io',
     port: '5432',
     //paswword: process.env.DB_PASSWORD
-    password: 'db-adeepak269-41332'
+    password: process.env.DB_PASSWORD
 };
 
 function createTemplate(data) {
@@ -146,7 +146,7 @@ app.get('/check-login',function(req,res) {
 
 app.get('/logout',function(req,res) {
    delete req.session.outh;
-   res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
+   res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/myapp">Back to home</a></div></body></html>');
 });
 
 app.get('/articles/:articleName', function (req, res) {
