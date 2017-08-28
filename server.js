@@ -202,7 +202,6 @@ app.get('/articles/:articleName', function (req, res) {
   });
 });
 
-
 app.get('/database', function (req, res) {
     //make a select request
     //return the rrsponse with results
