@@ -151,8 +151,16 @@ app.get('/logout',function(req,res) {
 
 app.post('/myapp/register',function(req,res) {
     //we already have a username and password for now
-    var username = req.body.username;
-    var password = req.body.password;
+    var name = req.body.name;
+    var email = req.body.email;
+    var contact = req.body.name;
+    var flight_no = req.body.email;
+    var from = req.body.name;
+    var to = req.body.email;
+    var date = req.body.name;
+    var booking_id = req.body.email;
+    var username = req.body.name;
+    var password = req.body.email;
     
     //var salt = crypto.randomBytes(128).toString('hex');
     //var dbstring = hash(password, salt);
