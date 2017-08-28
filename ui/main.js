@@ -58,7 +58,7 @@
                   };
                   var username = document.getElementById('usr').value;
                   var password = document.getElementById('psd').value;
-                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/home/signup/register', true);
+                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/register', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
                 };
