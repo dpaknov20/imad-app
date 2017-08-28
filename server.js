@@ -74,7 +74,7 @@ app.get('/counter', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'myapp.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 //function for the encryption of the passsword
