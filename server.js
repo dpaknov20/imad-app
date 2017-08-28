@@ -207,6 +207,19 @@ app.get('/database', function (req, res) {
     });
 });
 
+app.get('/myapp/database', function (req, res) {
+    //make a select request
+    //return the rrsponse with results
+    pool.query('SELECT * FROM customer',function(err,result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+});
+
 app.get('/about_us', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
