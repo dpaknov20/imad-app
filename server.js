@@ -149,6 +149,23 @@ app.get('/logout',function(req,res) {
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
 });
 
+app.post('/myapp/register',function(req,res) {
+    //we already have a username and password for now
+    var username = req.body.username;
+    var password = req.body.password;
+    
+    //var salt = crypto.randomBytes(128).toString('hex');
+    //var dbstring = hash(password, salt);
+    pool.query('INSERT INTO customer (name,email,contact,fight_no,from,to,date,booking_id,pnr,tag) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [username,dbstring], function(err,result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send('user successfully created: ' + username);
+        }
+    });
+});
+
 app.get('/myapp/logout',function(req,res) {
    delete req.session.outh;
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/myapp">Back to home</a></div></body></html>');
