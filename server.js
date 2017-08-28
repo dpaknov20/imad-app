@@ -165,7 +165,7 @@ app.post('/myapp/registration',function(req,res) {
     
     //var salt = crypto.randomBytes(128).toString('hex');
     //var dbstring = hash(password, salt);
-    pool.query('INSERT INTO customer (name,email,contact,flight_no,from,to,date,booking_id,pnr,tag) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [name, email, contact, flight_no, from, to, date, booking_id, pnr, tag], function(err,result) {
+    pool.query('INSERT INTO "customer" (name,email,contact,flight_no,from,to,date,booking_id,pnr,tag) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [name, email, contact, flight_no, from, to, date, booking_id, pnr, tag], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
