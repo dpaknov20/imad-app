@@ -155,17 +155,17 @@ app.post('/registration',function(req,res) {
     var name = req.body.name;
     var email = req.body.email;
     var contact = req.body.contact;
-    var flight_no = req.body.flight_no;
+    var flight = req.body.flight_no;
     var from = req.body.from;
     var to = req.body.to;
     var date = req.body.date;
-    var booking_id = req.body.booking_id;
+    var booking = req.body.booking_id;
     var pnr = req.body.pnr;
     var tag = req.body.tag;
     
     //var salt = crypto.randomBytes(128).toString('hex');
     //var dbstring = hash(password, salt);
-    pool.query('INSERT INTO customer (name,email,contact,flight_no,from,to,date,booking_id,pnr,tag) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [name, email, contact, flight_no, from, to, date, booking_id, pnr, tag], function(err,result) {
+    pool.query('INSERT INTO customer (name,email,contact,flight,from,to,date,booking,pnr,tag) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [name, email, contact, flight_no, from, to, date, booking_id, pnr, tag], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
