@@ -18,6 +18,7 @@ var config = {
     //paswword: process.env.DB_PASSWORD
     password: 'db-adeepak269-41332'
 };
+var pool = new Pool(config);
 
 function createTemplate(data) {
     var title=data.article_name;
@@ -201,7 +202,7 @@ app.get('/articles/:articleName', function (req, res) {
   });
 });
 
-var pool = new Pool(config);
+
 app.get('/database', function (req, res) {
     //make a select request
     //return the rrsponse with results
