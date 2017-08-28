@@ -169,7 +169,7 @@ app.post('/myapp/register',function(req,res) {
             res.status(500).send(err.toString());
         }
         else {
-            res.send('user successfully created: ' + username);
+            res.send('user successfully created: ' + booking_id);
         }
     });
 });
