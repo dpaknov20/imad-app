@@ -1,4 +1,4 @@
-var submit=document.getElementById('submit_btn');
+var submit=document.getElementById('myapp_submit');
                  submit.onclick = function() {
                   //create a request
                   var request = new XMLHttpRequest();
@@ -30,7 +30,7 @@ var submit=document.getElementById('submit_btn');
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
             };
-                 var register=document.getElementById('register_btn');
+                 var register=document.getElementById('myapp_register');
                  register.onclick = function() {
                   //create a request
                   var request = new XMLHttpRequest();
@@ -56,9 +56,10 @@ var submit=document.getElementById('submit_btn');
                         }
                     }
                   };
-                  var username = document.getElementById('usr').value;
-                  var password = document.getElementById('psd').value;
-                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/register', true);
+                  var bookid = document.getElementById('bookid').value;
+                  var pnr = document.getElementById('pnr').value;
+    
+                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/register', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
                 };
