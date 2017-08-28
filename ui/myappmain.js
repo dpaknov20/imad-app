@@ -60,15 +60,15 @@
                   var name = document.getElementById('name').value;
                   var email = document.getElementById('email').value;
                   var contact = document.getElementById('contact').value;
-                  var flight_no = document.getElementById('flight').value;
-                  var from = document.getElementById('from').value;
-                  var to = document.getElementById('to').value;
+                  var flight = document.getElementById('flight').value;
+                  var fromcity = document.getElementById('fromcity').value;
+                  var tocity = document.getElementById('tocity').value;
                   var date = document.getElementById('date').value;
-                  var booking_id = document.getElementById('book').value;
+                  var booking = document.getElementById('book').value;
                   var pnr = document.getElementById('pnr').value;
-                  var tag = document.getElementById('tag').value;
+                  var tagid = document.getElementById('tagid').value;
     
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/registration', true);
                   request.setRequestHeader('Content-Type','application/json');
-                  request.send(JSON.stringify({"name": name, "email": email, "contact": contact, "flight_no": flight_no, "from": from, "to": to, "date": date, "booking_id": booking_id, "pnr": pnr, "tag": tag}));
+                  request.send(JSON.stringify({"name": name, "email": email, "contact": contact, "flight": flight, "fromcity": fromcity, "tocity": tocity, "date": date, "booking": booking, "pnr": pnr, "tagid": tagid}));
                 };
