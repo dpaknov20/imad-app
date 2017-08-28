@@ -141,7 +141,7 @@ app.get('/check-login',function(req,res) {
    if(req.session && req.session.outh && req.session.outh.userName) 
         res.send('you are logged in as ' + req.session.outh.userName.toString());
    else
-        res.send('you are not logged in');
+        res.status(400).send('you are not logged in');
 });
 
 app.get('/logout',function(req,res) {
