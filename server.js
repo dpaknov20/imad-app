@@ -120,7 +120,7 @@ app.post('/login',function(req,res) {
     });
 });
 
-app.post('/home/signup/register',function(req,res) {
+app.post('/register',function(req,res) {
     //we already have a username and password for now
     var username = req.body.username;
     var password = req.body.password;
