@@ -56,10 +56,19 @@ var submit=document.getElementById('myapp_submit');
                         }
                     }
                   };
+                  
+                  var username = document.getElementById('bookid').value;
+                  var email = document.getElementById('pnr').value;
+                  var contact = document.getElementById('bookid').value;
+                  var flight = document.getElementById('pnr').value;
+                  var from = document.getElementById('bookid').value;
+                  var to = document.getElementById('pnr').value;
+                  var date = document.getElementById('bookid').value;
                   var bookid = document.getElementById('bookid').value;
                   var pnr = document.getElementById('pnr').value;
+                  var tag = document.getElementById('pnr').value;
     
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/register', true);
                   request.setRequestHeader('Content-Type','application/json');
-                  request.send(JSON.stringify({"username": username, "password": password}));
+                  request.send(JSON.stringify({"username": username, "email": email, "contact": contact, "flight_no": flight, "from": from, "id": id, "date": date, "booking_id": bookid, "pnr": pnr, "tag": tag,}));
                 };
