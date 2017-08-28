@@ -90,6 +90,7 @@ app.get('/hash/:input', function (req, res) {
     
 });
 
+var pool = new Pool(config);
 app.post('/login',function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
@@ -151,7 +152,6 @@ app.get('/logout',function(req,res) {
 });
 
 app.post('/registration',function(req,res) {
-    //we already have a username and password for now
     var name = req.body.name;
     var email = req.body.email;
     var contact = req.body.contact;
@@ -162,9 +162,6 @@ app.post('/registration',function(req,res) {
     var booking = req.body.booking;
     var pnr = req.body.pnr;
     var tag = req.body.tag;
-    
-    //var salt = crypto.randomBytes(128).toString('hex');
-    //var dbstring = hash(password, salt);
     pool.query('INSERT INTO customer (name,email,contact,flight,from,to,date,booking,pnr,tag) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [name, email, contact, flight_no, from, to, date, booking_id, pnr, tag], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
