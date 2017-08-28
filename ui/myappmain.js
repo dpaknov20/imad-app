@@ -30,6 +30,56 @@
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
             }; */
+            function loadregister() {
+                var registerHTML = 
+                `<!doctype html>
+                <html>
+                    <head>
+                        <title>Register for BagTrack</title>
+                         <link href="/ui/style.css" rel="stylesheet" /> 
+                    </head>
+                    <body>
+                        <div align="center">
+                            <h3>Registration form</h3>
+                            <hr/>
+                            <br>
+                            <label><b>Name</b></label>
+                            <input type="text" placeholder="enter name" id="name" />
+                            <hr/>
+                            <label><b>Email</b></label>
+                            <input type="text" placeholder="enter email" id="email" />
+                            <hr/>
+                            <label><b>Phone</b></label>
+                            <input type="text" placeholder="mobile" id="contact" />
+                            <hr/>
+                            <label><b>Flight No.</b></label>
+                            <input type="text" placeholder="fight no" id="flight" />
+                            <hr/>
+                            <label><b>From</b></label>
+                            <input type="text" placeholder="from" id="from" />
+                            <hr/>
+                            <label><b>To</b></label>
+                            <input type="text" placeholder="to" id="to" />
+                            <hr/>
+                            <label><b>Date</b></label>
+                            <input type="text" placeholder="date" id="date" />
+                            <hr/>
+                            <label><b>Booking ID</b></label>
+                            <input type="text" placeholder="booking id" id="book" />
+                            <hr/>
+                            <label><b>PNR</b></label>
+                            <input type="text" placeholder="PNR" id="pnr" />
+                            <hr/>
+                            <label><b>Tag</b></label>
+                            <input type="text" placeholder="enter tag" id="tag" />
+                            <hr/>
+                            <button type="submit" id="myapp_register">Register</button>
+                            <script type="text/javascript" src="/ui/myappmain.js"></script>
+                         </div>
+                    </body>
+                </html>
+                `;
+                document.getElementById('get_register').innerHTML = registerHTML;
                  var register=document.getElementById('myapp_register');
                  register.onclick = function() {
                   //create a request
@@ -72,3 +122,5 @@
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"name": name, "email": email, "contact": contact, "flight_no": flight_no, "from": from, "to": to, "date": date, "booking_id": booking_id, "pnr": pnr, "tag": tag}));
                 };
+}
+loadregister();
