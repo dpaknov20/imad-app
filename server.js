@@ -149,6 +149,12 @@ app.get('/logout',function(req,res) {
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
 });
 
+app.get('/myapp/logout',function(req,res) {
+   delete req.session.outh;
+   res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/myapp">Back to home</a></div></body></html>');
+});
+
+
 app.get('/articles/:articleName', function (req, res) {
   pool.query("SELECT * FROM articles WHERE article_name = $1" ,[req.params.articleName], function(err,result) {
         if(err)
