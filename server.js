@@ -248,6 +248,9 @@ app.get('/myapp/register', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'register.html'));
 });
 
+app.get('/myappregister', function(req, res){
+   res.sendFile(path.join(__dirname, 'ui', 'myappregister.html'));
+});
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
