@@ -68,7 +68,7 @@
                   var pnr = document.getElementById('pnr').value;
                   var tag = document.getElementById('tag').value;
     
-                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/register', true);
+                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/registration', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"name": name, "email": email, "contact": contact, "flight_no": flight_no, "from": from, "to": to, "date": date, "booking_id": booking_id, "pnr": pnr, "tag": tag}));
                 };
