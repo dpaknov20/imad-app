@@ -156,13 +156,13 @@ app.post('/registration',function(req,res) {
     var email = req.body.email;
     var contact = req.body.contact;
     var flight = req.body.flight;
-    var from = req.body.from;
-    var to = req.body.to;
+    var fromcity = req.body.fromcity;
+    var tocity = req.body.tocity;
     var date = req.body.date;
     var booking = req.body.booking;
     var pnr = req.body.pnr;
-    var tag = req.body.tag;
-    pool.query('INSERT INTO customer (name,email,contact,flight,from,to,date,booking,pnr,tag) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [name, email, contact, flight_no, from, to, date, booking_id, pnr, tag], function(err,result) {
+    var tagid = req.body.tagid;
+    pool.query('INSERT INTO customer (name,email,contact,flight,fromcity,tocity,date,booking,pnr,tagid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [name, email, contact, flight, fromcity, tocity, date, booking, pnr, tagid], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
