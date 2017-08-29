@@ -67,12 +67,10 @@
             request.onreadystatechange = function () {
                 if (request.readyState === XMLHttpRequest.DONE) {
                     if (request.status === 200) {
-                        var content = '<ul>';
                         var detailData = JSON.parse(this.responseText);
-                            content = `<li>
-                            <a href="/customer/${detailData[0].booking}">${detailData[i].name}</a></li>`;
-                            content = "</ul>";
-                            document.getElementById('details').innerHTML = content;
+                            var contentHTML = 
+                            `<html><body><a href="/customer/${detailData[0].booking}">${detailData[0].name}</a></body></html>`;
+                            document.getElementById('details').innerHTML = contentHTML;
                         }
                         else {
                             loadLoginPage();
