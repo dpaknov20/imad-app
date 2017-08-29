@@ -79,9 +79,6 @@
                             `<a href="/customer/${detailData[0].booking}">${detailData[0].name}</a>`;
                             document.getElementById('customer').innerHTML = contentHTML;
                         }
-                        else {
-                            loadLoginPage();
-                        }
             }
             };
             request.open('GET', '/get-details', true);
