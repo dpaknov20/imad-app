@@ -234,7 +234,7 @@ function makeTemplate(data) {
     var booking=data.booking;
     var pnr=data.pnr;
     var tagid=data.tagid;
-        var htmlTemplate = `
+        var bookTemplate = `
         <html>
             <head>  
                 <title>
@@ -268,7 +268,7 @@ function makeTemplate(data) {
             </body>
         </html>`
         ;
-        return htmlTemplate;
+        return bookTemplate;
 }
 
 app.post('/registration',function(req,res) {
