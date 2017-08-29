@@ -77,9 +77,9 @@
                 }
             };
     
-    request.open('GET', '/get-details', true);
-    request.send(null);
-}
+            request.open('GET', '/get-details', true);
+            request.send(null);
+        }
 
         loadLogin();
         
