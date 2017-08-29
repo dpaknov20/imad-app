@@ -66,7 +66,7 @@
             var loginArea = document.getElementById('loginsubmit');
             loginArea.innerHTML = 
                 `<h3> Hi <i>${username}</i></h3>
-                <a href="/logout">Logout</a>`;
+                <a href="/myapp/logout">Logout</a>`;
         }
         
         function loadDetails() {
