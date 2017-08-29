@@ -149,7 +149,7 @@ app.get('/check-login',function(req,res) {
 
 app.get('/logout',function(req,res) {
    delete req.session.outh;
-   res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/myapp">Back to home</a></div></body></html>');
+   res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
 });
 
 app.post('/myapp/login',function(req,res) {
