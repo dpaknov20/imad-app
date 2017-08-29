@@ -41,7 +41,18 @@
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"name": name, "email": email, "contact": contact, "flight": flight, "fromcity": fromcity, "tocity": tocity, "date": date, "booking": booking, "pnr": pnr, "tagid": tagid}));
                 };
-                
+            
+            function loadLoginPage() {
+                var loginHTML = 
+                    `<h3>Login Access</h3>
+                    <label><b>BOOKING ID</b></label>
+                    <input type="text" placeholder="BOOKING" id="bookid" />
+                    <hr/>
+                    <label><b>PNR &emsp; &emsp; &emsp;</b></label>
+                    <input type="password" placeholder="PNR" id="pnr" />
+                    <hr/>
+                    <button type="submit" id="myapp_submit" >Login</button>`;
+                documtne.getElementById('login_submit').innerHTML=loginHTML;
                 var submit=document.getElementById('myapp_submit');
                  submit.onclick = function() {
                   //create a request
@@ -74,3 +85,6 @@
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"booking": booking, "pnr": pnr}));
             };
+        }
+        
+        loadLoginPage();
