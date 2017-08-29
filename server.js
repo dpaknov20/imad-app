@@ -247,20 +247,19 @@ function makeTemplate(data) {
                     ${pnr}</h2>
                     <h2>
                     ${tag}</h2>
-                    <h2>${flight}</h2>
+                    <h2>${flight}
+                    </h2>
                     <hr/>
                     <h4>${name}</h4>
                     <hr/>
                     <h4>
                     ${contact}</h4>
                     <hr/>
-                    <p>${flight}</p>
-                    <hr/>
-                    <p>
-                    ${fromcity}</p> 
-                    <p>
-                    ${tocity}</p>
-                    <p>${date}</p>
+                    <h4>
+                    ${fromcity}</h4> 
+                    <h4>
+                    ${tocity}</h4>
+                    <h4>${date}</h4>
                 </div>
             </body>
         </html>`
