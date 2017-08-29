@@ -68,7 +68,6 @@
             request.onreadystatechange = function () {
                 if (request.readyState === XMLHttpRequest.DONE) {
                     if (request.status === 200) {
-                        alert("Here");
                         var detailData = JSON.parse(this.responseText);
                             var contentHTML = 
                             `${detailData[0].name}`;
