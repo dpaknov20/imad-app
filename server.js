@@ -241,6 +241,7 @@ function makeTemplate(data) {
             </head>
             <body>
                 <div align="center" style="padding-top : 50">
+                <h1>Passenger Details</h1>
                     <h2>
                     ${booking}</h2>
                     <h2>
