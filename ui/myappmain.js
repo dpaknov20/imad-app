@@ -84,7 +84,7 @@
                 }
             };
     
-    request.open('GET', '/get-articles', true);
+    request.open('GET', '/get-details', true);
     request.send(null);
 }
 
