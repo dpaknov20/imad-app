@@ -216,6 +216,7 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer booking_id not found');
         } else {
             var custData = result.rows[0];
+            res.send(custData);
             res.send(makeTemplate(custData));
         }
     }
