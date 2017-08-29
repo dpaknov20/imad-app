@@ -233,51 +233,36 @@ function makeTemplate(data) {
     var booking=data.booking;
     var pnr=data.pnr;
     var tagid=data.tagid;
-    var cust="Passenger details";
-    var custname = "Passenger Name";
-    var custemail = "Passenger Email";
-    var custcontact = "Contact no.";
-    var fly = "Flight no.";
-    var fcity = "From";
-    var tcity = "Destination";
-    var dfly = "On";
-    var custbook = "Customer Booking_id";
-    var custpnr = "Customer PNR no.";
-    var custtag = "BAGGARE TAG";
-    var str="to";
         var htmlTemplate = `
-        		<html>
+        <html>
             <head>  
                 <title>
-                    ${cust}
+                    ${name}
                 </title>
             </head>
             <body>
                 <div align="center">
                     <h2>
-                    ${custbook}</h2>
-                    <p>${booking}</p>
+                    ${booking}</h2>
                     <h2>
-                    ${custpnr}</h2>
-                    <p>${pnr}</p>
+                    ${pnr}</h2>
                     <h2>
-                    ${custtag}</h2>
-                    <p>${tag}</p>
+                    ${tag}</h2>
                     <hr/>
-                    <h4>${custname}</h4>
-                    <p>${name}</p>
+                    <h4>${name}</h4>
                     <hr/>
                     <h4>
-                    ${custcontact}</h4>
-                    <p>${contact}</p>
+                    ${contact}</h4>
                     <hr/>
                     <h4>
                     ${fly}</h4>
                     <p>${flight}</p>
                     <hr/>
-                    <h4>
-                    ${fcity}  ${str}  ${tcity}  ${dfly}  ${date}</h4>
-                    <hr/>
+                    <p>
+                    ${fromcity}</p> 
+                    <p>
+                    ${tocity}</p>
+                    <p>${date}</p>
                 </div>
             </body>
         </html>`
