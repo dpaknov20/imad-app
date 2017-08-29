@@ -171,6 +171,7 @@ app.post('/myapp/login',function(req,res) {
                 {
                     //set the session
                     req.session.auth={userBook: result.rows[0].booking };
+                    console.log(userBook);
                     res.send('credentials correct !');
                 }
                 else
