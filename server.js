@@ -234,19 +234,19 @@ function makeTemplate(data) {
     var pnr=data.pnr;
     var tagid=data.tagid;
     var cust="Passenger details";
-    var cust_name = "Passenger Name";
-    var cust_email = "Passenger Email";
-    var cust_contact = "Contact no.";
+    var custname = "Passenger Name";
+    var custemail = "Passenger Email";
+    var custcontact = "Contact no.";
     var fly = "Flight no.";
     var fcity = "From";
     var tcity = "Destination";
     var dfly = "On";
-    var cust_book = "Customer Booking_id";
-    var cust_pnr = "Customer PNR no.";
-    var cust_tag = "BAGGARE TAG";
+    var custbook = "Customer Booking_id";
+    var custpnr = "Customer PNR no.";
+    var custtag = "BAGGARE TAG";
     var str="to";
         var htmlTemplate = `
-        <html>
+        		<html>
             <head>  
                 <title>
                     ${cust}
@@ -255,21 +255,20 @@ function makeTemplate(data) {
             <body>
                 <div align="center">
                     <h2>
-                    ${cust_book}</h2>
+                    ${custbook}</h2>
                     <p>${booking}</p>
                     <h2>
-                    ${cust_pnr}</h2>
+                    ${custpnr}</h2>
                     <p>${pnr}</p>
                     <h2>
+                    ${custtag}</h2>
+                    <p>${tag}</p>
                     <hr/>
-                    <h2>
-                    ${cust_tag}</h2>
-                    <p>${taq}</p>
-                    ${cust_name}</h4>
+                    <h4>${custname}</h4>
                     <p>${name}</p>
                     <hr/>
                     <h4>
-                    ${cust_contact}</h4>
+                    ${custcontact}</h4>
                     <p>${contact}</p>
                     <hr/>
                     <h4>
@@ -279,17 +278,6 @@ function makeTemplate(data) {
                     <h4>
                     ${fcity}  ${str}  ${tcity}  ${dfly}  ${date}</h4>
                     <hr/>
-                    <div>
-                        ${date.toDateString()}
-                    </div>
-                    <hr/>
-                    <div>
-                        ${content}
-                    </div>
-                    <hr/>
-                    <div>
-                        ${category}
-                    </div>
                 </div>
             </body>
         </html>`
