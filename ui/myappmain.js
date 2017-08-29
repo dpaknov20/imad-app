@@ -73,8 +73,6 @@
                             var content = 
                             `<a href="/customer/${detailData[0].booking}">${detailData[i].name}</a>`;
                         details.innerHTML = content;
-                    } else {
-                        details.innerHTML('Oops! Could not load all the details!');
                     }
                 }
             };
