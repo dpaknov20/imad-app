@@ -69,14 +69,9 @@
                 if (request.readyState === XMLHttpRequest.DONE) {
                     var details = document.getElementById('details');
                     if (request.status === 200) {
-                        //var content = '<ul>';
                         var detailData = JSON.parse(this.responseText);
-                        for (var i=0; i< articleData.length; i++) {
-                            content += `<li>
-                            <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                            (${articleData[i].date.split('T')[0]})</li>`;
-                        }
-                        content += "</ul>";
+                            var content = 
+                            `<a href="/customer/${detailData[0].booking}">${detailData[i].name}</a>`;
                         details.innerHTML = content;
                     } else {
                         details.innerHTML('Oops! Could not load all the details!');
