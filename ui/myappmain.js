@@ -75,6 +75,9 @@
                         details.innerHTML = content;
                     }
                 }
+                else {
+                    loadLoginPage();
+                }
             };
     
             request.open('GET', '/get-details', true);
