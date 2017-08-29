@@ -72,8 +72,8 @@
         function loadDetails() {
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
-                alert("here");
                 if (request.readyState === XMLHttpRequest.DONE) {
+                    alert("here");
                     if (request.status === 200) {
                         var detailData = JSON.parse(this.responseText);
                             var contentHTML = 
