@@ -39,7 +39,7 @@
                     }
                   };
                   var booking = document.getElementById('bookid').value;
-                  var pnr = document.getElementById('PNR').value;
+                  var pnr = document.getElementById('pnr').value;
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/login', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"booking": booking, "pnr": pnr}));
