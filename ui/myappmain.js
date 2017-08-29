@@ -73,14 +73,12 @@
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
                 if (request.readyState === XMLHttpRequest.DONE) {
-                    if (request.status === 200) {
                         var detailData = JSON.parse(this.responseText);
                             var contentHTML = 
                             `<a href="/customer/${detailData[0].booking}">${detailData[0].name}</a>`;
                             document.getElementById('customer').innerHTML = contentHTML;
-                        }
-            }
-            };
+                    }
+                };
             request.open('GET', '/getdetails', true);
             request.send(null);
         }
