@@ -22,8 +22,7 @@
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
                         {
-                            //alert('login successful !!');
-                            loadDetails(); 
+                            alert('login successful !!');
                         }
                         else if(request.status === 500)
                         {
