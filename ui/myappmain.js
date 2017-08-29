@@ -10,7 +10,7 @@
                     <input type="password" placeholder="PNR" id="pnr" />
                     <hr/>
                     <button type="submit" id="myapp_submit" >Login</button>`;
-                documtne.getElementById('login_submit').innerHTML=loginHTML;
+                document.getElementById('login_submit').innerHTML=loginHTML;
                 
                 var submit=document.getElementById('myapp_submit');
                  submit.onclick = function() {
