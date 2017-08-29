@@ -49,7 +49,7 @@
         function loadLoggedInUser (userBook) {
         var loginArea = document.getElementById('login_submit');
         loginArea.innerHTML = `
-        <h3> Hi <i>${username}</i></h3>
+        <h3> Hi <i>${userBook}</i></h3>
         <a href="/logout">Logout</a>
     `;
 }
