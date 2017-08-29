@@ -170,7 +170,7 @@ app.post('/myapp/login',function(req,res) {
                 if(user1 === pnr)
                 {
                     //set the session
-                    req.session.auth={userBook: result.rows[0].booking };
+                    req.session.auth={bookid: result.rows[0].booking };
                     res.send('credentials correct !');
                 }
                 else
@@ -181,9 +181,9 @@ app.post('/myapp/login',function(req,res) {
 });
 
 app.get('/myapp/checklogin', function (req, res) {
-   if (req.session && req.session.auth && req.session.auth.userBook) {
+   if (req.session && req.session.auth && req.session.auth.bookid) {
        // Load the user object
-       pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.userBook], function (err, result) {
+       pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.bookid], function (err, result) {
            if (err) {
               res.status(500).send(err.toString());
            } else {
@@ -198,7 +198,7 @@ app.get('/myapp/checklogin', function (req, res) {
 app.get('/getdetails', function (req, res) {
    // make a select request
    // return a response with the results
-   pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.userBook], function (err, result) {
+   pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.bookid], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
