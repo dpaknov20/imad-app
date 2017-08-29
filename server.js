@@ -246,7 +246,7 @@ function makeTemplate(data) {
                     <h2>
                     ${pnr}</h2>
                     <h2>
-                    ${tag}</h2>
+                    ${tagid}</h2>
                     <h2>${flight}
                     </h2>
                     <hr/>
