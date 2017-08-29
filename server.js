@@ -208,15 +208,15 @@ app.get('/get-details', function (req, res) {
 });
 
 app.get('/customer/:bookingid', function (req, res) {
-  pool.query("SELECT * FROM customer WHERE booking = $1", [req.params.bookingid], function (err, result) {
+  pool.query('SELECT * FROM customer WHERE booking = $1', [req.params.bookingid], function (err, result) {
     if (err) {
         res.status(500).send(err.toString());
     } else {
         if (result.rows.length === 0) {
             res.status(404).send('customer booking_id not found');
         } else {
-            var detailData = result.rows[0];
-            res.send(makeTemplate(detailData));
+            var custData = result.rows[0];
+            res.send(makeTemplate(custData));
         }
     }
   });
