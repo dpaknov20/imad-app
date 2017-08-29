@@ -58,7 +58,7 @@
                     }
                 }
             };
-            request.open('GET', '/myapp/check-login', true);
+            request.open('GET', '/myapp/checklogin', true);
             request.send(null);
         }
         
@@ -81,7 +81,7 @@
                         }
             }
             };
-            request.open('GET', '/get-details', true);
+            request.open('GET', '/getdetails', true);
             request.send(null);
         }
 
