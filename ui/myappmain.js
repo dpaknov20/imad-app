@@ -58,17 +58,17 @@
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
                 if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
-            } else {
-                loadLoginPage();
-            }
+                    if (request.status === 200) {
+                        loadLoggedInUser(this.responseText);
+                    } else {
+                        loadLoginPage();
+                    }
+                }
+            };
+            request.open('GET', '/myapp/check-login', true);
+            request.send(null);
         }
-    };
-    
-    request.open('GET', '/myapp/check-login', true);
-    request.send(null);
-}
+        
         loadLogin();
         
                 
