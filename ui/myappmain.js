@@ -62,6 +62,13 @@
             request.send(null);
         }
         
+        function loadLoggedInUser(username) {
+            var loginArea = document.getElementById('myapp_submit');
+            loginArea.innerHTML = 
+                `<h3> Hi <i>${username}</i></h3>
+                <a href="/logout">Logout</a>`;
+        }
+        
         function loadDetails() {
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
@@ -82,3 +89,4 @@
         };
 
         loadLogin();
+        loadDetails();
