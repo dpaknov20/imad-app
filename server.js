@@ -242,25 +242,24 @@ function makeTemplate(data) {
             <body>
                 <div align="center" style="padding-top : 50">
                 <h1>Passenger Details</h1>
-                    <h2>BOOKING ID : </h2>
+                    <h3>BOOKING ID : </h3>
                     <p>${booking}<p>
-                    <h2>
-                    ${pnr}</h2>
-                    <h2>
-                    ${tagid}</h2>
-                    <h2>${flight}
-                    </h2>
-                    <hr/>
-                    <h4>${name}</h4>
-                    <hr/>
-                    <h4>
-                    ${contact}</h4>
-                    <hr/>
-                    <h4>
-                    ${fromcity}</h4> 
-                    <h4>
-                    ${tocity}</h4>
-                    <h4>${date}</h4>
+                    <h3>PNR NO. : </h3>
+                    <p>${pnr}<p>
+                    <h3>TAG ID : </h3>
+                    <p>${tagid}<p>
+                    <h3>Passenger Name : </h3>
+                    <p>${name}<p>
+                    <h3>Passenger Contact : </h3>
+                    <p>${contact}<p>
+                    <h3>Flight no. : </h3>
+                    <p>${flight}<p>
+                    <h3>From : </h3>
+                    <p>${fromcity}<p>
+                    <h3>DESTINATION : </h3>
+                    <p>${tocity}<p>
+                    <h3>ON date : </h3>
+                    <p>${date}<p>
                 </div>
             </body>
         </html>`
