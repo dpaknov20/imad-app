@@ -180,11 +180,19 @@ app.post('/myapp/login',function(req,res) {
     });
 });
 
-app.get('/myapp/check-login',function(req,res) {
-   if(req.session && req.session.outh && req.session.outh.userBook) 
-        res.send('you are logged in as ' + req.session.outh.userBook.toString());
-   else
-        res.status(400).send('you are not logged in');
+app.get('/myapp/check-login', function (req, res) {
+   if (req.session && req.session.auth && req.session.auth.userBook) {
+       // Load the user object
+       pool.query('SELECT * FROM customer WHERE booking = $1', [req.session.auth.userBook], function (err, result) {
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(result.rows[0].name);    
+           }
+       });
+   } else {
+       res.status(400).send('You are not logged in');
+   }
 });
 
 app.post('/registration',function(req,res) {
