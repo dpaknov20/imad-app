@@ -216,11 +216,86 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer booking_id not found');
         } else {
             var detailData = result.rows[0];
-            res.send(createTemplate(detailData));
+            res.send(makeTemplate(detailData));
         }
     }
   });
 });
+
+function makeTemplate(data) {
+    var name=data.name;
+    var email=data.email;
+    var contact=data.contact;
+    var flight=data.flight;
+    var fromcity=data.fromcity;
+    var tocity=data.tocity;
+    var date=data.date;
+    var booking=data.booking;
+    var pnr=data.pnr;
+    var tagid=data.tagid;
+    var cust="Passenger details";
+    var cust_name = "Passenger Name";
+    var cust_email = "Passenger Email";
+    var cust_contact = "Contact no.";
+    var fly = "Flight no.";
+    var fcity = "From";
+    var tcity = "Destination";
+    var dfly = "On";
+    var cust_book = "Customer Booking_id";
+    var cust_pnr = "Customer PNR no.";
+    var cust_tag = "BAGGARE TAG";
+    var str="to";
+        var htmlTemplate = `
+        <html>
+            <head>  
+                <title>
+                    ${cust}
+                </title>
+            </head>
+            <body>
+                <div align="center">
+                    <h2>
+                    ${cust_book}</h2>
+                    <p>${booking}</p>
+                    <h2>
+                    ${cust_pnr}</h2>
+                    <p>${pnr}</p>
+                    <h2>
+                    <hr/>
+                    <h2>
+                    ${cust_tag}</h2>
+                    <p>${taq}</p>
+                    ${cust_name}</h4>
+                    <p>${name}</p>
+                    <hr/>
+                    <h4>
+                    ${cust_contact}</h4>
+                    <p>${contact}</p>
+                    <hr/>
+                    <h4>
+                    ${fly}</h4>
+                    <p>${flight}</p>
+                    <hr/>
+                    <h4>
+                    ${fcity}  ${str}  ${tcity}  ${dfly}  ${date}</h4>
+                    <hr/>
+                    <div>
+                        ${date.toDateString()}
+                    </div>
+                    <hr/>
+                    <div>
+                        ${content}
+                    </div>
+                    <hr/>
+                    <div>
+                        ${category}
+                    </div>
+                </div>
+            </body>
+        </html>`
+        ;
+        return htmlTemplate;
+}
 
 app.post('/registration',function(req,res) {
     var name = req.body.name;
