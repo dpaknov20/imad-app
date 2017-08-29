@@ -9,10 +9,10 @@
                     <label><b>PNR &emsp; &emsp; &emsp;</b></label>
                     <input type="password" placeholder="PNR" id="pnr" />
                     <hr/>
-                    <button type="submit" id="myapp_submit" >Login</button>`;
-                document.getElementById('login_submit').innerHTML=loginHTML;
+                    <button type="submit" id="myappsubmit" >Login</button>`;
+                document.getElementById('loginsubmit').innerHTML=loginHTML;
                 
-                var submit=document.getElementById('myapp_submit');
+                var submit=document.getElementById('myappsubmit');
                  submit.onclick = function() {
                   //create a request
                   var request = new XMLHttpRequest();
@@ -63,7 +63,7 @@
         }
         
         function loadLoggedInUser(username) {
-            var loginArea = document.getElementById('myapp_submit');
+            var loginArea = document.getElementById('loginsubmit');
             loginArea.innerHTML = 
                 `<h3> Hi <i>${username}</i></h3>
                 <a href="/logout">Logout</a>`;
