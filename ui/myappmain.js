@@ -70,7 +70,7 @@
                         var detailData = JSON.parse(this.responseText);
                             var contentHTML = 
                             `<html><body><a href="/customer/${detailData[0].booking}">${detailData[0].name}</a></body></html>`;
-                            document.getElementById('details').innerHTML = contentHTML;
+                            document.getElementById('customer').innerHTML = contentHTML;
                         }
                         else {
                             loadLoginPage();
