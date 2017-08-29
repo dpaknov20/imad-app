@@ -23,6 +23,7 @@
                         if(request.status === 200)
                         {
                             alert('login successful !!');
+                            loadDetails(); 
                         }
                         else if(request.status === 500)
                         {
@@ -83,4 +84,3 @@
         };
 
         loadLogin();
-        loadDetails();        
