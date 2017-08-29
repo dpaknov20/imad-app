@@ -180,7 +180,7 @@ app.post('/myapp/login',function(req,res) {
     });
 });
 
-app.get('/myapp/check-login', function (req, res) {
+app.get('/myapp/checklogin', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userBook) {
        // Load the user object
        pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.userBook], function (err, result) {
@@ -195,7 +195,7 @@ app.get('/myapp/check-login', function (req, res) {
    }
 });
 
-app.get('/get-details', function (req, res) {
+app.get('/getdetails', function (req, res) {
    // make a select request
    // return a response with the results
    pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.userBook], function (err, result) {
