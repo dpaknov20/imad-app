@@ -113,7 +113,7 @@ app.post('/login',function(req,res) {
                 if(hashedPassword === dbstring)
                 {
                     //set the session
-                    req.session.outh={userName: result.rows[0].username };
+                    req.session.auth={userName: result.rows[0].username };
                     res.send('credentials correct !');
                 }
                 else
