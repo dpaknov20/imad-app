@@ -195,6 +195,18 @@ app.get('/myapp/check-login', function (req, res) {
    }
 });
 
+app.get('/get-details', function (req, res) {
+   // make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM customer WHERE booking = $1', [req.session.auth.userBook], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows[0]));
+      }
+   });
+});
+
 app.post('/registration',function(req,res) {
     var name = req.body.name;
     var email = req.body.email;
