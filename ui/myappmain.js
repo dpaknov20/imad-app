@@ -45,6 +45,7 @@
                   request.send(JSON.stringify({"booking": booking, "pnr": pnr}));
             };
         }
+        
         loadLoginPage();
         
                 
