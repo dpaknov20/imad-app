@@ -151,6 +151,42 @@ app.get('/logout',function(req,res) {
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
 });
 
+app.post('/myapp/login',function(req,res) {
+    var booking = req.body.booking;
+    var pnr = req.body.pnr;
+    pool.query('SELECT booking,pnr FROM customer WHERE booking = $1', [booking], function(err,result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else
+        {
+            if(result.rows.length === 0)
+            {
+                res.status(403).send('username/password is invalid');
+            }
+            else
+            {
+                var user1 = result.rows[0].pnr;
+                if(user1 === pnr)
+                {
+                    //set the session
+                    req.session.outh={userBook: result.rows[0].booking };
+                    res.send('credentials correct !');
+                }
+                else
+                    res.status(403).send('username/password is invalid');
+            }
+        }
+    });
+});
+
+app.get('/myapp/check-login',function(req,res) {
+   if(req.session && req.session.outh && req.session.outh.userBook) 
+        res.send('you are logged in as ' + req.session.outh.userBook.toString());
+   else
+        res.status(400).send('you are not logged in');
+});
+
 app.post('/registration',function(req,res) {
     var name = req.body.name;
     var email = req.body.email;
