@@ -170,7 +170,7 @@ app.post('/myapp/login',function(req,res) {
                 if(user1 === pnr)
                 {
                     //set the session
-                    req.session.outh={userBook: result.rows[0].booking };
+                    req.session.auth={userBook: result.rows[0].booking };
                     res.send('credentials correct !');
                 }
                 else
