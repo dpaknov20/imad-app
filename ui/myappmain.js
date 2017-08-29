@@ -69,7 +69,7 @@
                     if (request.status === 200) {
                         var detailData = JSON.parse(this.responseText);
                             var contentHTML = 
-                            `<a href="/customer/${detailData[0].booking}">${detailData[0].name}</a>`;
+                            `${detailData[0].name}`;
                             document.getElementById('customer').innerHTML = contentHTML;
                         }
                         else {
