@@ -197,8 +197,6 @@ app.get('/myapp/checklogin', function (req, res) {
 });
 
 app.get('/getdetails', function (req, res) {
-   // make a select request
-   // return a response with the results
    pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.bookid], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
