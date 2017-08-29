@@ -50,8 +50,7 @@
         var loginArea = document.getElementById('login_submit');
         loginArea.innerHTML = `
         <h3> Hi <i>${userBook}</i></h3>
-        <a href="/logout">Logout</a>
-    `;
+        <a href="/logout">Logout</a>`;
 }
         
         function loadLogin () {
@@ -66,6 +65,9 @@
             }
         }
     };
+    
+    request.open('GET', '/myapp/check-login', true);
+    request.send(null);
 }
         loadLogin();
         
