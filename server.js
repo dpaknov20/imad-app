@@ -198,7 +198,7 @@ app.get('/myapp/check-login', function (req, res) {
 app.get('/get-details', function (req, res) {
    // make a select request
    // return a response with the results
-   pool.query('SELECT * FROM customer WHERE booking = $1', [req.session.auth.userBook], function (err, result) {
+   pool.query('SELECT * FROM customer WHERE booking = $1', [userBook], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
