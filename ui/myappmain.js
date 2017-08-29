@@ -22,7 +22,7 @@
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
                         {
-                            alert('logged in successfully');
+                            alert('login successful !!');
                         }
                         else if(request.status === 500)
                         {
@@ -46,7 +46,7 @@
             };
         }
         
-        function loadLogin () {
+        function loadLogin() {
             // Check if the user is already logged in
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
@@ -62,37 +62,26 @@
             request.send(null);
         }
         
-        function loadDetails () {
-        // Check if the user is already logged in
+        function loadDetails() {
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
                 if (request.readyState === XMLHttpRequest.DONE) {
                     if (request.status === 200) {
+                        var content = '<ul>';
                         var detailData = JSON.parse(this.responseText);
-                            var content = 
-                            `<a href="/customer/${detailData[0].booking}">${detailData[i].name}</a>`;
-                        document.getElementById('details').innerHTML = content;
-                        
-                         var content = '<ul>';
-                var articleData = JSON.parse(this.responseText);
-                for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
-                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>`;
-                }
-                content += "</ul>"
-                articles.innerHTML = content;
-                    }
-                }
-                else {
-                    loadLoginPage();
-                }
+                            content = `<li>
+                            <a href="/customer/${detailData[0].booking}">${detailData[i].name}</a></li>`;
+                            content = "</ul>";
+                            document.getElementById('details').innerHTML = content;
+                        }
+                        else {
+                            loadLoginPage();
+                        }
+            }
             };
-    
             request.open('GET', '/get-details', true);
             request.send(null);
-        }
+        };
 
         loadLogin();
-        
         loadDetails();        
