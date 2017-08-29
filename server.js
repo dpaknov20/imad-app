@@ -294,7 +294,7 @@ app.post('/registration',function(req,res) {
 });
 
 app.get('/myapp/logout',function(req,res) {
-   delete req.session.outh;
+   delete req.session.auth;
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/myapp">Back to home</a></div></body></html>');
 });
 
