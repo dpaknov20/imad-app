@@ -215,7 +215,6 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer booking_id not found');
         } else {
             var custData = result.rows[0];
-            res.send(custData);
             res.send(makeTemplate(custData));
         }
     }
@@ -248,14 +247,13 @@ function makeTemplate(data) {
                     ${pnr}</h2>
                     <h2>
                     ${tag}</h2>
+                    <h2>${flight}</h2>
                     <hr/>
                     <h4>${name}</h4>
                     <hr/>
                     <h4>
                     ${contact}</h4>
                     <hr/>
-                    <h4>
-                    ${fly}</h4>
                     <p>${flight}</p>
                     <hr/>
                     <p>
