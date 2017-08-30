@@ -232,21 +232,13 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer tagid_id not found');
         } else {
             var custData = result.rows[0];
-            pool.query('SELECT * FROM maps WHERE city = ($1)', [custData.fromcity], function (err, result) {
-                 if (err) {
-                    res.status(500).send(err.toString());
-                }
-                else {
-                    var mapData = result.rows[0];
-                }
-            }
-            res.send(makeTemplate(custData,mapData));
+            res.send(makeTemplate(custData));
         }
     }
   });
 });
 
-function makeTemplate(data,mdata) {
+function makeTemplate(data) {
     var name=data.name;
     var email=data.email;
     var contact=data.contact;
@@ -257,8 +249,6 @@ function makeTemplate(data,mdata) {
     var booking=data.booking;
     var pnr=data.pnr;
     var tagid=data.tagid;
-    var mapy=mdata.maplink;
-    console.log(mapy);
         var bookTemplate = `
         <html>
             <head>  
