@@ -2,23 +2,24 @@
                  
             function loadLoginPage() {
                 var loginHTML = 
-                    `<h3>Login Access</h3>
-                    <label><b>BOOKING ID</b></label>
+                    <h3>Login Access</h3>
+                    /* <label><b>BOOKING ID</b></label>
                     <input type="text" placeholder="BOOKING" id="bookid" />
                     <hr/>
                     <label><b>PNR &emsp; &emsp; &emsp;</b></label>
                     <input type="password" placeholder="PNR" id="pnr" />
-                    <hr/>
-                    <button type="submit" id="myappsubmit" >Login</button>`;
-                document.getElementById('loginsubmit').innerHTML=loginHTML;
-                
-               /* <label><b>PASSENGER NAME</b></label>
-                    <input type="text" placeholder="BOOKING" id="name" />
+                    <hr/> */
+                    `<label><b>PASSENGER NAME</b></label>
+                    <input type="text" placeholder="Name" id="name" />
                     <hr/>
                     <label><b>TAG ID &emsp; &emsp; &emsp;</b></label>
-                    <input type="password" placeholder="PNR" id="tagid" />
-                    <hr/> */
+                    <input type="text" placeholder="Tagid" id="tagid" />
+                    <hr/> 
                 
+                    <button type="submit" id="myappsubmit" >Login</button>`;
+                    document.getElementById('loginsubmit').innerHTML=loginHTML;
+                
+               
                 var submit=document.getElementById('myappsubmit');
                  submit.onclick = function() {
                   //create a request
@@ -45,14 +46,14 @@
                         }
                     }
                   };
-                  var booking = document.getElementById('bookid').value;
-                  var pnr = document.getElementById('pnr').value;
-                  //var name = document.getElementById('name').value;
-                  //var tagid = document.getElementById('tagid').value;
+                  //var booking = document.getElementById('bookid').value;
+                  //var pnr = document.getElementById('pnr').value;
+                  var name = document.getElementById('name').value;
+                  var tagid = document.getElementById('tagid').value;
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/login', true);
                   request.setRequestHeader('Content-Type','application/json');
-                  request.send(JSON.stringify({"booking": booking, "pnr": pnr}));
-                  //request.send(JSON.stringify({"name": name, "tagid": tagid}));
+                  //request.send(JSON.stringify({"booking": booking, "pnr": pnr}));
+                  request.send(JSON.stringify({"name": name, "tagid": tagid}));
             };
         }
         
