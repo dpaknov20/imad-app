@@ -258,6 +258,9 @@ function makeTemplate(data) {
             </head>
             <body>
                 <div align="center" style="padding-top : 50">
+                <div style="position: relative;">
+                    <div style="position: absolute; top: 0; right: 0; padding-top: 10; padding-right: 10"><a href="/myapp/logout"><button>LOGOUT</button></a></div>
+                </div>
                 <h1>Passenger Details</h1>
                     <h3>BOOKING ID : </h3>
                     <p>${booking}<p>
@@ -277,10 +280,6 @@ function makeTemplate(data) {
                     <p>${tocity}<p>
                     <h3>ON date : </h3>
                     <p>${date}<p>
-                    <hr/>
-                    <div style="position: relative;">
-                    <div style="position: absolute; top: 0; right: 0; padding-top: 10; padding-right: 10"><a href="/myapp/logout"><button>LOGOUT</button></a></div>
-                </div>
                 </div>
             </body>
         </html>`
