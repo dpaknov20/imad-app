@@ -255,7 +255,6 @@ function makeTemplate(data) {
                 <title>
                     ${name}
                 </title>
-                <link href="/ui/style.css" rel="stylesheet" /> 
             </head>
             <body>
                 <div align="center" style="padding-top : 50">
