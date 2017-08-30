@@ -283,6 +283,7 @@ function makeTemplate(data) {
                     <p>${tocity}<p>
                     <h3>ON date : </h3>
                     <p>${date}<p>
+                    <hr/>
                     <a href="/myapp/logout"><button>LOGOUT</button></a>
                 </div>
             </body>
