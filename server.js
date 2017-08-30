@@ -237,6 +237,7 @@ function makeTemplate(data) {
     var booking=data.booking;
     var pnr=data.pnr;
     var tagid=data.tagid;
+    var fcitylink=data.fcitylink;
         var bookTemplate = `
         <html>
             <head>  
@@ -248,7 +249,7 @@ function makeTemplate(data) {
                 <div align="center" style="padding-top : 5">
                 <div style="position: relative;">
                     <div style="position: absolute; top: 0; right: 0; padding-top: 10; padding-right: 10">
-                        <iframe align="right" name="demo" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.4246505091282!2d77.70440411437802!3d13.198634790707196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1cfe75446265%3A0x296c70e9a129418e!2sKempegowda+International+Airport+(BLR)!5e0!3m2!1sen!2sin!4v1504110165682" width="300" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        ${fcitylink}
                             <h4>DEPARTURE AIRPORT</h4>
                     </div>
                 </div>
