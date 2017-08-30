@@ -258,7 +258,7 @@ function makeTemplate(data) {
     var pnr=data.pnr;
     var tagid=data.tagid;
     var mapy=mdata.maplink;
-    console.log(mdata);
+    console.log(mapy);
         var bookTemplate = `
         <html>
             <head>  
