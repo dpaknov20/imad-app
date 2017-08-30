@@ -156,11 +156,8 @@ app.get('/logout',function(req,res) {
 });
 
 app.post('/myapp/login',function(req,res) {
-    //var booking = req.body.booking;
-    //var pnr = req.body.pnr;
     var name = req.body.name;
     var tagid = req.body.tagid;
-    //pool.query('SELECT booking,pnr FROM customer WHERE booking = $1', [booking], function(err,result) {
     pool.query('SELECT name,tagid FROM customer WHERE tagid = $1', [tagid], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
@@ -173,14 +170,6 @@ app.post('/myapp/login',function(req,res) {
             }
             else
             {
-                /*var user1 = result.rows[0].pnr;
-                if(user1 === pnr)
-                {
-                    //set the session
-                    req.session.auth={bookid: result.rows[0].booking };
-                    //req.session.auth={tagid: result.rows[0].tagid };
-                    res.send('credentials correct !');
-                }*/
                 var user1 = result.rows[0].name;
                 if(user1 === name)
                 {
@@ -198,7 +187,6 @@ app.post('/myapp/login',function(req,res) {
 app.get('/myapp/checklogin', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.tagid) {
        // Load the user object
-       //pool.query('SELECT * FROM customer WHERE booking = ($1)', [req.session.auth.bookid], function (err, result) {
         pool.query('SELECT * FROM customer WHERE tagid = $1', [req.session.auth.tagid], function(err,result) {
            if (err) {
               res.status(500).send(err.toString());
