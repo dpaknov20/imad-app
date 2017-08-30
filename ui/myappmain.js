@@ -10,12 +10,13 @@
                     <hr/> */
                     `<h3>Login Access</h3>
                     <label><b>PASSENGER NAME</b></label>
+                    <br>
                     <input type="text" placeholder="Name" id="name" />
                     <hr/>
-                    <label><b>TAG ID &emsp; &emsp; &emsp;</b></label>
+                    <label><b>BAG TAG NUMBER</b></label>
+                    <br>
                     <input type="text" placeholder="Tagid" id="tagid" />
                     <hr/> 
-                
                     <button type="submit" id="myappsubmit" >Login</button>`;
                     document.getElementById('loginsubmit').innerHTML=loginHTML;
                 
