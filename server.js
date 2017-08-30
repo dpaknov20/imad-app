@@ -280,10 +280,15 @@ function makeTemplate(data) {
                     <hr/>
                     <a href="/myapp/logout"><button>LOGOUT</button></a>
                     #button {
-                         position:absolute;
-                         top:0;
-                         right:0;
-                        }
+                        line-height: 12px;
+                        width: 18px;
+                        font-size: 8pt;
+                        font-family: tahoma;
+                        margin-top: 1px;
+                        margin-right: 2px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
                     }
                 </div>
             </body>
