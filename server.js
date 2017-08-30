@@ -207,13 +207,6 @@ app.get('/getdetails', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-          pool.query('SELECT * FROM maps WHERE city = ($1)', [result.row[0].fromcity], function (err, result) {
-              if (err) {
-                  res.status(500).send(err.toString());
-              } else {
-                  res.status(200).send(JSON.stringify(result.rows));
-              }
-           });
           res.status(200).send(JSON.stringify(result.rows));
       }
    });
