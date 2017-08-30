@@ -9,11 +9,12 @@
                     <input type="password" placeholder="PNR" id="pnr" />
                     <hr/> */
                     `<h3>Login Access</h3>
-                    <label><h2>PASSENGER NAME</h2></label>
+                    <label><b>PASSENGER NAME</b></label>
                     <br>
                     <input type="text" placeholder="Name" id="name" />
                     <br>
-                    <label><h2>BAG TAG NUMBER</h2></label>
+                    <hr/>
+                    <label><b>BAG TAG NUMBER</b></label>
                     <br>
                     <input type="text" placeholder="Tagid" id="tagid" />
                     <hr/> 
