@@ -232,7 +232,15 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer tagid_id not found');
         } else {
             var custData = result.rows[0];
-            res.send(makeTemplate(custData));
+            pool.query('SELECT * FROM maps WHERE city = ($1)', [custData.fromcity], function (err, result) {
+                 if (err) {
+                    res.status(500).send(err.toString());
+                }
+                else {
+                    var mapData = result.rows[0];
+                }
+            }
+            res.send(makeTemplate(custData,mapData));
         }
     }
   });
