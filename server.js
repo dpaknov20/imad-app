@@ -279,6 +279,12 @@ function makeTemplate(data) {
                     <p>${date}<p>
                     <hr/>
                     <a href="/myapp/logout"><button>LOGOUT</button></a>
+                    #button {
+                         position:absolute;
+                         top:0;
+                         right:0;
+                        }
+                    }
                 </div>
             </body>
         </html>`
