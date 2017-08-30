@@ -161,7 +161,7 @@ app.post('/myapp/login',function(req,res) {
     var name = req.body.name;
     var tagid = req.body.tagid;
     //pool.query('SELECT booking,pnr FROM customer WHERE booking = $1', [booking], function(err,result) {
-    pool.query('SELECT booking,pnr FROM customer WHERE tagid = $1', [tagid], function(err,result) {
+    pool.query('SELECT name,tagid FROM customer WHERE tagid = $1', [tagid], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
