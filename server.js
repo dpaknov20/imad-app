@@ -174,9 +174,7 @@ app.post('/myapp/login',function(req,res) {
                 if(user1 === name)
                 {
                     //set the session
-                    
                     req.session.auth={tagid: result.rows[0].tagid };
-                    
                     res.send('credentials correct !');
                 }
                 else
