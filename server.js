@@ -223,7 +223,14 @@ app.get('/getdetails', function (req, res) {
 });
 
 app.get('/customer/:bookingid', function (req, res) {
-  //pool.query('SELECT * FROM customer WHERE booking = $1', [req.params.bookingid], function (err, result) {
+  pool.query('SELECT * FROM maps WHERE city = ($1)', [custData.fromcity], function (err, result) {
+    if (err) {
+        res.status(500).send(err.toString());
+    }
+    else {
+        var mapData = result.rows[0];
+    }
+}
   pool.query('SELECT * FROM customer WHERE tagid = ($1)', [req.session.auth.tagid], function (err, result) {
     if (err) {
         res.status(500).send(err.toString());
@@ -232,14 +239,6 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer tagid_id not found');
         } else {
             var custData = result.rows[0];
-            pool.query('SELECT * FROM maps WHERE city = ($1)', [custData.fromcity], function (err, result) {
-                 if (err) {
-                    res.status(500).send(err.toString());
-                }
-                else {
-                    var mapData = result.rows[0];
-                }
-            }
             res.send(makeTemplate(custData,mapData));
         }
     }
