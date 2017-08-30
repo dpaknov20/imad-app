@@ -2,14 +2,14 @@
                  
             function loadLoginPage() {
                 var loginHTML = 
-                    <h3>Login Access</h3>
                     /* <label><b>BOOKING ID</b></label>
                     <input type="text" placeholder="BOOKING" id="bookid" />
                     <hr/>
                     <label><b>PNR &emsp; &emsp; &emsp;</b></label>
                     <input type="password" placeholder="PNR" id="pnr" />
                     <hr/> */
-                    `<label><b>PASSENGER NAME</b></label>
+                    `<h3>Login Access</h3>
+                    <label><b>PASSENGER NAME</b></label>
                     <input type="text" placeholder="Name" id="name" />
                     <hr/>
                     <label><b>TAG ID &emsp; &emsp; &emsp;</b></label>
