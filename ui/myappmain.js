@@ -12,6 +12,7 @@
                     <label><b>PASSENGER NAME</b></label>
                     <br>
                     <input type="text" placeholder="Name" id="name" />
+                    <br>
                     <label><b>BAG TAG NUMBER</b></label>
                     <br>
                     <input type="text" placeholder="Tagid" id="tagid" />
