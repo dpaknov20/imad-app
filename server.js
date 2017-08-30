@@ -257,7 +257,7 @@ function makeTemplate(data) {
                 </title>
             </head>
             <body>
-                <div align="center" style="padding-top : 50">
+                <div align="center" style="padding-top : 20">
                 <div style="position: relative;">
                     <div style="position: absolute; top: 0; right: 0; padding-top: 10; padding-right: 10"><a href="/myapp/logout"><button>LOGOUT</button></a></div>
                 </div>
