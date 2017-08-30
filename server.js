@@ -174,7 +174,9 @@ app.post('/myapp/login',function(req,res) {
                 if(user1 === name)
                 {
                     //set the session
+                    
                     req.session.auth={tagid: result.rows[0].tagid };
+                    
                     res.send('credentials correct !');
                 }
                 else
@@ -205,9 +207,17 @@ app.get('/getdetails', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
+          pool.query('SELECT * FROM maps WHERE city = ($1)', [result.row[0].fromcity], function (err, result) {
+              if (err) {
+                  res.status(500).send(err.toString());
+              } else {
+                  res.status(200).send(JSON.stringify(result.rows));
+              }
+           });
           res.status(200).send(JSON.stringify(result.rows));
       }
    });
+   
 });
 
 app.get('/customer/:bookingid', function (req, res) {
