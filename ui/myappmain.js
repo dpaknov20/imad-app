@@ -1,13 +1,5 @@
- 
-                 
             function loadLoginPage() {
                 var loginHTML = 
-                    /* <label><b>BOOKING ID</b></label>
-                    <input type="text" placeholder="BOOKING" id="bookid" />
-                    <hr/>
-                    <label><b>PNR &emsp; &emsp; &emsp;</b></label>
-                    <input type="password" placeholder="PNR" id="pnr" />
-                    <hr/> */
                     `<h3>Login Access</h3>
                     <label><b>PASSENGER NAME</b></label>
                     <br>
@@ -21,13 +13,9 @@
                     <button type="submit" id="myappsubmit" >Login</button>`;
                     document.getElementById('loginsubmit').innerHTML=loginHTML;
                 
-               
                 var submit=document.getElementById('myappsubmit');
                  submit.onclick = function() {
-                  //create a request
                   var request = new XMLHttpRequest();
-                  //capture the response and store it in the variable
-                  
                   request.onreadystatechange = function() {
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
@@ -48,13 +36,10 @@
                         }
                     }
                   };
-                  //var booking = document.getElementById('bookid').value;
-                  //var pnr = document.getElementById('pnr').value;
                   var name = document.getElementById('name').value;
                   var tagid = document.getElementById('tagid').value;
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/login', true);
                   request.setRequestHeader('Content-Type','application/json');
-                  //request.send(JSON.stringify({"booking": booking, "pnr": pnr}));
                   request.send(JSON.stringify({"name": name, "tagid": tagid}));
             };
         }
