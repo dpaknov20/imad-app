@@ -12,6 +12,13 @@
                     <button type="submit" id="myappsubmit" >Login</button>`;
                 document.getElementById('loginsubmit').innerHTML=loginHTML;
                 
+               /* <label><b>PASSENGER NAME</b></label>
+                    <input type="text" placeholder="BOOKING" id="name" />
+                    <hr/>
+                    <label><b>TAG ID &emsp; &emsp; &emsp;</b></label>
+                    <input type="password" placeholder="PNR" id="tagid" />
+                    <hr/> */
+                
                 var submit=document.getElementById('myappsubmit');
                  submit.onclick = function() {
                   //create a request
@@ -40,9 +47,12 @@
                   };
                   var booking = document.getElementById('bookid').value;
                   var pnr = document.getElementById('pnr').value;
+                  //var name = document.getElementById('name').value;
+                  //var tagid = document.getElementById('tagid').value;
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/myapp/login', true);
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"booking": booking, "pnr": pnr}));
+                  //request.send(JSON.stringify({"name": name, "tagid": tagid}));
             };
         }
         
