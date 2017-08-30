@@ -219,7 +219,7 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer tagid_id not found');
         } else {
             var custData = result.rows[0];
-            res.send(makeTemplate(custData,mapData));
+            res.send(makeTemplate(custData));
         }
     }
   });
