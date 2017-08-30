@@ -246,7 +246,7 @@ app.get('/customer/:bookingid', function (req, res) {
   });
 });
 
-function makeTemplate(data) {
+function makeTemplate(data,mdata) {
     var name=data.name;
     var email=data.email;
     var contact=data.contact;
