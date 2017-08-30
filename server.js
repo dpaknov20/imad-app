@@ -238,6 +238,7 @@ function makeTemplate(data) {
     var pnr=data.pnr;
     var tagid=data.tagid;
     var fcitylink=data.fcitylink;
+    var tcitylink=data.tcitylink;
         var bookTemplate = `
         <html>
             <head>  
@@ -251,6 +252,8 @@ function makeTemplate(data) {
                     <div style="position: absolute; top: 0; right: 0; padding-top: 10; padding-right: 10">
                         ${fcitylink}
                             <h4>DEPARTURE AIRPORT</h4>
+                         ${tcitylink}
+                            <h4>ARRIVAL AIRPORT</h4>   
                     </div>
                 </div>
                 <h1>Passenger Details</h1>
