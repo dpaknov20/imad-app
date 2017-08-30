@@ -269,7 +269,7 @@ function makeTemplate(data,mdata) {
                 <div align="center" style="padding-top : 5">
                 <div style="position: relative;">
                     <div style="position: absolute; top: 0; right: 0; padding-top: 10; padding-right: 10">
-                        ${mapy}
+                        <iframe ${mapy}></frame>
                             <h4>DEPARTURE AIRPORT</h4>
                     </div>
                 </div>
