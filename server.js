@@ -75,13 +75,13 @@ app.get('/counter', function (req, res) {
   res.send(count.toString());
 });
 
-app.get('/', function (req, res) {
+app.get('/myapp', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'myapp.html'));
 });
 
-/* app.get('/', function (req, res) {
+ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-}); */
+}); 
 //function for the encryption of the passsword
 function hash (input,salt) {
     var hashed=crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
