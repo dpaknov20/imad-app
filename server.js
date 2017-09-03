@@ -208,6 +208,13 @@ app.get('/getdetails', function (req, res) {
           res.status(200).send(JSON.stringify(result.rows));
       }
    });
+   pool.query('SELECT * FROM maps WHERE city = 'BANGALORE', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.status(200).send(JSON.stringify(result.rows));
+      }
+   });
    
 });
 
