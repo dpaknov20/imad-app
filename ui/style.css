@@ -1,4 +1,5 @@
 body {
+    background-image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwOffqDcoBufxQIGDM8LqP77Neh0nRiJ79NAKtPWu1qFMgxyLM";
     font-family: sans-serif;
     margin-top: 10px;
 }
@@ -26,21 +27,4 @@ body {
     font-family: sans-serif;
     padding-left: 20px;
     padding-right: 20px;
-}
-
-.comment {
-    margin-left: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.commenter {
-    font-style: italic;
-    font-size: 0.8em;
-}
-
-#comment_form {
-    margin-left: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
 }
