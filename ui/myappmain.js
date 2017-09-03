@@ -5,7 +5,6 @@
                     <br>
                     <input type="text" placeholder="Name" id="name" />
                     <br>
-                    <hr/>
                     <label><b>BAG TAG NUMBER</b></label>
                     <br>
                     <input type="text" placeholder="Tagid" id="tagid" />
