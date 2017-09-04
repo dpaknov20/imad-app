@@ -208,15 +208,6 @@ app.get('/getdetails', function (req, res) {
    });
 });
 
-app.get('/getdetails', function (req, res) {
-   pool.query('SELECT * FROM maps WHERE city = 'BANGALORE', function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.status(200).send(JSON.stringify(result.rows));
-      }
-   });
-});
 
 app.get('/customer/:bookingid', function (req, res) {
   pool.query('SELECT * FROM customer WHERE tagid = ($1)', [req.session.auth.tagid], function (err, result) {
