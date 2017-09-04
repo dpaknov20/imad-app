@@ -207,13 +207,6 @@ app.get('/getdetails', function (req, res) {
       }
    });
    psql -c "SELECT procpid FROM pg_stat_activity;" -t | xargs -n1 -I {} psql -c "SELECT pg_cancel_backend({})"
-   pool.query('SELECT * FROM maps WHERE city = ($1)', 'BANGALORE', function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.status(200).send(JSON.stringify(result.rows));
-      }
-   });
 });
 
 app.get('/customer/:bookingid', function (req, res) {
