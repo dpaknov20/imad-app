@@ -231,6 +231,9 @@ app.get('/customer/:bookingid', function (req, res) {
   });
 });
 
+app.get('/customer/:bookingid', function (req, res) {
+});
+
 function makeTemplate(data) {
     var name=data.name;
     var email=data.email;
