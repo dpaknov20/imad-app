@@ -206,7 +206,6 @@ app.get('/getdetails', function (req, res) {
           res.status(200).send(JSON.stringify(result.rows));
       }
    });
-   psql -c "SELECT procpid FROM pg_stat_activity;" -t | xargs -n1 -I {} psql -c "SELECT pg_cancel_backend({})"
 });
 
 app.get('/customer/:bookingid', function (req, res) {
