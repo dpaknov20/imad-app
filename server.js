@@ -217,7 +217,8 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer tagid_id not found');
         } else {
             var custData = result.rows[0];
-            res.send(custData.tagid);
+            res.send(makeTemplate(custData));
+            
         }
     }
   });
@@ -231,8 +232,7 @@ app.get('/customer/baggage/:tagid', function (req, res) {
         if (result.rows.length === 0) {
             res.status(404).send('customer tagid_id not found');
         } else {
-            var custData = result.rows[0];
-            res.send(makeTemplate(custData));
+            res.send( result.rows[0];.tagid);
         }
     }
   });
