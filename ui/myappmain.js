@@ -76,7 +76,7 @@
                             var detailData = JSON.parse(this.responseText);
                             var contentHTML = 
                             `<a href="/customer/${detailData[0].booking}">${detailData[0].name}</a>
-                            <a href="link to the status of the bags"`;
+                            <a href="link to the status of the bags"</a>`;
                             document.getElementById('customer').innerHTML = contentHTML;
                         }
                     }
