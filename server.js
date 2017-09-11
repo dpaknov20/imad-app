@@ -93,7 +93,7 @@ app.get('/hash/:input', function (req, res) {
     
 });
 
-var pool = new Pool(config);
+
 app.post('/login',function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
