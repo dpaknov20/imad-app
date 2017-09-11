@@ -217,6 +217,21 @@ app.get('/customer/:bookingid', function (req, res) {
             res.status(404).send('customer tagid_id not found');
         } else {
             var custData = result.rows[0];
+            res.send(custData.tagid);
+        }
+    }
+  });
+});
+
+app.get('/customer/baggage/:tagid', function (req, res) {
+  pool.query('SELECT * FROM customer WHERE tagid = ($1)', [req.session.auth.tagid], function (err, result) {
+    if (err) {
+        res.status(500).send(err.toString());
+    } else {
+        if (result.rows.length === 0) {
+            res.status(404).send('customer tagid_id not found');
+        } else {
+            var custData = result.rows[0];
             res.send(makeTemplate(custData));
         }
     }
