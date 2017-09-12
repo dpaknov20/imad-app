@@ -233,7 +233,7 @@ app.get('/customer/baggage/:tagid', function (req, res) {
             res.status(404).send('customer tagid_id not found');
         } else {
             var metdata=result.rows[0];
-            res.send( metdata.tagid);
+            res.send(metdata.tagid);
         }
     }
   });
