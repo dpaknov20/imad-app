@@ -224,6 +224,27 @@ app.get('/customer/:bookingid', function (req, res) {
   });
 });
 
+
+
+
+
+(async () => {
+  var pool = new Pool()
+  var client = await pool.connect()
+  try {
+    var result = await client.query('select * FROM customer WHERE tagid = ($1)', [req.session.auth.tagid])
+    console.log(result.rows[0])
+  } finally {
+    client.release()
+  }
+})().catch(e => console.error(e.message, e.stack))
+
+
+
+
+
+
+
 app.get('/customer/baggage/:tagid', function (req, res) {
   pool.query('SELECT * FROM customer WHERE tagid = ($1)', [req.session.auth.tagid], function (err, result) {
     if (err) {
