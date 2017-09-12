@@ -229,7 +229,7 @@ app.get('/customer/:bookingid', function (req, res) {
 
 
 (async () => {
-  var pool = new Pool()
+  var pool = new Pool(config)
   var client = await pool.connect()
   try {
     var result = await client.query('select * FROM customer WHERE tagid = ($1)', [req.session.auth.tagid])
