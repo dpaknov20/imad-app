@@ -227,7 +227,7 @@ app.get('/customer/:bookingid', function (req, res) {
 
 
 
-app.get('/customer/qwerty', function (req, res) {
+app.get('/qwerty', function (req, res) {
 (async () => {
   var pool = new Pool(config)
   var client = await pool.connect()
