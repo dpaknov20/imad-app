@@ -165,6 +165,7 @@ app.post('/myapp/login',function(req,res) {
         {
             if(result.rows.length === 0)
             {
+                console.log("program not working properly");
                 res.status(403).send('username/password is invalid');
             }
             else
