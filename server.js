@@ -302,6 +302,7 @@ function makeTemplate(data) {
                 <title>
                     ${name}
                 </title>
+               
             </head>
             <body>
                 <div align="center" style="padding-top : 5">
