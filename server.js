@@ -266,12 +266,12 @@ function statusTemplate(statusdata) {
         
         <div class="w3-third">
           <h2>Status-2</h2>
-          <p>${stat1}</p>
+          <p>${stat2}</p>
         </div>
         
         <div class="w3-third">
           <h2>Status-3</h2>
-          <p>${stat1}</p>
+          <p>${stat3}</p>
         </div>
         
         </div>
