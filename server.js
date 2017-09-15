@@ -240,6 +240,13 @@ app.get('/customer/baggage/:tagid', function (req, res) {
   });
 });
 
+function statusTemplate(statusdata) {
+    var tagid=statusdata.tagid;
+    var stat1=statusdata.status1;
+    var stat2=statusdata.status2;
+    var stat3=statusdata.status3;
+}
+
 function makeTemplate(data) {
     var name=data.name;
     var email=data.email;
