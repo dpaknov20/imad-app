@@ -253,31 +253,25 @@ function statusTemplate(statusdata) {
         <body>
         
         <div class="w3-container w3-orange">
-          <h1>W3.CSS Demo</h1>      
-          <p>Resize this responsive page!</p>      
+          <h2>This is the baggage status page!</h2>      
+          <p>Baggage Tag ID :- ${tagid}</p>      
         </div>
         
         <div class="w3-row-padding">
         
         <div class="w3-third">
           <h2>Status-1</h2>
-          <p>London is the capital of England.</p>
-          <p>It is the most populous city in the United Kingdom,
-          with a metropolitan area of over 13 million inhabitants.</p>
+          <p>${stat1}</p>
         </div>
         
         <div class="w3-third">
           <h2>Status-2</h2>
-          <p>Paris is the capital of France.</p> 
-          <p>The Paris area is one of the largest population centers in Europe,
-          with more than 12 million inhabitants.</p>
+          <p>${stat1}</p>
         </div>
         
         <div class="w3-third">
           <h2>Status-3</h2>
-          <p>Tokyo is the capital of Japan.</p>
-          <p>It is the center of the Greater Tokyo Area,
-          and the most populous metropolitan area in the world.</p>
+          <p>${stat1}</p>
         </div>
         
         </div>
