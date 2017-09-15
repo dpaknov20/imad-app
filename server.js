@@ -302,14 +302,6 @@ function makeTemplate(data) {
                 <title>
                     ${name}
                 </title>
-                <style>
-             body {
-                background-image:url("https://cdn.shutterstock.com/shutterstock/videos/13193411/thumb/12.jpg");
-                background-repeat:no-repeat;
-                background-size:cover;
-                color:white;
-             }
-         </style>
             </head>
             <body>
                 <div align="center" style="padding-top : 5">
