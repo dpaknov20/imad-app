@@ -9,7 +9,6 @@ var Pool = require('pg').Pool;
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var net = require('net');
-var mqttCon = require('mqtt-connection')
 
 //configuraton for the database
 var config = {
