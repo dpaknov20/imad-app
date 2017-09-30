@@ -33,7 +33,7 @@ function createTemplate(data) {
         <html>
             <head>  
                 <title>
-                   tile of the project: ${title}
+                   <h3>${title}</h3>
                 </title>
                  
             </head>
