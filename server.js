@@ -40,7 +40,7 @@ function createTemplate(data) {
             <body>
                 <div align="center">
                     <h3>
-                    ${name}</h3>
+                    Name of the article: ${name}</h3>
                     <hr/>
                     <div>
                         ${date.toDateString()}
