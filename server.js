@@ -168,7 +168,7 @@ app.get('/author/:username',function(req,res) {
                 res.status(404).send('user not found');
             } else {
                 var authordata=result.rows[0];
-                res.send(authorTemplate(auhtordata));
+                res.send(authorTemplate(authordata));
             }
     }
    });
@@ -189,7 +189,8 @@ function authorTemplate(writedata) {
         <body>
                 <div align="center">
                     <div><h3>
-                    Author id: </h3>${id}</div>
+                    Author id: </h3>${id}
+                    </div>
                     <hr/>
                     <div>
                         <h3>Author name: </h3>${name}
@@ -200,10 +201,10 @@ function authorTemplate(writedata) {
                     </div>
                     <hr/>
                     <div>
-                       <h3>Author email: </h3> ${email}
+                       <h3>Author email: </h3>${email}
                     </div>
                 </div>
-            </body>
+        </body>
     </html>
     `;
     return template;
