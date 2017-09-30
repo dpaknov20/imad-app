@@ -110,8 +110,8 @@ function myfirstloadLogin() {
                         {
                             var detaildata = JSON.parse(this.responseText);
                             var content = 
-                            <h3>To view your details: </h3>
-                            `<a href="/author/${detaildata[0].username}">${detaildata[0].username} DETAILS</a><br/><br/>`;
+                            `<h3>To view your details: </h3>
+                            <a href="/author/${detaildata[0].username}">${detaildata[0].username} DETAILS</a><br/><br/>`;
                             document.getElementById('variable').innerHTML=content;
                         }
                     }
