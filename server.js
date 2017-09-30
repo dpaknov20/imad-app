@@ -159,7 +159,7 @@ app.get('/check-login',function(req,res) {
 });
 
 app.get('/author/:username',function(req,res) {
-     pool.query('SELECT * FROM authors WHERE username = ($1)', [req.session.auth.userName], function (err, result) {
+     pool.query('SELECT * FROM authors WHERE username = ($1)', [req.params.username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } 
