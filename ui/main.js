@@ -109,11 +109,11 @@ function myfirstloadLogin() {
                         if(request.status === 200 )
                         {
                             var detailData = JSON.parse(this.responseText);
-                            var contentHTML = 
-                            `<a href="/customer/${detailData[0].booking}">${detailData[0].name} DETAILS</a><br/><br/>
+                            var content = 
+                            `<a href="/customer/${detailData[0].username}">${detailData[0].username} DETAILS</a><br/><br/>
                             <div>For checking the status of your baggage...</div>
                             <a href="/customer/baggage/${detailData[0].tagid}">click here</a>`;
-                            document.getElementById('customer').innerHTML = contentHTML;
+                            document.getElementById('customer').innerHTML = content;
                         }
                     }
                 };
