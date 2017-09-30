@@ -82,7 +82,7 @@
                         }
                     }
                 };
-            request.open('GET', '/getdetails', true);
+            request.open('GET', '/myapp/getdetails', true);
             request.send(null);
         }
 
