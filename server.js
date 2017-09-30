@@ -39,8 +39,8 @@ function createTemplate(data) {
             </head>
             <body>
                 <div align="center">
-                    <h3>
-                    Name of the article: ${name}</h3>
+                    <div><h3>
+                    Name of the article: </h3>${name}</div>
                     <hr/>
                     <div>
                         <h3>Publishing date: </h3>${date.toDateString()}
@@ -51,7 +51,7 @@ function createTemplate(data) {
                     </div>
                     <hr/>
                     <div>
-                       <h3>category: </h3> ${category}
+                       <h3>Category: </h3> ${category}
                     </div>
                 </div>
             </body>
