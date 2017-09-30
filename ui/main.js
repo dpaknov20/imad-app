@@ -1,4 +1,19 @@
- var submit=document.getElementById('submit_btn');
+function myfirstlogin() {
+    var loginhtml= `
+    <h3>Login Access</h3>
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Username" id="usr" />
+            <hr/>
+            
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Password" id="psd" />
+            <hr/>
+            
+            <button type="submit" id="submit_btn" >Login</button>
+            <button type="submit" id="register_btn" >Register</button> `;
+            document.getElementById('valid').innerHTML=loginhtml;
+            
+            var submit=document.getElementById('submit_btn');
                  submit.onclick = function() {
                   //create a request
                   var request = new XMLHttpRequest();
@@ -62,3 +77,29 @@
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"username": username, "password": password}));
                 };
+}
+
+function myfirstloadLogin() {
+            // Check if the user is already logged in
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                    if (request.status === 200) {
+                        LoggedInUser(this.responseText);
+                    } else {
+                        myfirstlogin();
+                    }
+                }
+            };
+            request.open('GET', '/check-login', true);
+            request.send(null);
+        }
+        
+         function LoggedInUser(username) {
+            var loginarena = document.getElementById('valid');
+            loginarena.innerHTML = 
+                `<h3> Hi! <i>${username}</i></h3>
+                <a href="/logout"><button>Logout</button></a>`;
+        }
+        
+                
