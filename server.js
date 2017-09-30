@@ -43,15 +43,15 @@ function createTemplate(data) {
                     Name of the article: ${name}</h3>
                     <hr/>
                     <div>
-                        ${date.toDateString()}
+                        <h3>Publishing date: </h3>${date.toDateString()}
                     </div>
                     <hr/>
                     <div>
-                        ${content}
+                        <h3>About: </h3>${content}
                     </div>
                     <hr/>
                     <div>
-                        ${category}
+                       <h3>category: </h3> ${category}
                     </div>
                 </div>
             </body>
