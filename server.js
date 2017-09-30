@@ -22,43 +22,7 @@ var config = {
 };
 var pool = new Pool(config);
 
-function createTemplate(data) {
-    var title=data.article_name;
-    var name=data.article_name;
-    var date=data.issued_on;
-    var content=data.content;
-    var category=data.category;
-    
-        var htmlTemplate = `
-        <html>
-            <head>  
-                <title>
-                   ${title}
-                </title>
-                 
-            </head>
-            <body>
-                <div align="center">
-                    <div><h3>
-                    Name of the article: </h3>${name}</div>
-                    <hr/>
-                    <div>
-                        <h3>Publishing date: </h3>${date.toDateString()}
-                    </div>
-                    <hr/>
-                    <div>
-                        <h3>About: </h3>${content}
-                    </div>
-                    <hr/>
-                    <div>
-                       <h3>Category: </h3> ${category}
-                    </div>
-                </div>
-            </body>
-        </html>`
-        ;
-        return htmlTemplate;
-}
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -156,6 +120,19 @@ app.get('/check-login',function(req,res) {
    }  
    else
         res.status(400).send('you are not logged in');
+});
+
+app.get('/myfirstapp/articles',function(req,res) {
+   pool.query('SELECT * from articles',function(err,result) {
+       if(err)
+       {
+           res.status(500).send(err.toString());
+       }
+       else {
+           
+           res.send();
+       }
+   });
 });
 
 app.get('/author/:username',function(req,res) {
@@ -460,6 +437,44 @@ app.get('/articles/:articleName', function (req, res) {
         }  
   });
 });
+
+function createTemplate(data) {
+    var title=data.article_name;
+    var name=data.article_name;
+    var date=data.issued_on;
+    var content=data.content;
+    var category=data.category;
+    
+        var htmlTemplate = `
+        <html>
+            <head>  
+                <title>
+                   ${title}
+                </title>
+                 
+            </head>
+            <body>
+                <div align="center">
+                    <div><h3>
+                    Name of the article: </h3>${name}</div>
+                    <hr/>
+                    <div>
+                        <h3>Publishing date: </h3>${date.toDateString()}
+                    </div>
+                    <hr/>
+                    <div>
+                        <h3>About: </h3>${content}
+                    </div>
+                    <hr/>
+                    <div>
+                       <h3>Category: </h3> ${category}
+                    </div>
+                </div>
+            </body>
+        </html>`
+        ;
+        return htmlTemplate;
+}
 
 app.get('/database', function (req, res) {
     //make a select request
