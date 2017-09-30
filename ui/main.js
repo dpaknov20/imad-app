@@ -122,7 +122,7 @@ function myfirstloadLogin() {
         }
 
         myfirstloadLogin();
-        loaddetails();
+        details();
         
         
                 
