@@ -158,6 +158,22 @@ app.get('/check-login',function(req,res) {
         res.status(400).send('you are not logged in');
 });
 
+app.get('/author/:username',function(req,res) {
+     pool.query('SELECT * FROM authors WHERE username = ($1)', [req.session.auth.userName], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } 
+      else {
+            if (result.rows.length === 0) {
+                res.status(404).send('customer tagid_id not found');
+            } else {
+                var metdata=result.rows[0];
+                res.send(statusTemplate(metdata));
+            }
+    }
+   });
+});
+
 app.get('/logout',function(req,res) {
    delete req.session.auth;
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
