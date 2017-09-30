@@ -102,4 +102,27 @@ function myfirstloadLogin() {
                 <a href="/logout"><button>Logout</button></a>`;
         }
         
+         function details() {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                        if(request.status === 200 )
+                        {
+                            var detailData = JSON.parse(this.responseText);
+                            var contentHTML = 
+                            `<a href="/customer/${detailData[0].booking}">${detailData[0].name} DETAILS</a><br/><br/>
+                            <div>For checking the status of your baggage...</div>
+                            <a href="/customer/baggage/${detailData[0].tagid}">click here</a>`;
+                            document.getElementById('customer').innerHTML = contentHTML;
+                        }
+                    }
+                };
+            request.open('GET', '/getdetails', true);
+            request.send(null);
+        }
+
+        myfirstloadLogin();
+        loaddetails();
+        
+        
                 
