@@ -275,7 +275,7 @@ function statusTemplate(statusdata) {
           <h2>Status-3</h2>
           <p>${stat3}</p>
         </div>
-        
+        <a href="/myapp">home</a>
         <a href="/myapp/logout"><button>LOGOUT</button></a>
         </div>
         
