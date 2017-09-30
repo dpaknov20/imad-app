@@ -110,10 +110,8 @@ function myfirstloadLogin() {
                         {
                             var detaildata = JSON.parse(this.responseText);
                             var content = 
-                            `<a href="/customer/${detailData[0].username}">${detailData[0].username} DETAILS</a><br/><br/>
-                            <div>For checking the status of your baggage...</div>
-                            <a href="/customer/baggage/${detailData[0].tagid}">click here</a>`;
-                            document.getElementById('customer').innerHTML = content;
+                            `<a href="/author/${detaildata[0].username}">${detaildata[0].username} DETAILS</a><br/><br/>`;
+                            
                         }
                     }
                 };
