@@ -108,7 +108,7 @@ function myfirstloadLogin() {
                 if (request.readyState === XMLHttpRequest.DONE) {
                         if(request.status === 200 )
                         {
-                            var detailData = JSON.parse(this.responseText);
+                            var detaildata = JSON.parse(this.responseText);
                             var content = 
                             `<a href="/customer/${detailData[0].username}">${detailData[0].username} DETAILS</a><br/><br/>
                             <div>For checking the status of your baggage...</div>
