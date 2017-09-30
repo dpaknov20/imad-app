@@ -201,7 +201,7 @@ app.get('/myapp/checklogin', function (req, res) {
    }
 });
 
-app.get('/getdetails', function (req, res) {
+app.get('/myapp/getdetails', function (req, res) {
    pool.query('SELECT * FROM customer WHERE tagid = ($1)', [req.session.auth.tagid], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
