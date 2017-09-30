@@ -174,6 +174,41 @@ app.get('/author/:username',function(req,res) {
    });
 });
 
+function authorTemplate(writedata) {
+    var id=writedata.id;
+    var name=writedata.name;
+    var email=writedata.email;
+    var username=writedata.username;
+    var template = `
+    <html>
+        <head>
+            <title>
+                Author details:  
+            </title>
+        </head>
+        <body>
+                <div align="center">
+                    <div><h3>
+                    Author id: </h3>${id}</div>
+                    <hr/>
+                    <div>
+                        <h3>Author name: </h3>${name}
+                    </div>
+                    <hr/>
+                    <div>
+                        <h3>Author username: </h3>${username}
+                    </div>
+                    <hr/>
+                    <div>
+                       <h3>Author email: </h3> ${email}
+                    </div>
+                </div>
+            </body>
+    </html>
+    `;
+    return template;
+}
+
 app.get('/logout',function(req,res) {
    delete req.session.auth;
    res.send('<html><body style="padding-top : 50";><div align="center">Logged out!<br/><br/><a href="/">Back to home</a></div></body></html>');
