@@ -112,8 +112,8 @@ function myfirstloadLogin() {
                             var content = 
                             `<h3>To view your details: </h3>
                             <a href="/author/${detaildata[0].username}">${detaildata[0].username} DETAILS</a><br/><br/>
-                            <div> 
-                            to view all the articles 
+                            <div><h3> 
+                            To view all the articles</h3> 
                             <a href="/myfirstapp/articles">click here</a></div>
                             `;
                             document.getElementById('variable').innerHTML=content;
