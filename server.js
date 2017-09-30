@@ -145,8 +145,15 @@ app.post('/register',function(req,res) {
 });
 
 app.get('/check-login',function(req,res) {
-   if(req.session && req.session.auth && req.session.auth.userName) 
-        res.send('you are logged in as ' + req.session.auth.userName.toString());
+   if(req.session && req.session.auth && req.session.auth.userName) {
+        pool.query('SELECT * FROM "user" WHERE username = $1', [req.session.auth.userName], function(err,result) {
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(result.rows[0].username);    
+           }
+       });
+   }  
    else
         res.status(400).send('you are not logged in');
 });
