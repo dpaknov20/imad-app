@@ -99,7 +99,7 @@ function myfirstloadLogin() {
             var loginarena = document.getElementById('valid');
             loginarena.innerHTML = 
                 `<h3> Hi! <i>${username}</i></h3>
-                <a href="/logout"><button>Logout</button></a>`;
+                <a href="/logout"><button>Logout</button></a><br/>`;
         }
         
          function details() {
