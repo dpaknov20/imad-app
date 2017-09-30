@@ -111,7 +111,7 @@ function myfirstloadLogin() {
                             var detaildata = JSON.parse(this.responseText);
                             var content = 
                             `<a href="/author/${detaildata[0].username}">${detaildata[0].username} DETAILS</a><br/><br/>`;
-                            
+                            document.getElementById('variable').innerHTML=content;
                         }
                     }
                 };
