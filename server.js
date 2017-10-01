@@ -127,7 +127,7 @@ app.get('/myfirstapp/articles',function(req,res) {
            res.status(500).send(err.toString());
        }
        else {
-           var artdata = result.rows.length;
+           var artdata = JSON.stringify(result.rows.length);
            res.send(artdata);
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
