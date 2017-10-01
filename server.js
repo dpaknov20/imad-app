@@ -127,21 +127,49 @@ app.get('/myfirstapp/articles',function(req,res) {
            res.status(500).send(err.toString());
        }
        else {
-           var artdata = JSON.stringify(result.rows.length);
+           var listlength = JSON.stringify(result.rows.length);
             var cost = JSON.stringify(result.rows);
-            res.send(cost);
+            res.send(listtemplate(cost,listlength));
             
         }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
                    res.status(500).send(err.toString());
               } 
-              else {
+              lse {
                   res.send(result.rows);
               }
            }); */
    });
 });
+
+function listtemplate(coda,lilen) {
+    var atemp = `
+     <html>
+        <head>
+            <title>
+                List of the articles:- 
+            </title>
+        </head>
+        <body>
+                <div align="center">
+                    <h2>List of the articles:</h2>
+                    <br/><br/>
+                    <div id="pro"></div>
+                    </ul>
+                </div>
+        </body>
+    </html>
+        `;
+    for(i=0;i<lilen;i++) {
+        var kemp = `
+            <ul style="list-style-type:circle">
+            <li>${coda[i]}</li>
+        `;
+        document.getElementById('pro').innerHTML = kemp;
+    }
+    return atemp;
+}
 
 app.get('/author/:username',function(req,res) {
     
