@@ -147,12 +147,13 @@ app.get('/myfirstapp/articles',function(req,res) {
 });
 
 app.get('/author/:username',function(req,res) {
-    if(req.session && req.session.auth && req.session.auth.userName) {
+    
      pool.query('SELECT * FROM authors WHERE username = ($1)', [req.params.username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } 
       else {
+          if(req.session && req.session.auth && req.session.auth.userName) {
             if (result.rows.length === 0) {
                 res.status(404).send('user not found');
             } else {
@@ -160,8 +161,8 @@ app.get('/author/:username',function(req,res) {
                 res.send(authorTemplate(authordata));
             }
     }
+      }
    });
-    }
 });
 
 function authorTemplate(writedata) {
