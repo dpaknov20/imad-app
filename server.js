@@ -127,10 +127,9 @@ app.get('/myfirstapp/articles',function(req,res) {
            res.status(500).send(err.toString());
        }
        else {
-           var count1=0;
            var artdata = JSON.stringify(result.rows.length);
-           while(count1 != artdata) {
-                var consent = `
+           var count1=0;
+           var consent = `
                 <html>
                     <head>
                         <title>
@@ -139,13 +138,15 @@ app.get('/myfirstapp/articles',function(req,res) {
                     </head>
                     <body>
                         <div align="center">
-                            ${result.rows[count1]}
+                            <div id="question"></div>
                         </div>
                     </body>
                 </html>
                 `;
+           while(count1 != artdata) {
+                document.getElementById('question').innerHTML = consent;
                 count1++;
-                res.send(consent);
+                //res.send(consent);
            }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
