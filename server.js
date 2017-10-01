@@ -130,10 +130,23 @@ app.get('/myfirstapp/articles',function(req,res) {
            var count1=0;
            var artdata = JSON.stringify(result.rows.length);
            while(count1 != artdata) {
-                
+                var consent = `
+                <html>
+                    <head>
+                        <title>
+                            List of Articles
+                        </title>
+                    </head>
+                    <body>
+                        <div align="center">
+                            ${result.rows[count1]}
+                        </div>
+                    </body>
+                </html>
+                `;
                 count1++;
+                res.send(consent);
            }
-           res.send(artdata);
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
                    res.status(500).send(err.toString());
