@@ -128,8 +128,9 @@ app.get('/myfirstapp/articles',function(req,res) {
        }
        else {
            var artdata = JSON.stringify(result.rows.length);
-           // res.send(artdata);
-            res.send(JSON.stringify(result.rows));
+            var cost = JSON.stringify(result.rows);
+            res.send(cost);
+            
         }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
