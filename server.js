@@ -127,10 +127,7 @@ app.get('/myfirstapp/articles',function(req,res) {
            res.status(500).send(err.toString());
        }
        else {
-           var listlength = JSON.stringify(result.rows.length);
-            var cost = JSON.stringify(result.rows);
-            res.send(cost);
-            
+            res.send(JSON.stringify(result.rows));
         }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
