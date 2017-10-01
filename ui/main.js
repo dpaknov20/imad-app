@@ -154,7 +154,7 @@ function myfirstloadLogin() {
         }
     };
     
-    request.open('GET', '/get-articles', true);
+    request.open('GET', '/myfirstapp/articles', true);
     request.send(null);
 }
 
