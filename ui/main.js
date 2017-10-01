@@ -116,10 +116,14 @@ function myfirstloadLogin() {
                             To view all the articles:</h3> 
                             <a href="/myfirstapp/articles">click here</a></div><br/><br/>
                             <div>
-                            <input type="text" id="search" /><button>search</button></div>
+                            <input type="text" id="search" /><button type="submit" id="btn">search</button></div>
                             `;
                             document.getElementById('variable').innerHTML=content;
-                            
+                           /* var kuch = document.getElementById('btn');
+                            kuch.onclick = function() {
+                                var inp = document.getElementById('search').value;
+                                
+                            }; */
                         }
                     }
                 };
