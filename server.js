@@ -121,7 +121,7 @@ app.get('/check-login',function(req,res) {
 });
 
 app.get('/myfirstapp/articles',function(req,res) {
-   pool.query('SELECT article_name from articles' , function(err,result) {
+   pool.query('SELECT * from articles' , function(err,result) {
        if(err)
        {
            res.status(500).send(err.toString());
