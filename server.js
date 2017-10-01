@@ -143,35 +143,6 @@ app.get('/myfirstapp/articles',function(req,res) {
    });
 });
 
-/* 
-function listtemplate(coda,lilen) {
-    var atemp = `
-     <html>
-        <head>
-            <title>
-                List of the articles:- 
-            </title>
-        </head>
-        <body>
-                <div align="center">
-                    <h2>List of the articles:</h2>
-                    <br/><br/>
-                    <div id="pro"></div>
-                    </ul>
-                </div>
-        </body>
-    </html>
-        `;
-    for(i=0;i<lilen;i++) {
-        var kemp = `
-            <ul style="list-style-type:circle">
-            <li>${coda[i]}</li>
-        `;
-        document.getElementById('pro').innerHTML = kemp;
-    }
-    return atemp;
-} */
-
 app.get('/author/:username',function(req,res) {
     
      pool.query('SELECT * FROM authors WHERE username = ($1)', [req.params.username], function (err, result) {
