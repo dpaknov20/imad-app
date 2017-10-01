@@ -129,8 +129,7 @@ app.get('/myfirstapp/articles',function(req,res) {
            res.status(500).send(err.toString());
        }
        else {
-           var rowcount=result.length;
-           res.send(rowcount);
+           res.send(result.rows);
        }
    });
 });
