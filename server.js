@@ -128,26 +128,8 @@ app.get('/myfirstapp/articles',function(req,res) {
        }
        else {
            var artdata = JSON.stringify(result.rows.length);
-           var count1=0;
-           var consent = `
-                <html>
-                    <head>
-                        <title>
-                            List of Articles
-                        </title>
-                    </head>
-                    <body>
-                        <div align="center">
-                            <div id="question"></div>
-                        </div>
-                    </body>
-                </html>
-                `;
-           while(count1 != artdata) {
-                document.getElementById('question').innerHTML = consent;
-                count1++;
-                //res.send(consent);
-           }
+            res.send(artdata);
+        }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
                    res.status(500).send(err.toString());
@@ -156,7 +138,6 @@ app.get('/myfirstapp/articles',function(req,res) {
                   res.send(result.rows);
               }
            }); */
-       }
    });
 });
 
