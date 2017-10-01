@@ -117,7 +117,7 @@ function myfirstloadLogin() {
                             <a href="/myfirstapp/articles">click here</a></div>
                             <div><h3>
                             Search<h3>
-                            <input type="text" id="search" /></div>
+                            <input type="text" id="search" /><button>search</button></div>
                             `;
                             document.getElementById('variable').innerHTML=content;
                             
