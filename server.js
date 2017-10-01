@@ -129,7 +129,7 @@ app.get('/myfirstapp/articles',function(req,res) {
        else {
            var listlength = JSON.stringify(result.rows.length);
             var cost = JSON.stringify(result.rows);
-            res.send(listtemplate(cost,listlength));
+            res.send(cost);
             
         }
            /* pool.query("select * from articles",function(err,result) {
@@ -143,6 +143,7 @@ app.get('/myfirstapp/articles',function(req,res) {
    });
 });
 
+/* 
 function listtemplate(coda,lilen) {
     var atemp = `
      <html>
@@ -169,7 +170,7 @@ function listtemplate(coda,lilen) {
         document.getElementById('pro').innerHTML = kemp;
     }
     return atemp;
-}
+} */
 
 app.get('/author/:username',function(req,res) {
     
