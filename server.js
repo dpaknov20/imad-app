@@ -127,7 +127,15 @@ app.get('/myfirstapp/articles',function(req,res) {
            res.status(500).send(err.toString());
        }
        else {
-           res.send(JSON.stringify(result.rows));
+           pool.query("select * from articles",function(err,result) {
+              if(err) {
+                   res.status(500).send(err.toString());
+              } 
+              else {
+                  res.send(result.rows);
+              }
+           });
+           //res.send(JSON.stringify(result.rows));
        }
    });
 });
