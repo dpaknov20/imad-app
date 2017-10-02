@@ -163,6 +163,8 @@ function arttemp(some) {
                 <div align="center">
                     <h3>List of the Articles: </h3>
                     <div>${content}</div>
+                    <hr/>
+                    <a href = "/logout"><button>LOGOUT</button></a> 
                 </div>
             </body>
         </html>
