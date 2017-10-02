@@ -128,14 +128,6 @@ function myfirstloadLogin() {
                                         {
                                             alert('article found');
                                         }
-                                        else if(request.status === 500)
-                                        {
-                                            alert('something went wrong on the server');
-                                        }
-                                        else if(request.status === 403)
-                                        {
-                                            alert('forbidden request');
-                                        }
                                         else if(request.status === 404)
                                         {
                                             alert('article not found');
