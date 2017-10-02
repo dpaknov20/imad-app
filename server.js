@@ -122,14 +122,14 @@ app.get('/check-login',function(req,res) {
 
 app.get('/myfirstapp/articles',function(req,res) {
      if(req.session && req.session.auth && req.session.auth.userName) {
-   pool.query('SELECT * from articles' , function(err,result) {
+   pool.query('SELECT article_name from articles' , function(err,result) {
        if(err)
        {
            res.status(500).send(err.toString());
        }
        else {
            var something = JSON.stringify(result.rows);
-            res.send((something));
+            res.send(arttemp(something));
         }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
@@ -147,7 +147,7 @@ function arttemp(some) {
     var content = '<ul>';
     for (var i=0; i< some.length; i++) {
         content += `<li>
-        <a href="/articles/${some[i].article_name}">${some[i].article_name}</a>
+        <a href="/articles/${some[i]}">${some[i]}</a>
         </li>`;
     }
     content += "</ul>";
