@@ -146,9 +146,9 @@ function myfirstloadLogin() {
                     </li>`;
                 }
                 content += "</ul>";
-                document.getElementById('variable').innerHTML = content;
+                document.getElementById('victory').innerHTML = content;
             } else {
-                document.getElementById('variable').innerHTML('Oops! Could not load all articles!');
+                document.getElementById('victory').innerHTML('Oops! Could not load all articles!');
             }
         }
     };
