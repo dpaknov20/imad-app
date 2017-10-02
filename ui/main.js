@@ -130,36 +130,9 @@ function myfirstloadLogin() {
             request.open('GET', '/getdetails', true);
             request.send(null);
         }
-
-/*
-    function loadArticles () {
-        // Check if the user is already logged in
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                var articleData = JSON.parse(this.responseText);
-                var content = '<ul>';
-                for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
-                    <a href="/articles/${articleData[i].article_name}">${articleData[i].article_name}</a>
-                    </li>`;
-                }
-                content += "</ul>";
-                document.getElementById('victory').innerHTML = content;
-            } else {
-                document.getElementById('victory').innerHTML('Oops! Could not load all articles!');
-            }
-        }
-    };
-    
-    request.open('GET', '/myfirstapp/articles', true);
-    request.send(null);
-}
-*/
+        
         myfirstloadLogin();
         details();
-  //      loadArticles();
         
         
                 
