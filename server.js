@@ -129,7 +129,7 @@ app.get('/myfirstapp/articles',function(req,res) {
        }
        else {
            var something = JSON.stringify(result.rows);
-            res.send(arttemp(something));
+            res.send((something));
         }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
