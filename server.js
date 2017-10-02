@@ -121,6 +121,7 @@ app.get('/check-login',function(req,res) {
 });
 
 app.get('/myfirstapp/articles',function(req,res) {
+     if(req.session && req.session.auth && req.session.auth.userName) {
    pool.query('SELECT * from articles' , function(err,result) {
        if(err)
        {
@@ -138,6 +139,7 @@ app.get('/myfirstapp/articles',function(req,res) {
               }
            }); */
    });
+     }
 });
 
 app.get('/author/:username',function(req,res) {
