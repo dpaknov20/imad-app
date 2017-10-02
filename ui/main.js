@@ -119,11 +119,10 @@ function myfirstloadLogin() {
                             <input type="text" id="search" /><button type="submit" id="btn">search</button></div>
                             `;
                             document.getElementById('variable').innerHTML=content;
-                           /* var kuch = document.getElementById('btn');
+                           var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
                                 var inp = document.getElementById('search').value;
-                                
-                            }; */
+                            }; 
                         }
                     }
                 };
