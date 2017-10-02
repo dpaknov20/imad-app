@@ -144,10 +144,11 @@ app.get('/myfirstapp/articles',function(req,res) {
 });
 
 function arttemp(some) {
+    var some1 = JSON.parse(some);
     var content = '<ul>';
-    for (var i=0; i< some.length; i++) {
+    for (var i=0; i< some1.length; i++) {
         content += `<li>
-        <a href="/articles/${some[i]}">${some[i]}</a>
+        <a href="/articles/${some1[i]}">${some1[i]}</a>
         </li>`;
     }
     content += "</ul>";
