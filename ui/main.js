@@ -131,7 +131,7 @@ function myfirstloadLogin() {
             request.send(null);
         }
 
-
+/*
     function loadArticles () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
@@ -156,10 +156,10 @@ function myfirstloadLogin() {
     request.open('GET', '/myfirstapp/articles', true);
     request.send(null);
 }
-
+*/
         myfirstloadLogin();
         details();
-        loadArticles();
+  //      loadArticles();
         
         
                 
