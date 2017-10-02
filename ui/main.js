@@ -121,12 +121,21 @@ function myfirstloadLogin() {
                             document.getElementById('variable').innerHTML=content;
                            var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
-                                var inp = document.getElementById('search').value;
-                                 request.open('GET', 'http://adeepak269.imad.hasura-app.io/articles/inp', true);
-                                  //request.setRequestHeader('Content-Type','application/json');
-                                  request.send(null);
-                                  //request.send(JSON.stringify({"article_name": inp}));
-                            }; 
+                                var request = new XMLHttpRequest();
+                                request.onreadystatechange = function () {
+                                if (request.readyState === XMLHttpRequest.DONE) {
+                                        if(request.status === 200 )
+                                        {
+                                            alert('article found');
+                                        }
+                                }
+                                };
+                                    var inp = document.getElementById('search').value;
+                                     request.open('GET', 'http://adeepak269.imad.hasura-app.io/articles/inp', true);
+                                      //request.setRequestHeader('Content-Type','application/json');
+                                      request.send(null);
+                                      //request.send(JSON.stringify({"article_name": inp}));
+                                }; 
                         }
                     }
                 };
