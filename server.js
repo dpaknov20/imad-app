@@ -160,14 +160,13 @@ function arttemp(some) {
             <body>
                 <div align="center">
                     <h3>List of the Articles: </h3>
-                    <div id="num"></div>
+                    <div>${content}</div>
                     <hr/>
                     <a href = "/logout"><button>LOGOUT</button></a> 
                 </div>
             </body>
         </html>
     `;
-    document.getElementById('num').innerHTML = content;
     return tempo;
 }
 
