@@ -122,7 +122,7 @@ app.get('/check-login',function(req,res) {
 
 app.get('/myfirstapp/articles',function(req,res) {
      if(req.session && req.session.auth && req.session.auth.userName) {
-   pool.query('SELECT article_name from articles' , function(err,result) {
+   pool.query('SELECT * from articles' , function(err,result) {
        if(err)
        {
            res.status(500).send(err.toString());
@@ -148,7 +148,7 @@ function arttemp(some) {
     var content = '<ul>';
     for (var i=0; i< some1.length; i++) {
         content += `<li>
-        <a href="/articles/${some1[i]}">${some1[i]}</a>
+        <a href="/articles/${some1[i].article_name}">${some1[i].article_name}</a>
         </li>`;
     }
     content += "</ul>";
