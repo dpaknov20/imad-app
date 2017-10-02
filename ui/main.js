@@ -137,7 +137,6 @@ function myfirstloadLogin() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
-            var articles = document.getElementById('variable');
             if (request.status === 200) {
                 var content = '<ul>';
                 var articleData = JSON.parse(this.responseText);
@@ -147,9 +146,9 @@ function myfirstloadLogin() {
                     </li>`;
                 }
                 content += "</ul>";
-                articles.innerHTML = content;
+                document.getElementById('variable').innerHTML = content;
             } else {
-                articles.innerHTML('Oops! Could not load all articles!');
+                document.getElementById('variable').innerHTML('Oops! Could not load all articles!');
             }
         }
     };
