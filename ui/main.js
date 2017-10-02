@@ -122,6 +122,9 @@ function myfirstloadLogin() {
                            var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
                                 var inp = document.getElementById('search').value;
+                                 request.open('GET', 'http://adeepak269.imad.hasura-app.io/articles/inp', true);
+                                  request.setRequestHeader('Content-Type','application/json');
+                                  request.send(JSON.stringify({"article_name": inp}));
                             }; 
                         }
                     }
