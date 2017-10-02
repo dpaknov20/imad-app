@@ -148,7 +148,7 @@ function arttemp(some) {
     var content = '<ul>';
     for (var i=0; i< some1.length; i++) {
         content += `<li>
-        <a href="/articles/${some1[i].article_name}">${some1[i].article_name}</a>
+        <a href="/articles/${some1[i].article_name}">${some1[i].article_name}</a><br/><br/>
         </li>`;
     }
     content += "</ul>";
