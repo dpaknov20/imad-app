@@ -134,10 +134,10 @@ function myfirstloadLogin() {
                                         }
                                 }
                                 };
-                                    var inp = document.getElementById('search').value;
-                                     request.open('GET', '/articles/inp', true);
-                                      request.send(null);
-                                }; 
+                                var inp = document.getElementById('search').value;
+                                request.open('GET', '/articles/inp', true);
+                                request.send(null);
+                            }; 
                         }
                     }
                 };
