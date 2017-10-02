@@ -151,7 +151,22 @@ function arttemp(some) {
         </li>`;
     }
     content += "</ul>";
-    
+    var tempo = `
+        <html>
+            <head>
+            <title>
+                List of the Articles:
+            </title>
+            </head>
+            <body>
+                <div align="center">
+                    <h3>List of the Articles: </h3>
+                    <div>${content}</div>
+                </div>
+            </body>
+        </html>
+    `;
+    return tempo;
                 
 }
 
