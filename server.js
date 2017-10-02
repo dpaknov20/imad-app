@@ -128,7 +128,8 @@ app.get('/myfirstapp/articles',function(req,res) {
            res.status(500).send(err.toString());
        }
        else {
-            res.send(JSON.stringify(result.rows));
+           var something = JSON.stringify(result.rows);
+            res.send(something);
         }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
