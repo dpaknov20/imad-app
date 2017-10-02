@@ -138,11 +138,11 @@ function myfirstloadLogin() {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                var content = '<ul>';
                 var articleData = JSON.parse(this.responseText);
+                var content = '<ul>';
                 for (var i=0; i< articleData.length; i++) {
                     content += `<li>
-                    <a href="/articles/${articleData[i]}">${articleData[i]}</a>
+                    <a href="/articles/${articleData[i].article_name}">${articleData[i].article_name}</a>
                     </li>`;
                 }
                 content += "</ul>";
