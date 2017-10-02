@@ -167,7 +167,6 @@ function arttemp(some) {
         </html>
     `;
     return tempo;
-                
 }
 
 app.get('/author/:username',function(req,res) {
