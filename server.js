@@ -20,8 +20,6 @@ var config = {
 };
 var pool = new Pool(config);
 
-
-
 var app = express();
 app.use(morgan('combined'));
 //for the JSON file to load 
@@ -565,10 +563,6 @@ app.get('/myapp', function(req, res){
 
 app.get('/ui/myappmain.js', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'myappmain.js'));
-});
-
-app.get('/ui/myappregister.js', function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'myappregister.js'));
 });
 
 app.get('/myappregister', function(req, res){
