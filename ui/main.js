@@ -138,15 +138,13 @@ function myfirstloadLogin() {
                                         }
                                         else if(request.status === 404)
                                         {
-                                            alert('file not found');
+                                            alert('article not found');
                                         }
                                 }
                                 };
                                     var inp = document.getElementById('search').value;
-                                     request.open('GET', 'http://adeepak269.imad.hasura-app.io/articles/inp', true);
-                                      //request.setRequestHeader('Content-Type','application/json');
+                                     request.open('GET', '/articles/inp', true);
                                       request.send(null);
-                                      //request.send(JSON.stringify({"article_name": inp}));
                                 }; 
                         }
                     }
