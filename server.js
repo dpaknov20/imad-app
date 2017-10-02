@@ -129,7 +129,7 @@ app.get('/myfirstapp/articles',function(req,res) {
        }
        else {
            var something = JSON.stringify(result.rows);
-            res.send(something);
+            res.send(arttemp(something));
         }
            /* pool.query("select * from articles",function(err,result) {
               if(err) {
@@ -142,6 +142,18 @@ app.get('/myfirstapp/articles',function(req,res) {
    });
      }
 });
+
+function arttemp(some) {
+    var content = '<ul>';
+    for (var i=0; i< some.length; i++) {
+        content += `<li>
+        <a href="/articles/${some[i].article_name}">${some[i].article_name}</a>
+        </li>`;
+    }
+    content += "</ul>";
+    
+                
+}
 
 app.get('/author/:username',function(req,res) {
     
