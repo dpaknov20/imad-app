@@ -136,7 +136,7 @@ function myfirstloadLogin() {
                                     }
                                 }
                               };
-                                var inp = document.getElementById('search').value;
+                                var inp = document.getElementById('find').value;
                                 var kum = `/articles/${inp}`;
                                 request.open('GET', kum, true);
                                 request.send(null);
