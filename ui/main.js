@@ -123,6 +123,19 @@ function myfirstloadLogin() {
                            document.getElementById('variable').innerHTML=content;
                             var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
+                            var request = new XMLHttpRequest();
+                              request.onreadystatechange = function() {
+                                if(request.readyState === XMLHttpRequest.DONE)  {
+                                    if(request.status === 200)
+                                    {
+                                        alert('article found');
+                                    }
+                                    else if(request.status === 500)
+                                    {
+                                        alert('article not found');
+                                    }
+                                }
+                              }
                                 var inp = document.getElementById('search').value;
                                 var kum = `/articles/${inp}`;
                                 request.open('GET', kum, true);
