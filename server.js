@@ -509,7 +509,7 @@ function createTemplate(data) {
                     </div>
                     <hr/>
                     <div>
-                        <a href="/logout"><button>LOGOUT</button></a>
+                        <a href="/logout"><button>Logout</button></a>
                         </div>
                 </div>
             </body>
