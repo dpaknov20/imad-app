@@ -117,11 +117,14 @@ function myfirstloadLogin() {
                             <a href="/myfirstapp/articles">click here</a></div><br/><br/>
                             <div>
                             To search any article enter here:
-                            <input type="text" id="search" />
+                            <input type="text" id="find" /><button type="submit" id="btn">search</button>
                             <script>
-                                var inp = document.getElementById('search').value;
-                            </script>
-                            <a href="/myfirstapp/${inp}"><button>search</button></a>
+                                var ser = document.getElementById('btn');
+                                ser.onclick = function() {
+                                var inp = document.getElementById('find').value;
+                                }
+                                </script>
+                            <a href="/myfirstapp/${inp}">search</a>
                             </div>
                             `;
                            document.getElementById('variable').innerHTML=content;
