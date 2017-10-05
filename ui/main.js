@@ -118,7 +118,7 @@ function myfirstloadLogin() {
                             <div>
                             To search any article enter here:
                             <input type="text" id="find" /><button type="submit" id="btn">search</button>
-                            </div>
+                            </div><br/><br/>
                             <div id="milgaya"></div>
                             `;
                            document.getElementById('variable').innerHTML=content;
