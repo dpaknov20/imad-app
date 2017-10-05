@@ -118,36 +118,16 @@ function myfirstloadLogin() {
                             <div>
                             To search any article enter here:
                             <input type="text" id="find" /><button type="submit" id="btn">search</button>
-                            <script>
-                                var ser = document.getElementById('btn');
-                                ser.onclick = function() {
-                                var inp = document.getElementById('find').value;
-                                }
-                                </script>
-                            <a href="/myfirstapp/${inp}">search</a>
                             </div>
                             `;
                            document.getElementById('variable').innerHTML=content;
-                           /* var kuch = document.getElementById('btn');
+                            var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
-                                var request = new XMLHttpRequest();
-                                request.onreadystatechange = function () {
-                                if (request.readyState === XMLHttpRequest.DONE) {
-                                        if(request.status === 200 )
-                                        {
-                                            alert('article found');
-                                        }
-                                        else
-                                        {
-                                            alert('article not found');
-                                        }
-                                }
-                                };
                                 var inp = document.getElementById('search').value;
                                 var kum = `/articles/${inp}`;
                                 request.open('GET', kum, true);
                                 request.send(null);
-                            }; */
+                            }; 
                         }
                     }
                 };
