@@ -128,7 +128,7 @@ function myfirstloadLogin() {
                                         {
                                             alert('article found');
                                         }
-                                        else if(request.status === 404)
+                                        else
                                         {
                                             alert('article not found');
                                         }
