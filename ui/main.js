@@ -126,7 +126,7 @@ function myfirstloadLogin() {
                                 if (request.readyState === XMLHttpRequest.DONE) {
                                         if(request.status === 200 )
                                         {
-                                            alert('article found');
+                                            kuch.innerHTML = kum;
                                         }
                                         else
                                         {
