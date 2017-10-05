@@ -132,7 +132,7 @@ function myfirstloadLogin() {
                                         var cont = `you can find your article <a href="/articles/${inp}">here</a>`;
                                         document.getElementById('milgaya').innerHTML = cont;
                                     }
-                                    else if(request.status === 500)
+                                    else
                                     {
                                         alert('article not found');
                                     }
