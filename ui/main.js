@@ -138,9 +138,8 @@ function myfirstloadLogin() {
                               };
                                 var inp = document.getElementById('search').value;
                                 var kum = `/articles/${inp}`;
-                                request.open('POST', kum, true);
-                                request.setRequestHeader('Content-Type','application/json');
-                                request.send(JSON.stringify({"art": inp}));
+                                request.open('GET', kum, true);
+                                request.send(null);
                             }; 
                         }
                     }
