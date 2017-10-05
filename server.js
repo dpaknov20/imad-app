@@ -118,29 +118,6 @@ app.get('/check-login',function(req,res) {
         res.status(400).send('you are not logged in');
 });
 
-app.post('/myfirstapp/articles',function(req,res) {
-     if(req.session && req.session.auth && req.session.auth.userName) {
-   pool.query('SELECT * from articles' , function(err,result) {
-       if(err)
-       {
-           res.status(500).send(err.toString());
-       }
-       else {
-           var something = JSON.stringify(result.rows);
-            res.send(arttemp(something));
-        }
-           /* pool.query("select * from articles",function(err,result) {
-              if(err) {
-                   res.status(500).send(err.toString());
-              } 
-              lse {
-                  res.send(result.rows);
-              }
-           }); */
-   });
-     }
-});
-
 app.get('/myfirstapp/articles',function(req,res) {
      if(req.session && req.session.auth && req.session.auth.userName) {
    pool.query('SELECT * from articles' , function(err,result) {
