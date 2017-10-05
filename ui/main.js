@@ -129,7 +129,7 @@ function myfirstloadLogin() {
                                 if(request.readyState === XMLHttpRequest.DONE)  {
                                     if(request.status === 200)
                                     {
-                                        var cont = `you can find your article <a href="/articles/${inp}">here</a>`;
+                                        var cont = `you can find this article <a href="/articles/${inp}">here</a>`;
                                         document.getElementById('milgaya').innerHTML = cont;
                                     }
                                     else
