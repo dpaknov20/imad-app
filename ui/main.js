@@ -118,19 +118,32 @@ function myfirstloadLogin() {
                             
                             <div>
                             To search any article enter here:
-                            <input type="text" id="find" />
-                            <button type="submit" formaction="/artcles/${inp}" id="btn">search</button>
-                            <script>
-                                var kuch = document.getElementById('btn');
-                                kuch.onclick = function() {
-                                    var inp = document.getElementById('find').value;
-                                }
-                            </script>
+                            <input type="text" id="find" /><button type="submit" id="btn">search</button>
                             </div>
-                            <form action="/articles/${inp}" method="get">
-                            
+                            <div id="milgaya"></div>
                             `;
                            document.getElementById('variable').innerHTML=content;
+                            var kuch = document.getElementById('btn');
+                            kuch.onclick = function() {
+                            var request = new XMLHttpRequest();
+                              request.onreadystatechange = function() {
+                                if(request.readyState === XMLHttpRequest.DONE)  {
+                                    if(request.status === 200)
+                                    {
+                                        var cont = `you can find this article <a href="/articles/${inp}">here</a>`;
+                                        document.getElementById('milgaya').innerHTML = cont;
+                                    }
+                                    else
+                                    {
+                                        alert('article not found');
+                                    }
+                                }
+                              };
+                                var inp = document.getElementById('find').value;
+                                var kum = `/articles/${inp}`;
+                                request.open('GET', kum, true);
+                                request.send(null);
+                            }; 
                         }
                     }
                 };
