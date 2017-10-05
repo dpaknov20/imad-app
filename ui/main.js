@@ -117,9 +117,14 @@ function myfirstloadLogin() {
                             <a href="/myfirstapp/articles">click here</a></div><br/><br/>
                             <div>
                             To search any article enter here:
-                            <input type="text" id="search" /><button type="submit" id="btn">search</button></div>
+                            <input type="text" id="search" />
+                            <script>
+                                var inp = document.getElementById('search').value;
+                            </script>
+                            <a href="/myfirstapp/${inp}"><button>search</button></a>
+                            </div>
                             `;
-                            document.getElementById('variable').innerHTML=content;
+                          /*  document.getElementById('variable').innerHTML=content;
                            var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
                                 var request = new XMLHttpRequest();
@@ -139,7 +144,7 @@ function myfirstloadLogin() {
                                 var kum = `/articles/${inp}`;
                                 request.open('GET', kum, true);
                                 request.send(null);
-                            }; 
+                            }; */
                         }
                     }
                 };
