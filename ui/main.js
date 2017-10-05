@@ -116,6 +116,7 @@ function myfirstloadLogin() {
                             To view all the articles:</h3> 
                             <a href="/myfirstapp/articles">click here</a></div><br/><br/>
                             <div>
+                            To search any article enter here:
                             <input type="text" id="search" /><button type="submit" id="btn">search</button></div>
                             `;
                             document.getElementById('variable').innerHTML=content;
