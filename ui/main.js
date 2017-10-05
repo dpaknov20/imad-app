@@ -135,7 +135,8 @@ function myfirstloadLogin() {
                                 }
                                 };
                                 var inp = document.getElementById('search').value;
-                                request.open('GET', '/articles/piezoelectricity', true);
+                                var kum = `/articles/${inp}`;
+                                request.open('GET', kum, true);
                                 request.send(null);
                             }; 
                         }
