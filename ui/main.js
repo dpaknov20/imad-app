@@ -124,8 +124,8 @@ function myfirstloadLogin() {
                             <a href="/myfirstapp/${inp}"><button>search</button></a>
                             </div>
                             `;
-                          /*  document.getElementById('variable').innerHTML=content;
-                           var kuch = document.getElementById('btn');
+                           document.getElementById('variable').innerHTML=content;
+                           /* var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
                                 var request = new XMLHttpRequest();
                                 request.onreadystatechange = function () {
