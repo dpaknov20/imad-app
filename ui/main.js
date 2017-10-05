@@ -119,6 +119,7 @@ function myfirstloadLogin() {
                             To search any article enter here:
                             <input type="text" id="find" /><button type="submit" id="btn">search</button>
                             </div>
+                            <div id="milgaya"></div>
                             `;
                            document.getElementById('variable').innerHTML=content;
                             var kuch = document.getElementById('btn');
@@ -128,7 +129,8 @@ function myfirstloadLogin() {
                                 if(request.readyState === XMLHttpRequest.DONE)  {
                                     if(request.status === 200)
                                     {
-                                        alert('article found');
+                                        var cont = `you can find your article <a href="/articles/${inp}">here</a>`;
+                                        document.getElementById('milgaya').innerHTML = cont;
                                     }
                                     else if(request.status === 500)
                                     {
