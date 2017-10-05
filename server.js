@@ -507,6 +507,10 @@ function createTemplate(data) {
                     <div>
                        <h3>Category: </h3> ${category}
                     </div>
+                    <hr/>
+                    <div>
+                        <a href="/logout"><button>LOGOUT</button></a>
+                        </div>
                 </div>
             </body>
         </html>`
