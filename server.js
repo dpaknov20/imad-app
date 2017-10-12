@@ -471,19 +471,41 @@ app.get('/articles/:articleName', function (req, res) {
             {
                 var articleData = result.rows[0];
                 var articleid = result.rows[0].id;
-                res.send(createTemplate(articleData));
+                pool.query("select author_id from article_editor where article_id = ($1)" ,[articleid], function(err,result) {
+                    if(err)
+                    {
+                        res.status(500).send(err.toString());
+                    }
+                    else {
+                        if(result.rows.length === 0)
+                        {
+                            res.status(404).send('author not found');
+                        }
+                        else {
+                            var artauth = JSON.stringify(result.rows);
+                        }
+                    }
+                }); 
+                res.send(createTemplate(articleData,artauth));
             }
         }  
   });
 });
 
-function createTemplate(data) {
+function createTemplate(data,autdet) {
     var title=data.article_name;
     var name=data.article_name;
     var date=data.issued_on;
     var content=data.content;
     var category=data.category;
-
+    var aur = JSON.parse(autdet);
+    var cont = '<ul>';
+    for(var i=0;i<aur.length;i++)
+    {
+        cont+ = `<li>
+        aur.author_id
+        </li>`;
+    }
         var htmlTemplate = `
         <html>
             <head>  
@@ -507,6 +529,10 @@ function createTemplate(data) {
                     <hr/>
                     <div>
                        <h3>Category: </h3> ${category}
+                    </div>
+                    <hr/>
+                    <div>
+                        <h3>Author's ID: </h3>${cont}
                     </div>
                     <hr/>
                     <div>
