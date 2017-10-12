@@ -499,6 +499,7 @@ function createTemplate(data,autdet) {
     var content=data.content;
     var category=data.category;
     var aura = JSON.parse(autdet);
+    var cont = "hi i m deepak";
    /* var cont = '<ul>';
     for(var i=0 ; i < aura.length ; i++)
     {
@@ -533,7 +534,7 @@ function createTemplate(data,autdet) {
                        <h3>Category: </h3> ${category}
                     </div>
                     <hr/>
-                    <div> <h3>Authors of this article: </h3>${cont} </div> <hr/>
+                    <h3>Authors of this article: </h3><div>${cont}</div><hr/>
                     <div>
                         <a href="/logout"><button>Logout</button></a>
                         </div>
