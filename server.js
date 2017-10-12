@@ -506,6 +506,7 @@ function createTemplate(data,autdet) {
         aur.author_id
         </li>`;
     }
+    cont+ = "</ul>";
         var htmlTemplate = `
         <html>
             <head>  
