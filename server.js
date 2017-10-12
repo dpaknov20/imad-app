@@ -483,10 +483,10 @@ app.get('/articles/:articleName', function (req, res) {
                         }
                         else {
                             var artauth = JSON.stringify(result.rows);
+                            res.send(createTemplate(articleData,artauth));
                         }
                     }
                 }); 
-                res.send(createTemplate(articleData,artauth));
             }
         }  
   });
