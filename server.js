@@ -477,13 +477,13 @@ app.get('/articles/:articleName', function (req, res) {
   });
 });
 
-function createTemplate(data) {
+function createTemplate(data,artdata) {
     var title=data.article_name;
     var name=data.article_name;
     var date=data.issued_on;
     var content=data.content;
     var category=data.category;
-    
+
         var htmlTemplate = `
         <html>
             <head>  
