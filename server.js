@@ -499,8 +499,7 @@ function createTemplate(data,autdet) {
     var content=data.content;
     var category=data.category;
     var aura = JSON.parse(autdet);
-    var cont = "hi i m deepak";
-   /* var cont = '<ul>';
+    var cont = '<ul>';
     for(var i=0 ; i < aura.length ; i++)
     {
         cont+ = `<li>
