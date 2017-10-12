@@ -477,7 +477,7 @@ app.get('/articles/:articleName', function (req, res) {
   });
 });
 
-function createTemplate(data,artdata) {
+function createTemplate(data) {
     var title=data.article_name;
     var name=data.article_name;
     var date=data.issued_on;
