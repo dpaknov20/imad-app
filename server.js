@@ -507,7 +507,7 @@ function createTemplate(data,autdet) {
         </li>`;
     }
      */
-     cont+ = "</ul>"; 
+     cont+ = '</ul>'; 
         var htmlTemplate = `
         <html>
             <head>  
