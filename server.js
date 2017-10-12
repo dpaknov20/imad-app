@@ -133,7 +133,7 @@ app.get('/myfirstapp/articles',function(req,res) {
               if(err) {
                    res.status(500).send(err.toString());
               } 
-              lse {
+              else {
                   res.send(result.rows);
               }
            }); */
