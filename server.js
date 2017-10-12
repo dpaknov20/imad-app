@@ -500,7 +500,7 @@ function createTemplate(data,autdet) {
     var category=data.category;
     var aur = JSON.parse(autdet);
     var cont = '<ul>';
-    for(var i=0;i<aur.length;i++)
+    for(var i=0 ; i < aur.length ; i++)
     {
         cont+ = `<li>
         aur[i].author_id
@@ -532,7 +532,7 @@ function createTemplate(data,autdet) {
                        <h3>Category: </h3> ${category}
                     </div>
                     <hr/>
-                    <div> <h3>Authors of this article: </h3>${cont} </div> <hr/>
+                    
                     <div>
                         <a href="/logout"><button>Logout</button></a>
                         </div>
