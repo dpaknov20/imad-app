@@ -470,7 +470,7 @@ app.get('/articles/:articleName', function (req, res) {
             else
             {
                 var articleData = result.rows[0];
-                var articleid = result.rows[0].id;
+                var articleid = result.rows[0].article_id;
                 pool.query("SELECT author_id FROM article_editor WHERE article_id = ($1)" ,[articleid], function(err,result) {
                     if(err)
                     {
