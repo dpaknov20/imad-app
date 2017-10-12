@@ -471,7 +471,6 @@ app.get('/articles/:articleName', function (req, res) {
             {
                 var articleData = result.rows[0];
                 var articleid = result.rows[0].id;
-                alert(articleid);
                 res.send(createTemplate(articleData));
             }
         }  
