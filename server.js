@@ -498,12 +498,12 @@ function createTemplate(data,autdet) {
     var date=data.issued_on;
     var content=data.content;
     var category=data.category;
-    var aur = JSON.parse(autdet);
+    var aura = JSON.parse(autdet);
     var cont = '<ul>';
-    for(var i=0 ; i < aur.length ; i++)
+    for(var i=0 ; i < aura.length ; i++)
     {
         cont+ = `<li><div>
-        aur[i].author_id</div>
+        aura[i].author_id</div>
         </li>`;
     }
     cont+ = "</ul>"; 
