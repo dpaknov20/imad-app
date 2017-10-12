@@ -502,8 +502,8 @@ function createTemplate(data,autdet) {
     var cont = '<ul>';
     for(var i=0 ; i < aur.length ; i++)
     {
-        cont+ = `<li>
-        aur[i].author_id
+        cont+ = `<li><div>
+        aur[i].author_id</div>
         </li>`;
     }
     cont+ = "</ul>"; 
@@ -532,7 +532,7 @@ function createTemplate(data,autdet) {
                        <h3>Category: </h3> ${category}
                     </div>
                     <hr/>
-                    
+                    <div> <h3>Authors of this article: </h3>${cont} </div> <hr/>
                     <div>
                         <a href="/logout"><button>Logout</button></a>
                         </div>
