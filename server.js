@@ -503,7 +503,7 @@ function createTemplate(data,autdet) {
     for(var i=0 ; i < aura.length ; i++)
     {
         cont+ = `<li><div>
-        aura[i].author_id</div>
+        ${aura[i].author_id}</div>
         </li>`;
     }
     cont+ = "</ul>"; 
