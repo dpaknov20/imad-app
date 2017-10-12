@@ -531,7 +531,8 @@ function createTemplate(data,autdet) {
                        <h3>Category: </h3> ${category}
                     </div>
                     <hr/>
-                    <h3>Authors of this article: </h3><div>${cont}</div><hr/>
+                    <div>
+                    <h3>Authors of this article: </h3>${cont}</div><hr/>
                     <div>
                         <a href="/logout"><button>Logout</button></a>
                         </div>
