@@ -499,13 +499,13 @@ function createTemplate(data,autdet) {
     var content=data.content;
     var category=data.category;
     var aura = JSON.parse(autdet);
-    var content = '<ul>';
+    var cont = '<ul>';
     for (var i=0; i< aura.length; i++) {
-        content += `<li>
+        cont += `<li>
         ${aura[i].author_id}
         </li>`;
     }
-    content += "</ul>";
+    cont += "</ul>";
         var htmlTemplate = `
         <html>
             <head>  
@@ -532,7 +532,7 @@ function createTemplate(data,autdet) {
                     </div>
                     <hr/>
                     <div>
-                       <h3>Authors of this article: </h3> ${content}
+                       <h3>Authors of this article: </h3> ${cont}
                     </div>
                     <hr/>
                     <div>
