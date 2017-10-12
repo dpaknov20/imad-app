@@ -532,8 +532,6 @@ function createTemplate(data,autdet) {
                     </div>
                     <hr/>
                     <div>
-                    <h3>Authors of this article: </h3>${cont}</div><hr/>
-                    <div>
                         <a href="/logout"><button>Logout</button></a>
                         </div>
                 </div>
