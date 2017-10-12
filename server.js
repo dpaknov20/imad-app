@@ -477,14 +477,8 @@ app.get('/articles/:articleName', function (req, res) {
                         res.status(500).send(err.toString());
                     }
                     else {
-                        if(result.rows.length === 0)
-                        {
-                            res.status(404).send('author not found');
-                        }
-                        else {
                             var artauth = JSON.stringify(result.rows);
                             res.send(createTemplate(articleData,artauth));
-                        }
                     }
                 }); 
             }
