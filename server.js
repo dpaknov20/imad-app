@@ -456,7 +456,7 @@ app.get('/myapp/logout',function(req,res) {
 
 
 app.get('/articles/:articleName', function (req, res) {
-  pool.query("SELECT * FROM articles WHERE article_name = $1" ,[req.params.articleName], function(err,result) {
+  pool.query('SELECT * FROM articles WHERE article_name = $1' ,[req.params.articleName], function(err,result) {
         if(err)
         {
             res.status(500).send(err.toString());
@@ -471,7 +471,7 @@ app.get('/articles/:articleName', function (req, res) {
             {
                 var articleData = result.rows[0];
                 var articleid = result.rows[0].id;
-                pool.query("select author_id from article_editor where article_id = ($1)" ,[articleid], function(err,result) {
+                pool.query("SELECT author_id FROM article_editor WHERE article_id = ($1)" ,[articleid], function(err,result) {
                     if(err)
                     {
                         res.status(500).send(err.toString());
@@ -503,7 +503,7 @@ function createTemplate(data,autdet) {
     for(var i=0;i<aur.length;i++)
     {
         cont+ = `<li>
-        aur.author_id
+        aur[i].author_id
         </li>`;
     }
     cont+ = "</ul>"; */
