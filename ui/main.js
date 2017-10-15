@@ -63,7 +63,7 @@ function myfirstlogin() {
                         }
                         else if(request.status === 403)
                         {
-                            alert('forbidden request');
+                            alert('user with this username already exist');
                         }
                         else if(request.status === 404)
                         {
