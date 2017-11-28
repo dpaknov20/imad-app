@@ -23,7 +23,8 @@ function myfirstlogin() {
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
                         {
-                            alert('logged in successfully');
+                            request.open('GET', 'http://adeepak269.imad.hasura-app.io/', true);
+                            request.send(null);
                         }
                         else if(request.status === 500)
                         {
@@ -55,8 +56,7 @@ function myfirstlogin() {
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
                         {
-                            request.open('GET', 'http://adeepak269.imad.hasura-app.io/', true);
-                            request.send(null);
+                            alert('registered successfully');
                         }
                         else if(request.status === 500)
                         {
