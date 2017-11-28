@@ -55,7 +55,8 @@ function myfirstlogin() {
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
                         {
-                            alert('registered successfully');
+                            request.open('GET', 'http://adeepak269.imad.hasura-app.io/', true);
+                            request.send(null);
                         }
                         else if(request.status === 500)
                         {
