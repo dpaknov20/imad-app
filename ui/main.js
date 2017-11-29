@@ -23,7 +23,6 @@ function myfirstlogin() {
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
                         {
-                            alert('andar aao');
                             alert('logged in successfully');
                         }
                         else if(request.status === 500)
