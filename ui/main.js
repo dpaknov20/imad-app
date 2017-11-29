@@ -136,6 +136,8 @@ function myfirstloadLogin() {
                                     }
                                     else
                                     {
+                                        var kon=`<p></p>`;
+                                        document.getElementById('milgaya').innerHTML = kon;
                                         alert('article not found');
                                     }
                                 }
