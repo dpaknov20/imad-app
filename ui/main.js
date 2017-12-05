@@ -125,7 +125,7 @@ function myfirstloadLogin() {
                             </div>
                             <div id="milgaya"></div>
                             `;
-                           document.getElementById('variable').innerHTML=content;
+                            document.getElementById('variable').innerHTML=content;
                             var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
                             var request = new XMLHttpRequest();
