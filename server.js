@@ -54,7 +54,7 @@ app.get('/hash/:input', function (req, res) {
    res.send(hashedString);
 });
 
-app.get('/calculator/:opera/:val1/:val2', function (req, res){
+app.get('/calculator/:opera/:val1/:val2', function (req, res) {
     var value1=req.params.val1;
     var value2=req.params.val2;
     var operation=req.params.opera;
