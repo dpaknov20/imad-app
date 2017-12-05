@@ -71,7 +71,7 @@ app.get('/calculator/:opera/:val1/:val2', function (req, res){
     else if (operation.includes('div')) {
         calvalue=calue1/value2;
     }
-    res.send(calvalue);
+    res.send(calvalue.toString());
 });
 
 app.post('/login',function(req,res) {
