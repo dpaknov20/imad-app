@@ -59,16 +59,16 @@ app.get('/calculator/:opera/:val1/:val2', function(req, res){
     var value2=req.params.val2;
     var operation=req.params.opera;
     var calvalue=0;
-    if(operation.contains('add')) {
+    if(operation.includes('add')) {
         calvalue=value1+value2;
     }
-    else if (operation.contains('sub')) {
+    else if (operation.includes('sub')) {
         calvalue=calue1-value2;
     }
-    else if (operation.contains('mul')) {
+    else if (operation.includes('mul')) {
         calvalue=calue1*value2;
     }
-    else if (operation.contains('div')) {
+    else if (operation.includes('div')) {
         calvalue=calue1/value2;
     }
     res.send(calvalue);
