@@ -54,6 +54,26 @@ app.get('/hash/:input', function (req, res) {
    res.send(hashedString);
 });
 
+app.get('/calculator/:opera/:val1/:val2', function(req, res){
+    var value1=req.params.val1;
+    var value2=req.params.val2;
+    var operation=req.params.opera;
+    var calvalue=0;
+    if(operation === 'add') {
+        calvalue=value1+value2;
+    }
+    else if (operation === 'sub') {
+        calvalue=calue1-value2;
+    }
+    else if (operation === 'mul') {
+        calvalue=calue1*value2;
+    }
+    else if (operation === 'div') {
+        calvalue=calue1/value2;
+    }
+    res.send(calvalue);
+});
+
 app.post('/login',function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
