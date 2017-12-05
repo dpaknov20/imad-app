@@ -63,13 +63,13 @@ app.get('/calculator/:opera/:val1/:val2', function (req, res){
         calvalue=value1+value2;
     }
     else if (operation.includes('sub')) {
-        calvalue=calue1-value2;
+        calvalue=value1-value2;
     }
     else if (operation.includes('mul')) {
-        calvalue=calue1*value2;
+        calvalue=value1*value2;
     }
     else if (operation.includes('div')) {
-        calvalue=calue1/value2;
+        calvalue=value1/value2;
     }
     res.send(calvalue.toString());
 });
