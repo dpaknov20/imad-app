@@ -317,7 +317,6 @@ app.get('/customer/:bookingid', function (req, res) {
         } else {
             var custData = result.rows[0];
             res.send(makeTemplate(custData));
-            
         }
     }
   });
