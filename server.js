@@ -60,7 +60,7 @@ app.get('/calculator/:opera/:val1/:val2', function (req, res){
     var operation=req.params.opera;
     var calvalue=0;
     if(operation.includes('add')) {
-        calvalue=value1+value2;
+        calvalue=value1.add(value2);
     }
     else if (operation.includes('sub')) {
         calvalue=value1-value2;
