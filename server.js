@@ -59,8 +59,10 @@ app.get('/calculator/:opera/:val1/:val2', function (req, res) {
     var value2=req.params.val2;
     var operation=req.params.opera;
     var calvalue=0;
+    var x=Math.round(value1);
+    var y=Math.round(value2);
     if(operation.includes('add')) {
-        calvalue=value1+(value2);
+        calvalue=x+y;
     }
     else if (operation.includes('sub')) {
         calvalue=value1-value2;
