@@ -16,7 +16,8 @@ var config = {
     host: 'db.imad.hasura-app.io',
     port: '5432',
     //paswword: process.env.DB_PASSWORD
-    password: 'db-adeepak269-41332'
+    password: 'db-adeepak269-82983'
+    
 };
 var pool = new Pool(config);
 
@@ -28,7 +29,6 @@ app.use(session({
     secret: 'someRandomSecretValue', 
     cookie: {maxAge: 1000*60*60*24*30}
 }));
-
 
 var count=0;
 app.get('/counter', function (req, res) {
