@@ -91,13 +91,16 @@ app.post('/login',function(req,res) {
             }
             else
             {
-                var dbstring = result.rows[0].password;
+                /* var dbstring = result.rows[0].password;
                 var salt = dbstring.split('$')[2];
                 var hashedPassword = hash(password , salt);
                 if(hashedPassword === dbstring)
                 {
                     //set the session
                     req.session.auth={userName: result.rows[0].username };
+                    res.send('credentials correct !');
+                } */
+                if(password === result.rows[0].password) {
                     res.send('credentials correct !');
                 }
                 else
@@ -111,8 +114,9 @@ app.post('/register',function(req,res) {
     //we already have a username and password for now
     var username = req.body.username;
     var password = req.body.password;
-    var salt = crypto.randomBytes(128).toString('hex');
-    var dbstring = hash(password, salt);
+    //var salt = crypto.randomBytes(128).toString('hex');
+    //var dbstring = hash(password, salt);
+    var dbstring = password;
     pool.query('SELECT * FROM "user_table" WHERE username = $1', [username], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
