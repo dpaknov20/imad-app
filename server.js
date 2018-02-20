@@ -79,7 +79,7 @@ app.get('/calculator/:opera/:val1/:val2', function (req, res) {
 app.post('/login',function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
-    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(err,result) {
+    pool.query('SELECT * FROM "user_table" WHERE username = $1', [username], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
@@ -113,7 +113,7 @@ app.post('/register',function(req,res) {
     var password = req.body.password;
     var salt = crypto.randomBytes(128).toString('hex');
     var dbstring = hash(password, salt);
-    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(err,result) {
+    pool.query('SELECT * FROM "user_table" WHERE username = $1', [username], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
@@ -138,7 +138,7 @@ app.post('/register',function(req,res) {
 
 app.get('/check-login',function(req,res) {
    if(req.session && req.session.auth && req.session.auth.userName) {
-        pool.query('SELECT * FROM "user" WHERE username = $1', [req.session.auth.userName], function(err,result) {
+        pool.query('SELECT * FROM "user_table" WHERE username = $1', [req.session.auth.userName], function(err,result) {
            if (err) {
               res.status(500).send(err.toString());
            } else {
