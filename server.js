@@ -116,7 +116,7 @@ app.post('/register',function(req,res) {
     var password = req.body.password;
     var salt = crypto.randomBytes(128).toString('hex');
     var dbstring = hash(password, salt);
-    pool.query('SELECT * FROM "user" WHERE username = $1', [req.body.username], function(err,result) {
+    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
