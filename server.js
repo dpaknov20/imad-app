@@ -85,13 +85,13 @@ app.post('/login',function(req,res) {
         }
         else
         {
-            if(result.rows.length !== 0)
+            if(result.rows.length === 0)
             {
                 res.status(403).send('username/password is invalid');
             }
             else
             {
-                /* var dbstring = result.rows[0].password;
+                var dbstring = result.rows[0].password;
                 var salt = dbstring.split('$')[2];
                 var hashedPassword = hash(password , salt);
                 if(hashedPassword === dbstring)
@@ -99,10 +99,7 @@ app.post('/login',function(req,res) {
                     //set the session
                     req.session.auth={userName: result.rows[0].username };
                     res.send('credentials correct !');
-                } */
-                if(password === result.rows[0].password) {
-                    res.send('credentials correct !');
-                }
+                } 
                 else
                     res.status(403).send('username/password is invalid');
             }
