@@ -122,7 +122,7 @@ app.post('/register',function(req,res) {
         }
         else
         {
-            if(result.rows === 0) {
+            if(result.rows !== 0) {
                 res.status(403).send('username already present');
             }
             else {
