@@ -175,7 +175,7 @@ app.get('/myfirstapp/articles',function(req,res) {
 
 function arttemp(some) {
     var some1 = JSON.parse(some);
-    var content = '<ul>';
+    var content = `<ul style="list-syle-type:none;">`;
     for (var i=0; i< some1.length; i++) {
         content += `<li>
         <a href="/articles/${some1[i].article_name}">${some1[i].article_name}</a><br/><br/>
