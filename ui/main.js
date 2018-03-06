@@ -81,9 +81,6 @@ function myfirstlogin() {
                     if(request.readyState === XMLHttpRequest.DONE)  {
                         if(request.status === 200)
                         {
-                            if (window.location.href.substr(-2) !== '?r') {
-                                window.location = window.location.href + '?r';
-                            }
                             alert('registered successfully');
                         }
                         else if(request.status === 500)
