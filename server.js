@@ -111,6 +111,9 @@ app.post('/register',function(req,res) {
     //we already have a username and password for now
     var username = req.body.username;
     var password = req.body.password;
+    var name = req.body.name;
+    var id = req.body.id;
+    var email = req.body.email;
     var salt = crypto.randomBytes(128).toString('hex');
     var dbstring = hash(password, salt);
     pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(err,result) {
@@ -123,7 +126,12 @@ app.post('/register',function(req,res) {
                 res.status(403).send('username already present');
             }
             else {
-                pool.query('INSERT INTO "user" (username, password) VALUES ($1,$2)', [username,dbstring], function(err,result) {
+                pool.query('INSERT INTO "authors" (id, name, email, username) VALUES ($1,$2,$3,$4)', [id,name,email,username], function(err,result) {
+                    if(err) {
+                        res.status(500).send(err.toString());
+                    }
+                });
+                pool.query('INSERT INTO "users" (username,password) VALUES ($1,$2)', [username,dbstring], function(err,result) {
                     if(err) {
                         res.status(500).send(err.toString());
                     }
