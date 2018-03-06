@@ -50,6 +50,29 @@ function myfirstlogin() {
             };
                  var register=document.getElementById('register_btn');
                  register.onclick = function() {
+                     document.getElementById('valid').innerHTML='';
+                     var registerhtml= `
+                        <h3>Registration form</h3>
+                        <label><b>Name</b></label>
+                        <input type="text" placeholder="Name" id="name" />
+                        <hr/>
+                        <label><b>ID</b></label>
+                        <input type="integer" placeholder="Id" id="id" />
+                        <hr/>
+                        <label><b>Email</b></label>
+                        <input type="text" placeholder="Email" id="email" />
+                        <hr/>
+                        <label><b>Username</b></label>
+                        <input type="text" placeholder="Username" id="username" />
+                        <hr/>
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Password" id="password" />
+                        <hr/>
+                        <button type="submit" id="reg_btn" >Register</button> `;
+                        document.getElementById('valid').innerHTML=registerhtml;
+                        
+                   var reg=document.getElementById('reg_btn');
+                 reg.onclick = function() {     
                   //create a request
                   var request = new XMLHttpRequest();
                   //capture the response and store it in the variable
@@ -74,12 +97,16 @@ function myfirstlogin() {
                         }
                     }
                   };
-                  var username = document.getElementById('usr').value;
-                  var password = document.getElementById('psd').value;
+                  var name = document.getElementById('name').value;
+                  var id = document.getElementById('id').value;
+                  var email = document.getElementById('email').value;
+                  var username = document.getElementById('username').value;
+                  var password = document.getElementById('password').value;
                   request.open('POST', 'http://adeepak269.imad.hasura-app.io/register', true);
                   request.setRequestHeader('Content-Type','application/json');
-                  request.send(JSON.stringify({"username": username, "password": password}));
+                  request.send(JSON.stringify({"name": name, "id": id, "email": email, "username": username, "password": password}));
                 };
+                 }
 }
 
 function myfirstloadLogin() {
