@@ -82,6 +82,8 @@ function myfirstlogin() {
                         if(request.status === 200)
                         {
                             alert('registered successfully');
+                            document.getElementById('valid').innerHTML='';
+                            document.getElementById('valid').innerHTML=loginhtml;
                         }
                         else if(request.status === 500)
                         {
