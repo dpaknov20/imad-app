@@ -151,7 +151,7 @@ function myfirstloadLogin() {
                             <input type="text" id="find" /><button type="submit" id="btn">search</button>
                             </div>
                             <div id="milgaya"></div><hr/>
-                            To contribute the articles click here! <button><a href="/contribute">Contribute</a></button>
+                            To contribute the articles click here! <button type="submit" id="add_btn">Contribute</a></button>
                             `;
                             document.getElementById('variable').innerHTML=content;
                             var kuch = document.getElementById('btn');
