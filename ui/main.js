@@ -122,7 +122,7 @@ function myfirstlogin() {
                     <input type="submit" id="add_btn" value="submit" />
                 </fieldset>
             </form> `;
-                document.getElementById('valid').innerHTML=uploadhtml;
+                document.getElementById('contribution').innerHTML=uploadhtml;
             }
 }
 function myfirstloadLogin() {
