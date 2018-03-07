@@ -107,6 +107,7 @@ function myfirstlogin() {
                   request.send(JSON.stringify({"name": name, "id": id, "email": email, "username": username, "password": password}));
                 };
                  };
+                 
         var addition = document.getElementById('contribute_btn');
         addition.onclick = function() {
             var uploadhtml = `
@@ -123,6 +124,8 @@ function myfirstlogin() {
                 </fieldset>
             </form> `;
                 document.getElementById('contribution').innerHTML=uploadhtml;
+                
+                
             };
 }
 function myfirstloadLogin() {
