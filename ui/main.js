@@ -156,7 +156,6 @@ function myfirstlogin() {
                   request.send(JSON.stringify({"article_name": article_name, "issued_on": issued_on, "content": content, "category": category}));
                 };
                  };
-            };
 }
 function myfirstloadLogin() {
             // Check if the user is already logged in
