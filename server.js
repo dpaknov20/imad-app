@@ -199,6 +199,11 @@ function arttemp(some) {
             <title>
                 List of the Articles:
             </title>
+            <style> 
+                a {
+                    text-decoration: none;
+                }
+            </style>
             </head>
             <body>
                 <div align="center">
