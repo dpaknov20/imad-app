@@ -158,9 +158,10 @@ app.get('/contribute',function(req,res) {
                 <textarea cols="50" rows="20" id="content" value="Body of article"></textarea><br>
                 Category of the article:
                 <input type="text" id="category" value="category to which it belongs" /><br>
-                <input type="submit" id="submit" value="submit" />
+                <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
             </fieldset>
-        </form>`; 
+        </form> `; 
+        
 });
 
 app.get('/check-login',function(req,res) {
