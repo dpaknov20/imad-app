@@ -17,25 +17,3 @@
             </div>
     </body>
 </html> 
-
-
-
-app.get('/contribute',function(req,res) {
-    if(req.session && req.session.auth && req.session.auth.userName) {
-        
-            
-            `;
-    }   
-});
-
-
-    
-    pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [heading,date,contentbody,category], function(err,result) {
-        if(err) {
-            res.status(500).send(err.toString());
-        }
-        else {
-            res.send(alert('article successfully updated')); 
-        }
-    });
-};
