@@ -147,6 +147,23 @@ app.post('/register',function(req,res) {
     });
 });
 
+app.post('/contribute',function(req,res) {
+    if(req.session && req.session.auth && req.session.auth.userName) {
+        var article_name = req.body.article_name;
+        var issued_on = req.body.issued_on;
+        var content = req.body.content;
+        var category = req.body.category;
+        pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [article_name,issued_on,content,category], function(err,result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send('article successfully updated'); 
+        }
+    });
+    }
+});
+
 app.get('/check-login',function(req,res) {
    if(req.session && req.session.auth && req.session.auth.userName) {
         pool.query('SELECT * FROM "user" WHERE username = $1', [req.session.auth.userName], function(err,result) {
