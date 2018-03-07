@@ -125,7 +125,37 @@ function myfirstlogin() {
             </form> `;
                 document.getElementById('contribution').innerHTML=uploadhtml;
                 
-                
+                var add=document.getElementById('add_btn');
+                 add.onclick = function() {     
+                  //create a request
+                  var request = new XMLHttpRequest();
+                  //capture the response and store it in the variable
+                  
+                  request.onreadystatechange = function() {
+                    if(request.readyState === XMLHttpRequest.DONE)  {
+                        if(request.status === 200)
+                        {
+                            alert('article added successfully');
+                        }
+                        else if(request.status === 500)
+                        {
+                            alert('something went wrong on the server');
+                        }
+                        else if(request.status === 404)
+                        {
+                            alert('file not found');
+                        }
+                    }
+                  };
+                    var article_name = document.getElementById('title');
+                    var content = document.getElementById('content');
+                    var category = document.getElementById('category');
+                    var issued_on = Date();
+                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/contribute', true);
+                  request.setRequestHeader('Content-Type','application/json');
+                  request.send(JSON.stringify({"article_name": article_name, "issued_on": issued_on, "content": content, "category": category}));
+                };
+                 };
             };
 }
 function myfirstloadLogin() {
