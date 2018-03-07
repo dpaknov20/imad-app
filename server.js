@@ -158,7 +158,7 @@ app.get('/contribute',function(req,res) {
                     <legend>This is how you contribute</legend>
                     Title for your article: 
                     <input type="text" id="title" /><br>
-                    Write the content:
+                    Write the content:<br>
                     <textarea cols="5" rows="5" id="content">Body of the article</textarea><br>
                     Category of the article:
                     <input type="text" id="category" /><br>
