@@ -164,7 +164,17 @@ app.get('/contribute',function(req,res) {
                     <input type="text" id="category" /><br>
                     <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
                 </fieldset>
-            </form></body></html> `;
+            </form>
+            <script>
+                function contributefunc() {
+                    var heading = document.getElementById('title');
+                    var contentbody = document.getElementById('content');
+                    var category = document.getElementById('category');
+                    var date = Date();
+                    
+                }
+            </script>
+            </body></html> `;
             res.send(uploadhtml);
     }   
 });
