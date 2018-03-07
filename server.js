@@ -167,16 +167,24 @@ app.post('/contribute',function(req,res) {
             </form>
             <script type="text/javascript" src="server.js"></script>
             </body></html> `;
-            function contributefunc() {
-                    var heading = document.getElementById('title');
-                    var contentbody = document.getElementById('content');
-                    var category = document.getElementById('category');
-                    var date = Date();
-                    
-                }
             res.send(uploadhtml);
     }   
 });
+
+function contributefunc() {
+    var heading = document.getElementById('title');
+    var contentbody = document.getElementById('content');
+    var category = document.getElementById('category');
+    var date = Date();
+    pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [heading,date,contentbody,category], function(err,result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send(alert('article successfully updated')); 
+        }
+    });
+}
 
 app.get('/check-login',function(req,res) {
    if(req.session && req.session.auth && req.session.auth.userName) {
