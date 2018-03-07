@@ -159,7 +159,7 @@ app.get('/contribute',function(req,res) {
                     Title for your article: 
                     <input type="text" id="title" /><br>
                     Write the content:<br>
-                    <textarea cols="5" rows="5" id="content">Body of the article</textarea><br>
+                    <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
                     Category of the article:
                     <input type="text" id="category" /><br>
                     <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
