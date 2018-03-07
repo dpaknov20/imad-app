@@ -147,7 +147,7 @@ app.post('/register',function(req,res) {
     });
 });
 
-app.post('/contribute',function(req,res) {
+app.get('/contribute',function(req,res) {
     if(req.session && req.session.auth && req.session.auth.userName) {
         var uploadhtml = `<html><head>
             <title>Contribute to the articles</title>
