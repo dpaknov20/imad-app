@@ -157,11 +157,11 @@ app.get('/contribute',function(req,res) {
                 <fieldset>
                     <legend>This is how you contribute</legend>
                     Title for your article: 
-                    <input type="text" id="title" value="title" /><br>
+                    <input type="text" id="title" /><br>
                     Write the content:
-                    <textarea cols="50" rows="20" id="content" value="Body of article"></textarea><br>
+                    <textarea cols="50" rows="20" id="content">Body of the article</textarea><br>
                     Category of the article:
-                    <input type="text" id="category" value="category to which it belongs" /><br>
+                    <input type="text" id="category" /><br>
                     <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
                 </fieldset>
             </form></body></html> `;
