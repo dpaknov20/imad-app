@@ -203,7 +203,7 @@ function arttemp(some) {
                 a {
                     text-decoration: none;
                 }
-                a.hover {
+                a:hover {
                     color: red;
                 }
             </style>
