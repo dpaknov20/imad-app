@@ -29,10 +29,7 @@ app.get('/contribute',function(req,res) {
 });
 
 
-    var heading = document.getElementById('title');
-    var contentbody = document.getElementById('content');
-    var category = document.getElementById('category');
-    var date = Date();
+    
     pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [heading,date,contentbody,category], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
