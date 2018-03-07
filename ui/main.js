@@ -123,7 +123,7 @@ function myfirstlogin() {
                 </fieldset>
             </form> `;
                 document.getElementById('contribution').innerHTML=uploadhtml;
-            }
+            };
 }
 function myfirstloadLogin() {
             // Check if the user is already logged in
