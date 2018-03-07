@@ -147,6 +147,22 @@ app.post('/register',function(req,res) {
     });
 });
 
+app.get('/contribute',function(req,res) {
+   var uploadhtml = `
+        <form>
+            <fieldset>
+                <legend>This is how you contribute</legend>
+                Title for your article: 
+                <input type="text" id="title" value="title" /><br>
+                Write the content:
+                <textarea cols="50" rows="20" id="content" value="Body of article"></textarea><br>
+                Category of the article:
+                <input type="text" id="category" value="category to which it belongs" /><br>
+                <input type="submit" id="submit" value="submit" />
+            </fieldset>
+        </form>`; 
+});
+
 app.get('/check-login',function(req,res) {
    if(req.session && req.session.auth && req.session.auth.userName) {
         pool.query('SELECT * FROM "user" WHERE username = $1', [req.session.auth.userName], function(err,result) {
