@@ -106,9 +106,10 @@ function myfirstlogin() {
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"name": name, "id": id, "email": email, "username": username, "password": password}));
                 };
-                 }
-}
-
+                 };
+        var addition = document.getElementById('contribute_btn');
+        addition.onclick = function() {
+            var uploadhtml = `
             <form>
                 <fieldset>
                     <legend>This is how you contribute</legend>
@@ -120,8 +121,10 @@ function myfirstlogin() {
                     <input type="text" id="category" /><br>
                     <input type="submit" id="add_btn" value="submit" />
                 </fieldset>
-            </form>
-
+            </form> `;
+                document.getElementById('valid').innerHTML=uploadhtml;
+            }
+}
 function myfirstloadLogin() {
             // Check if the user is already logged in
             var request = new XMLHttpRequest();
