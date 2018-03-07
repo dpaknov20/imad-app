@@ -22,25 +22,9 @@
 
 app.get('/contribute',function(req,res) {
     if(req.session && req.session.auth && req.session.auth.userName) {
-        var uploadhtml = `<html><head>
-            <title>Contribute to the articles</title>
-            </head>
-            <body>
-            <form>
-                <fieldset>
-                    <legend>This is how you contribute</legend>
-                    Title for your article: 
-                    <input type="text" id="title" /><br>
-                    Write the content:<br>
-                    <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
-                    Category of the article:
-                    <input type="text" id="category" /><br>
-                    <input type="submit" id="add_btn" value="submit" />
-                </fieldset>
-            </form>
-            <script type="text/javascript" src="server.js"></script>
-            </body></html> `;
-            res.send(uploadhtml);
+        var uploadhtml = `
+            
+            `;
     }   
 });
 
