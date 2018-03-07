@@ -165,16 +165,15 @@ app.get('/contribute',function(req,res) {
                     <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
                 </fieldset>
             </form>
-            <script>
-                function contributefunc() {
+            <script type="text/javascript" src="server.js"></script>
+            </body></html> `;
+            function contributefunc() {
                     var heading = document.getElementById('title');
                     var contentbody = document.getElementById('content');
                     var category = document.getElementById('category');
                     var date = Date();
                     
                 }
-            </script>
-            </body></html> `;
             res.send(uploadhtml);
     }   
 });
