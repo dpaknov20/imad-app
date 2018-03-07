@@ -148,20 +148,24 @@ app.post('/register',function(req,res) {
 });
 
 app.get('/contribute',function(req,res) {
-   var uploadhtml = `
-        <form>
-            <fieldset>
-                <legend>This is how you contribute</legend>
-                Title for your article: 
-                <input type="text" id="title" value="title" /><br>
-                Write the content:
-                <textarea cols="50" rows="20" id="content" value="Body of article"></textarea><br>
-                Category of the article:
-                <input type="text" id="category" value="category to which it belongs" /><br>
-                <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
-            </fieldset>
-        </form> `; 
-        
+    if(req.session && req.session.auth && req.session.auth.userName) {
+        var uploadhtml = `<html><head>
+            <title>Contribute to the articles</title>
+            </head>
+            <body>
+            <form>
+                <fieldset>
+                    <legend>This is how you contribute</legend>
+                    Title for your article: 
+                    <input type="text" id="title" value="title" /><br>
+                    Write the content:
+                    <textarea cols="50" rows="20" id="content" value="Body of article"></textarea><br>
+                    Category of the article:
+                    <input type="text" id="category" value="category to which it belongs" /><br>
+                    <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
+                </fieldset>
+            </form></body></html> `; 
+    }   
 });
 
 app.get('/check-login',function(req,res) {
