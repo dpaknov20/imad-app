@@ -162,7 +162,7 @@ app.get('/contribute',function(req,res) {
                     <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
                     Category of the article:
                     <input type="text" id="category" /><br>
-                    <input type="submit" id="submit" onclick="contributefunc()" value="submit" />
+                    <input type="submit" id="add_btn" value="submit" />
                 </fieldset>
             </form>
             <script type="text/javascript" src="server.js"></script>
@@ -171,7 +171,8 @@ app.get('/contribute',function(req,res) {
     }   
 });
 
-function contributefunc() {
+var addition = document.getElementById('add_btn');
+addition.onclick = function() {
     var heading = document.getElementById('title');
     var contentbody = document.getElementById('content');
     var category = document.getElementById('category');
@@ -184,7 +185,7 @@ function contributefunc() {
             res.send(alert('article successfully updated')); 
         }
     });
-}
+};
 
 app.get('/check-login',function(req,res) {
    if(req.session && req.session.auth && req.session.auth.userName) {
