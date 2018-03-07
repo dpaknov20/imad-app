@@ -109,7 +109,7 @@ function myfirstlogin() {
                  };
                  
         var addition = document.getElementById('contribute_btn');
-        addition.onclick = function() {
+            addition.onclick = function() {
             var uploadhtml = `
             <form>
                 <fieldset>
@@ -120,7 +120,7 @@ function myfirstlogin() {
                     <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
                     Category of the article:
                     <input type="text" id="category" /><br>
-                    <input type="submit" id="add_btn" value="submit" />
+                    <input type="submit" id="add_btn" value="Continue" />
                 </fieldset>
             </form> `;
                 document.getElementById('contribution').innerHTML=uploadhtml;
