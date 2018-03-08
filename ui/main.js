@@ -106,56 +106,7 @@ function myfirstlogin() {
                   request.setRequestHeader('Content-Type','application/json');
                   request.send(JSON.stringify({"name": name, "id": id, "email": email, "username": username, "password": password}));
                 };
-                 };
-                 
-        var addition = document.getElementById('contribute_btn');
-            addition.onclick = function() {
-            var uploadhtml = `
-            <form>
-                <fieldset>
-                    <legend>This is how you contribute</legend>
-                    Title for your article: 
-                    <input type="text" id="title" /><br>
-                    Write the content:<br>
-                    <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
-                    Category of the article:
-                    <input type="text" id="category" /><br>
-                    <input type="submit" id="add_btn" value="Continue" />
-                </fieldset>
-            </form> `;
-                document.getElementById('contribution').innerHTML=uploadhtml;
-                
-                var add=document.getElementById('add_btn');
-                 add.onclick = function() {     
-                  //create a request
-                  var request = new XMLHttpRequest();
-                  //capture the response and store it in the variable
-                  
-                  request.onreadystatechange = function() {
-                    if(request.readyState === XMLHttpRequest.DONE)  {
-                        if(request.status === 200)
-                        {
-                            alert('article added successfully');
-                        }
-                        else if(request.status === 500)
-                        {
-                            alert('something went wrong on the server');
-                        }
-                        else if(request.status === 404)
-                        {
-                            alert('file not found');
-                        }
-                    }
-                  };
-                    var article_name = document.getElementById('title');
-                    var content = document.getElementById('content');
-                    var category = document.getElementById('category');
-                    var issued_on = Date();
-                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/contribute', true);
-                  request.setRequestHeader('Content-Type','application/json');
-                  request.send(JSON.stringify({"article_name": article_name, "issued_on": issued_on, "content": content, "category": category}));
-                };
-                 };
+            };
 }
 function myfirstloadLogin() {
             // Check if the user is already logged in
@@ -233,8 +184,59 @@ function myfirstloadLogin() {
             request.send(null);
         }
         
+        function contributearticles() {
+             var addition = document.getElementById('contribute_btn');
+            addition.onclick = function() {
+            var uploadhtml = `
+            <form>
+                <fieldset>
+                    <legend>This is how you contribute</legend>
+                    Title for your article: 
+                    <input type="text" id="title" /><br>
+                    Write the content:<br>
+                    <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
+                    Category of the article:
+                    <input type="text" id="category" /><br>
+                    <input type="submit" id="add_btn" value="Continue" />
+                </fieldset>
+            </form> `;
+                document.getElementById('contribution').innerHTML=uploadhtml;
+                
+                var add=document.getElementById('add_btn');
+                 add.onclick = function() {     
+                  //create a request
+                  var request = new XMLHttpRequest();
+                  //capture the response and store it in the variable
+                  
+                  request.onreadystatechange = function() {
+                    if(request.readyState === XMLHttpRequest.DONE)  {
+                        if(request.status === 200)
+                        {
+                            alert('article added successfully');
+                        }
+                        else if(request.status === 500)
+                        {
+                            alert('something went wrong on the server');
+                        }
+                        else if(request.status === 404)
+                        {
+                            alert('file not found');
+                        }
+                    }
+                  };
+                    var article_name = document.getElementById('title');
+                    var content = document.getElementById('content');
+                    var category = document.getElementById('category');
+                    var issued_on = Date();
+                  request.open('POST', 'http://adeepak269.imad.hasura-app.io/contribute', true);
+                  request.setRequestHeader('Content-Type','application/json');
+                  request.send(JSON.stringify({"article_name": article_name, "issued_on": issued_on, "content": content, "category": category}));
+                };
+                 };
+        }
+        
         myfirstloadLogin();
         details();
-        
+        contributearticles();
         
                 
