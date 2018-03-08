@@ -149,10 +149,9 @@ app.post('/register',function(req,res) {
 
 app.post('/contribute',function(req,res) {
         var articlename = req.body.articlename;
-        var issuedon = req.body.issuedon;
         var content = req.body.content;
         var category = req.body.category;
-        pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [articlename,issuedon,content,category], function(err,result) {
+        pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [articlename,Date(),content,category], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
