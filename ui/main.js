@@ -186,7 +186,7 @@ function myfirstloadLogin() {
                                         <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
                                         Category of the article:
                                         <input type="text" id="category" /><br>
-                                        <button type="submit" id="add_btn">Continue</button> `;
+                                        <button type="submit" id="add_btn">Continue</button><hr/> `;
                                     document.getElementById('contribution').innerHTML=uploadhtml;
                                     
                                     var add=document.getElementById('add_btn');
