@@ -214,10 +214,9 @@ function myfirstloadLogin() {
                                         var articlename = document.getElementById('title');
                                         var content = document.getElementById('content');
                                         var category = document.getElementById('category');
-                                        var issuedon = Date();
                                       request.open('POST', 'http://adeepak269.imad.hasura-app.io/contribute', true);
                                       request.setRequestHeader('Content-Type','application/json');
-                                      request.send(JSON.stringify({"articlename": articlename, "issuedon": issuedon, "content": content, "category": category}));
+                                      request.send(JSON.stringify({"articlename": articlename, "content": content, "category": category}));
                                     };
                                 }; 
                         }
