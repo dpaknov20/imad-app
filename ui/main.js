@@ -188,18 +188,13 @@ function myfirstloadLogin() {
              var addition = document.getElementById('contribute_btn');
             addition.onclick = function() {
             var uploadhtml = `
-            <form>
-                <fieldset>
-                    <legend>This is how you contribute</legend>
                     Title for your article: 
                     <input type="text" id="title" /><br>
                     Write the content:<br>
                     <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
                     Category of the article:
                     <input type="text" id="category" /><br>
-                    <input type="submit" id="add_btn" value="Continue" />
-                </fieldset>
-            </form> `;
+                    <button type="submit" id="add_btn">Continue</button> `;
                 document.getElementById('contribution').innerHTML=uploadhtml;
                 
                 var add=document.getElementById('add_btn');
