@@ -211,13 +211,13 @@ function myfirstloadLogin() {
                                             }
                                         }
                                       };
-                                        var article_name = document.getElementById('title');
+                                        var articlename = document.getElementById('title');
                                         var content = document.getElementById('content');
                                         var category = document.getElementById('category');
-                                        var issued_on = Date();
+                                        var issuedon = Date();
                                       request.open('POST', 'http://adeepak269.imad.hasura-app.io/contribute', true);
                                       request.setRequestHeader('Content-Type','application/json');
-                                      request.send(JSON.stringify({"article_name": article_name, "issued_on": issued_on, "content": content, "category": category}));
+                                      request.send(JSON.stringify({"articlename": articlename, "issuedon": issuedon, "content": content, "category": category}));
                                     };
                                 }; 
                         }
