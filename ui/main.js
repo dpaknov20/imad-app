@@ -186,6 +186,8 @@ function myfirstloadLogin() {
                                         <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
                                         Category of the article:
                                         <input type="text" id="category" /><br>
+                                        Date of uploading article:
+                                        <input type="date" id="date" /><br>
                                         <button type="submit" id="add_btn">Continue</button> `;
                                     document.getElementById('contribution').innerHTML=uploadhtml;
                                     
@@ -214,9 +216,10 @@ function myfirstloadLogin() {
                                         var articlename = document.getElementById('title');
                                         var content = document.getElementById('content');
                                         var category = document.getElementById('category');
+                                        var issuedon = document.getElementById('date');
                                       request.open('POST', 'http://adeepak269.imad.hasura-app.io/contribute', true);
                                       request.setRequestHeader('Content-Type','application/json');
-                                      request.send(JSON.stringify({"articlename": articlename, "content": content, "category": category}));
+                                      request.send(JSON.stringify({"articlename": articlename, "issuedon": issuedon, "content": content, "category": category}));
                                     };
                                 }; 
                         }
