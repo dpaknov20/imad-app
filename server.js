@@ -148,7 +148,6 @@ app.post('/register',function(req,res) {
 });
 
 app.post('/contribute',function(req,res) {
-    if(req.session && req.session.auth && req.session.auth.userName) {
         var article_name = req.body.article_name;
         var issued_on = req.body.issued_on;
         var content = req.body.content;
@@ -161,7 +160,6 @@ app.post('/contribute',function(req,res) {
             res.send('article successfully updated'); 
         }
     });
-    }
 });
 
 app.get('/check-login',function(req,res) {
