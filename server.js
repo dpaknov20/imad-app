@@ -151,7 +151,8 @@ app.post('/contribute',function(req,res) {
         var articlename = req.body.articlename;
         var content = req.body.content;
         var category = req.body.category;
-        pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [articlename,Date(),content,category], function(err,result) {
+        var issuedon = req.body.issuedon;
+        pool.query('INSERT INTO "articles" (article_name, issued_on, content, category) VALUES ($1,$2,$3,$4)', [articlename,issuedon,content,category], function(err,result) {
         if(err) {
             res.status(500).send(err.toString());
         }
