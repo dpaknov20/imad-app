@@ -180,13 +180,13 @@ function myfirstloadLogin() {
                            var addition = document.getElementById('contribute_btn');
                                 addition.onclick = function() {
                                 var uploadhtml = `
-                                        Title for your article: 
+                                        <hr/>Title for your article: 
                                         <input type="text" id="title" /><br>
                                         Write the content:<br>
                                         <textarea cols="50" rows="5" id="content">Body of the article</textarea><br>
                                         Category of the article:
                                         <input type="text" id="category" /><br>
-                                        <button type="submit" id="add_btn">Continue</button><hr/> `;
+                                        <button type="submit" id="add_btn">Continue</button> `;
                                     document.getElementById('contribution').innerHTML=uploadhtml;
                                     
                                     var add=document.getElementById('add_btn');
