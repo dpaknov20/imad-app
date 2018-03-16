@@ -157,7 +157,7 @@ app.post('/contribute',function(req,res) {
             res.status(500).send(err.toString());
         }
         else {
-            res.send('article successfully updated'); 
+                res.send('article successfully updated'); 
         }
     });
 });
