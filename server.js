@@ -255,6 +255,24 @@ app.get('/author/:username',function(req,res) {
    });
 });
 
+app.get('/authortable/:username',function(req,res) {
+    
+     pool.query("SELECT * FROM authors WHERE username = '" + req,params.username + "'", function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } 
+      else {
+          if(req.session && req.session.auth && req.session.auth.userName) {
+            if (result.rows.length === 0) {
+                res.status(404).send('user not found');
+            } else {
+                res.send(JSON.stringify(result.rows));
+            }
+    }
+      }
+   });
+});
+
 function authorTemplate(writedata) {
     var id=writedata.id;
     var name=writedata.name;
