@@ -203,6 +203,7 @@ app.get('/myfirstapp/articles',function(req,res) {
 
 function arttemp(some) {
     var some1 = JSON.parse(some);
+    var update = 300;
     var content = `<ul style="list-style-type:none;">`;
     for (var i=0; i< some1.length; i++) {
         content += `<li>
@@ -229,7 +230,7 @@ function arttemp(some) {
                 <div align="center">
                     <h3>List of the Articles: </h3>
                     <div>${content}</div><br>
-                    <button id="but1"><a href="https://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=200">click here to update fields</a></button>
+                    <button id="but1"><a href="https://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=${update}">click here to update fields</a></button>
                     <hr/>
                     <a href = "/logout"><button>LOGOUT</button></a> 
                 </div>
