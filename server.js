@@ -9,8 +9,6 @@ var Pool = require('pg').Pool;
 //for the body parsing(using JSON method)
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var ThingSpeakClient = require('thingspeakclient');
-var client = new ThingSpeakClient({useTimeoutMode:false}); 
 
 //configuraton for the database
 var config = {
