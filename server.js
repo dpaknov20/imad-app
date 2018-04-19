@@ -95,7 +95,7 @@ function control() {
     return jump;
 }
 
-app.get('/readstatus', function(req.res) {
+app.get('/readstatus', function(req,res) {
    if(req.session && req.session.auth && req.session.auth.userName) {
         res.send(control());
    }  
