@@ -144,6 +144,9 @@ function myfirstloadLogin() {
                             <div><br><h3>
                             To control the robot click here:</h3>
                             <a href="/controlrobot">click me</a>
+                            <h3>
+                            To see the status click here:</h3>
+                            <a href="/readstatus">click me</a>
                             <h3> 
                             To view all the articles:</h3> 
                             <a href="/myfirstapp/articles">click here</a></div><br/><br/>
