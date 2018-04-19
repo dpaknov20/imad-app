@@ -181,7 +181,7 @@ app.get('/check-login',function(req,res) {
 
 app.get('/update/channel',function(req,res) {
     if(req.session && req.session.auth && req.session.auth.userName) {
-        client.updateChannel(380103, {writeKey:'GR1IFBYTK5NKNIV6', field1: 100}, function(err, resp) {
+        client.updateChannel(380103, { writeKey:'GR1IFBYTK5NKNIV6', field1: 100}, function(err, resp) {
             if (!err && resp > 0) {
                 console.log('update successfully. Entry number was: ' + resp);
             }
