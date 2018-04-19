@@ -229,7 +229,7 @@ function arttemp(some) {
                 <div align="center">
                     <h3>List of the Articles: </h3>
                     <div>${content}</div><br>
-                    <button id="but1"><a href="http://adeepak269.imad.hasura-app.io/update/channel">click here to update fields</a></button>
+                    <button id="but1"><a href="https://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=200">click here to update fields</a></button>
                     <hr/>
                     <a href = "/logout"><button>LOGOUT</button></a> 
                 </div>
