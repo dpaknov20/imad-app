@@ -95,14 +95,6 @@ function control() {
     return jump;
 }
 
-app.get('/readstatus', function(req,res) {
-   if(req.session && req.session.auth && req.session.auth.userName) {
-        res.send(control());
-   }  
-   else
-        res.status(400).send('you are not logged in');
-});
-
 app.post('/login',function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
