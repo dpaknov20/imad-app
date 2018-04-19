@@ -79,8 +79,22 @@ app.get('/calculator/:opera/:val1/:val2', function (req, res) {
 });
 
 app.get('/controlrobot', function(req,res) {
-    
+    if(req.session && req.session.auth && req.session.auth.userName) {
+        res.send(control());
+   }  
+   else
+        res.status(400).send('you are not logged in');
 });
+
+function control() {
+    var move=0;
+    var status="";
+    var jump=`
+    <button>click me to move forward</button><br>
+    <button style="padding-left: 50px">click me to move letf</button><br>
+    <button>click me to move right</button><br>
+    <button>click me to move backward</button><br>`;
+}
 
 app.post('/login',function(req,res) {
     var username = req.body.username;
