@@ -90,10 +90,10 @@ function control() {
     var move=0;
     var status="";
     var jump=`
-    <button>click me to move forward</button><br>
-    <button>click me to move letf</button><br>
-    <button>click me to move right</button><br>
-    <button>click me to move backward</button><br>`;
+    <button><a href="">click me to move forward</a></button><br>
+    <button><a href="">click me to move left</a></button><br>
+    <button><a href="">click me to move right</a></button><br>
+    <button><a href="">click me to move backward</a></button><br>`;
     return jump;
 }
 
