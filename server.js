@@ -78,6 +78,10 @@ app.get('/calculator/:opera/:val1/:val2', function (req, res) {
     res.send(calvalue.toString());
 });
 
+app.get('/controlrobot', function(req,res) {
+    
+});
+
 app.post('/login',function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
