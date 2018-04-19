@@ -8,7 +8,8 @@ var Pool = require('pg').Pool;
 //for the body parsing(using JSON method)
 var bodyParser = require('body-parser');
 var session = require('express-session');
-
+var ThingSpeakClient = require('thingspeakclient');
+var client = new ThingSpeakClient();
 //configuraton for the database
 var config = {
     user: 'adeepak269',
@@ -175,6 +176,8 @@ app.get('/check-login',function(req,res) {
    else
         res.status(400).send('you are not logged in');
 });
+
+app.get('/update/channel',function(req,res) {
 
 app.get('/myfirstapp/articles',function(req,res) {
      if(req.session && req.session.auth && req.session.auth.userName) {
