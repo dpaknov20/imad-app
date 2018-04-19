@@ -1,3 +1,4 @@
+var npm = require('npm-install-global');
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
@@ -31,6 +32,10 @@ app.use(session({
     secret: 'someRandomSecretValue', 
     cookie: {maxAge: 1000*60*60*24*30}
 }));
+
+npm.install('generate', function(err) {
+  if (err) return console.log(err);
+});
 
 var count=0;
 app.get('/counter', function (req, res) {
