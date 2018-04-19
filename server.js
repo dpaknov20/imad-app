@@ -180,11 +180,12 @@ app.get('/check-login',function(req,res) {
 });
 
 app.get('/update/channel',function(req,res) {
-    client.updateChannel(380103, { writeKey:'GR1IFBYTK5NKNIV6', field1: 100}, function(err, resp) {
+    client.updateChannel(380103, { writeKey:'GR1IFBYTK5NKNIV6', field1: 200}, function(err, resp) {
         if (!err && resp > 0) {
-            console.log('update successfully. Entry number was: ' + resp);
+            alert('update successfully. Entry number was: ' + resp);
         }
     });
+    res.send("done updating");
 });
 
 app.get('/myfirstapp/articles',function(req,res) {
