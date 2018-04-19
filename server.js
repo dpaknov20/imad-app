@@ -94,6 +94,7 @@ function control() {
     <button style="padding-left: 50px">click me to move letf</button><br>
     <button>click me to move right</button><br>
     <button>click me to move backward</button><br>`;
+    return jump;
 }
 
 app.post('/login',function(req,res) {
