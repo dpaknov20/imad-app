@@ -90,10 +90,10 @@ function control() {
     var move=0;
     var status="";
     var jump=`
-    <button><a href="">click me to move forward</a></button><br>
-    <button><a href="">click me to move left</a></button><br>
-    <button><a href="">click me to move right</a></button><br>
-    <button><a href="">click me to move backward</a></button><br>`;
+    <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=100&status=forward>click me to move forward</a></button><br>
+    <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=200&status=left">click me to move left</a></button><br>
+    <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=300&status=right">click me to move right</a></button><br>
+    <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=400&status=backward">click me to move backward</a></button><br>`;
     return jump;
 }
 
