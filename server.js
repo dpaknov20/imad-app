@@ -226,7 +226,8 @@ function arttemp(some) {
             <body>
                 <div align="center">
                     <h3>List of the Articles: </h3>
-                    <div>${content}</div>
+                    <div>${content}</div><br>
+                    <button id="but1"><a href="http://adeepak269.imad.hasura-app.io/update/channel">click here to update fields</a></button>
                     <hr/>
                     <a href = "/logout"><button>LOGOUT</button></a> 
                 </div>
