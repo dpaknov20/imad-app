@@ -203,7 +203,7 @@ app.get('/myfirstapp/articles',function(req,res) {
 
 function arttemp(some) {
     var some1 = JSON.parse(some);
-    var update = 300;
+    var update = 400;
     var content = `<ul style="list-style-type:none;">`;
     for (var i=0; i< some1.length; i++) {
         content += `<li>
