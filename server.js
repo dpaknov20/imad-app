@@ -185,7 +185,7 @@ app.get('/update/channel',function(req,res) {
             if (!err && resp > 0) {
                 console.log('update successfully. Entry number was: ' + resp);
             }
-        };
+        });
     }
     else
         res.status(400).send('you are not logged in');
