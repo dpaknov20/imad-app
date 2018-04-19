@@ -181,12 +181,14 @@ app.get('/check-login',function(req,res) {
 
 app.get('/update/channel',function(req,res) {
     if(req.session && req.session.auth && req.session.auth.userName) {
-    client.updateChannel(4711, {field1: 7, field2: 6}, function(err, resp) {
-    if (!err && resp > 0) {
-        console.log('update successfully. Entry number was: ' + resp);
+        client.updateChannel(4711, {field1: 7, field2: 6}, function(err, resp) {
+            if (!err && resp > 0) {
+                console.log('update successfully. Entry number was: ' + resp);
+            }
+        };
     }
-};
-}
+    else
+        res.status(400).send('you are not logged in');
 });
 
 app.get('/myfirstapp/articles',function(req,res) {
