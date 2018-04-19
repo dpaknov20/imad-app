@@ -91,7 +91,7 @@ function control() {
     var status="";
     var jump=`
     <button>click me to move forward</button><br>
-    <button style="cell-spacing-left: 50px">click me to move letf</button><br>
+    <button style="cellspacing-left: 50px">click me to move letf</button><br>
     <button>click me to move right</button><br>
     <button>click me to move backward</button><br>`;
     return jump;
