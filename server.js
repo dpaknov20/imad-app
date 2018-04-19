@@ -9,6 +9,8 @@ var Pool = require('pg').Pool;
 //for the body parsing(using JSON method)
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var ThingSpeakClient = require('thingspeakclient');
+var client = new ThingSpeakClient({useTimeoutMode:false}); 
 
 //configuraton for the database
 var config = {
@@ -31,9 +33,6 @@ app.use(session({
     cookie: {maxAge: 1000*60*60*24*30}
 }));
 
-npm.install('generate', function(err) {
-  if (err) return console.log(err);
-});
 
 var count=0;
 app.get('/counter', function (req, res) {
