@@ -241,7 +241,6 @@ function myfirstloadLogin() {
             var request = new XMLHttpRequest();
             request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1');
             request.responseType = 'json';
-            request.setRequestHeader('Content-Type','application/json');
             request.send();
             request.onload = function() {
                 var render = request.response;
@@ -262,7 +261,7 @@ function myfirstloadLogin() {
                 {
                     dee="backward";
                 }
-                
+                document.getElementById('stoop').innerHTML = dee;
             }
         }
         checkrobotstatus();
