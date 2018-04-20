@@ -241,7 +241,7 @@ function myfirstloadLogin() {
                         var stat = JSON.parse(this.responseText);
                         if(${stat.})
                         document.getElementById('').innerHTML = stat;
-                    } else {
+                    } else if(request.status === 404) {
                         alert('Could not get the status of robot');
                     }
                 }
