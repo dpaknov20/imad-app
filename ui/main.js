@@ -243,23 +243,23 @@ function myfirstloadLogin() {
             request.responseType = 'json';
             request.send();
             request.onload = function() {
-                var render = request.response;
-                var rand = render.['feeds']['field1'];
+                var render = JSON.parse(request.response);
+                var rand = ${render[0].feeds};
                 if(rand === 100)
                 {
-                    dee="forward";
+                    var dee="forward";
                 }
                 else if(rand === 200)
                 {
-                    dee="left";
+                    var dee="left";
                 }
                 else if(rand === 300)
                 {
-                    dee="right";
+                     var dee="right";
                 }
                 else if(rand === 400)
                 {
-                    dee="backward";
+                     var dee="backward";
                 }
                 document.getElementById('stoop').innerHTML = dee;
             }
