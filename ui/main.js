@@ -144,6 +144,8 @@ function myfirstloadLogin() {
                             <div><br><h3>
                             To control the robot click here:</h3>
                             <a href="/controlrobot">click me</a>
+                            
+                            
                             <h3> 
                             To view all the articles:</h3> 
                             <a href="/myfirstapp/articles">click here</a></div><br/><br/>
@@ -233,25 +235,15 @@ function myfirstloadLogin() {
         }
         
         function checkrobotstatus() {
-            // Check if the user is already logged in
             var request = new XMLHttpRequest();
-            request.onreadystatechange = function () {
-                if (request.readyState === XMLHttpRequest.DONE) {
-                    if (request.status === 200) {
-                        var stat = JSON.parse(this.responseText);
-                        if(${stat.})
-                        document.getElementById('').innerHTML = stat;
-                    } 
-                    else if(request.status === 404) {
-                        alert('Could not get the status of robot');
-                    }
-                    else {
-                        alert('some error occurred');
-                    }
-                }
-            };
             request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1');
-            request.send(null);
+            request.responseType = 'json';
+            request.setRequestHeader('Content-Type','application/json');
+            request.send();
+            request.onload = function() {
+                var render = request.response;
+                var rand = render.['feeds']['field1'];
+            }
         }
         
         myfirstloadLogin();
