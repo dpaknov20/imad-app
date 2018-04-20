@@ -241,8 +241,12 @@ function myfirstloadLogin() {
                         var stat = JSON.parse(this.responseText);
                         if(${stat.})
                         document.getElementById('').innerHTML = stat;
-                    } else if(request.status === 404) {
+                    } 
+                    else if(request.status === 404) {
                         alert('Could not get the status of robot');
+                    }
+                    else {
+                        alert('some error occoured');
                     }
                 }
             };
