@@ -145,8 +145,8 @@ function myfirstloadLogin() {
                             To control the robot click here:</h3>
                             <a href="/controlrobot">click me</a>
                             <h3>
-                            Current status of robot:</h3><br>
-                            <div id="stoop"></div><br>
+                            Current status of robot:</h3>
+                            <div id="stoop"></div>
                             
                             <h3> 
                             To view all the articles:</h3> 
