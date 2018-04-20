@@ -262,7 +262,7 @@ function myfirstloadLogin() {
                 {
                     dee="backward";
                 }
-                document.getElementById('stoop').innerHTML = dee;
+                
             }
         }
         checkrobotstatus();
