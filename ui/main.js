@@ -248,12 +248,7 @@ function myfirstloadLogin() {
             request.send();
             request.onload = function() {
                 var render = JSON.stringify(request.response);
-                //document.getElementById('stoop').innerHTML = render;
-                myrobot(render);
-            }
-            function myrobot(jsonobject)
-            {
-                var parsing = JSON.parse(jsonobject);
-                document.getElementById('stoop').innerHTML = ${parsing[0].feeds[0].field1};
+                document.getElementById('stoop').innerHTML = render;
+            
             }
         }
