@@ -250,7 +250,7 @@ function myfirstloadLogin() {
                     }
                 }
             };
-            request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1', true);
+            request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1');
             request.send(null);
         }
         
