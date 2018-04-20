@@ -264,9 +264,9 @@ function myfirstloadLogin() {
                 document.getElementById('stoop').innerHTML = dee;
             }
         }
-        checkrobotstatus();
+    
         
         myfirstloadLogin();
         details();
-        
+        checkrobotstatus();
                 
