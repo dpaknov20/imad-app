@@ -395,7 +395,7 @@ app.get('/getdetails', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-          res.status(200).send((result.rows));
+          res.status(200).send(JSON.stringify(result.rows));
       }
    });
 });
