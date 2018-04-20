@@ -240,15 +240,28 @@ function myfirstloadLogin() {
         myfirstloadLogin();
         details();
                 
-        function checkrobotstatus() {
-            var dee = "";
+       function checkrobotstatus() {
+ 			var dee="";
             var request = new XMLHttpRequest();
             request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1');
             request.responseType = 'json';
             request.send();
             request.onload = function() {
-                var render = JSON.stringify(request.response);
-                document.getElementById('stoop').innerHTML = render;
-            
-            }
+                var render = request.response;
+                var keep=render['feeds'];
+                var keepup = keep[0].field1;
+                if(keepup==100){
+                dee="forward";
+                }
+                else if(keepup==200){
+                dee="left";
+                }
+                else if(keepup==300){
+                dee="right";
+                }
+                else if(keepup==400){
+                dee="backward";
+                }
+                document.getElementById('stoop').innerHTML = dee;
+ 		}		
         }
