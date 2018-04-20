@@ -146,6 +146,7 @@ function myfirstloadLogin() {
                             <a href="/controlrobot">click me</a>
                             <h3>
                             Current status of robot:</h3>
+                            <button onclick=checkrobotstatus()>Check status</button>
                             <div id="stoop"></div>
                             
                             <h3> 
@@ -268,5 +269,4 @@ function myfirstloadLogin() {
         
         myfirstloadLogin();
         details();
-        checkrobotstatus();
                 
