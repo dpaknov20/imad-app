@@ -246,7 +246,7 @@ function myfirstloadLogin() {
                         alert('Could not get the status of robot');
                     }
                     else {
-                        alert('some error occoured');
+                        alert('some error occurred');
                     }
                 }
             };
