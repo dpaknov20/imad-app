@@ -276,8 +276,12 @@ app.get('/author/:username',function(req,res) {
    });
 });
 
-app.get('' , function(req,res) {
-    
+app.get('https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1' , function(req,res) {
+    if (result.rows.length === 0) {
+                res.status(404).send('status not found');
+            } else {
+                res.send(JSON.stringify(result.rows));
+            }
 });
 
 app.get('/authortable/:username',function(req,res) {
