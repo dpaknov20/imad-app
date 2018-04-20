@@ -236,7 +236,36 @@ function myfirstloadLogin() {
             request.send(null);
         }
         
-        
+        function checkrobotstatus() {
+            var dee = "";
+            var request = new XMLHttpRequest();
+            request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1');
+            request.responseType = 'json';
+            request.setRequestHeader('Content-Type','application/json');
+            request.send();
+            request.onload = function() {
+                var render = request.response;
+                var rand = render.['feeds']['field1'];
+                if(rand === 100)
+                {
+                    dee="forward";
+                }
+                else if(rand === 200)
+                {
+                    dee="left";
+                }
+                else if(rand === 300)
+                {
+                    dee="right";
+                }
+                else if(rand === 400)
+                {
+                    dee="backward";
+                }
+                document.getElementById('stoop').innerHTML = dee;
+            }
+        }
+        checkrobotstatus();
         
         myfirstloadLogin();
         details();
