@@ -235,8 +235,11 @@ function myfirstloadLogin() {
                 };
             request.open('GET', '/getdetails', true);
             request.send(null);
-        }
+         }
         
+        myfirstloadLogin();
+        details();
+                
         function checkrobotstatus() {
             var dee = "";
             var request = new XMLHttpRequest();
@@ -265,8 +268,3 @@ function myfirstloadLogin() {
                 document.getElementById('stoop').innerHTML = dee;
             }
         }
-    
-        
-        myfirstloadLogin();
-        details();
-                
