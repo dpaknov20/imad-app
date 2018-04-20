@@ -232,7 +232,25 @@ function myfirstloadLogin() {
             request.send(null);
         }
         
+        function checkrobotstatus() {
+            // Check if the user is already logged in
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                    if (request.status === 200) {
+                        var stat = JSON.parse(this.responseText);
+                        if(${stat.})
+                        document.getElementById('').innerHTML = stat;
+                    } else {
+                        alert('Could not get the status of robot');
+                    }
+                }
+            };
+            request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1', true);
+            request.send(null);
+        }
+        
         myfirstloadLogin();
         details();
-        
+        checkrobotstatus();
                 
