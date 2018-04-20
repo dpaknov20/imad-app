@@ -144,7 +144,9 @@ function myfirstloadLogin() {
                             <div><br><h3>
                             To control the robot click here:</h3>
                             <a href="/controlrobot">click me</a>
-                            
+                            <h3>
+                            Current status of robot:</h3><br>
+                            <div id="stoop"></div><br>
                             
                             <h3> 
                             To view all the articles:</h3> 
@@ -235,6 +237,7 @@ function myfirstloadLogin() {
         }
         
         function checkrobotstatus() {
+            var dee = "";
             var request = new XMLHttpRequest();
             request.open('GET', 'https://api.thingspeak.com/channels/380103/feeds.json?api_key=M1DV9XU6R7E2IDST&results=1');
             request.responseType = 'json';
@@ -243,6 +246,23 @@ function myfirstloadLogin() {
             request.onload = function() {
                 var render = request.response;
                 var rand = render.['feeds']['field1'];
+                if(rand === 100)
+                {
+                    dee="forward";
+                }
+                else if(rand === 200)
+                {
+                    dee="left";
+                }
+                else if(rand === 300)
+                {
+                    dee="right";
+                }
+                else if(rand === 400)
+                {
+                    dee="backward";
+                }
+                document.getElementById('stoop').innerHTML = dee;
             }
         }
         
