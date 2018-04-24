@@ -9,7 +9,7 @@ var Pool = require('pg').Pool;
 //for the body parsing(using JSON method)
 var bodyParser = require('body-parser');
 var session = require('express-session');
-
+var ThingSpeakClient = require('thingspeakclient');
 
 //configuraton for the database
 var config = {
