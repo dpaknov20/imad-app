@@ -92,7 +92,7 @@ function control() {
     <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=100&status=forward" target="_blank">click me to move forward</a></button><br>
     <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=200&status=left" target="_blank">click me to move left</a></button><br>
     <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=300&status=right" target="_blank">click me to move right</a></button><br>
-    <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=400&status=backward" target="_blank">click me to move backward</a></button><br>`
+    <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=400&status=backward" target="_blank">click me to move backward</a></button><br>
     <button><a href="http://api.thingspeak.com/update?api_key=GR1IFBYTK5NKNIV6&field1=500&status=stop" target="_blank">click me to stop robot</a></button><br>`;
     return jump;
 }
