@@ -147,6 +147,8 @@ function myfirstloadLogin() {
                             <h3>
                             New controls click here:</h3>
                             <button onclick="control_the_bot()">start controlling</button>
+                            <div id="ui_for_robot"></div>
+                            
                             <h3>
                             Current status of robot:</h3>
                             <button onclick=checkrobotstatus()>Check status</button>
@@ -269,4 +271,14 @@ function myfirstloadLogin() {
                 }
                 document.getElementById('stoop').innerHTML = dee;
  		}		
+        }
+        
+        function control_the_bot() {
+            var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />
+            <input type="radio" name="movement" id="move_left" value="LeFT" /> 
+            <input type="radio" name="movement" id="move_right" value="RIGHT" /> 
+            <input type="radio" name="movement" id="move_back" value="BACK" /> 
+            <button type="submit" id="move_control">submit</button> `; 
+            document.getElementById("ui_for_robot").innerHTML = inserthojao; 
+            
         }
