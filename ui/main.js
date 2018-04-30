@@ -296,5 +296,6 @@ function myfirstloadLogin() {
             else if(document.getElementById('move_stop').checked) {
               point = 500;
             }
+            
             document.getElementById("ui_status").innerHTML = point; 
         }
