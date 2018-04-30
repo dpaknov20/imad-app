@@ -146,7 +146,7 @@ function myfirstloadLogin() {
                             <a href="/controlrobot">click me</a>
                             <h3>
                             New controls click here:</h3>
-                            <button type="submit" id="control_btn">start controlling</button>
+                            <button onclick="control_the_bot()">start controlling</button>
                             <h3>
                             Current status of robot:</h3>
                             <button onclick=checkrobotstatus()>Check status</button>
