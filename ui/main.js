@@ -172,10 +172,7 @@ function myfirstloadLogin() {
                             To contribute the articles click here! 
                             <button type="submit" id="contribute_btn">Contribute</button>
                             `;
-                            var control1 = document.getElementById('control_btn');
-                            control1.onclick = function() {
-                                document.getElementById("input").innerHTML = inserthojao;
-                            }
+                            
                             document.getElementById('variable').innerHTML=content;
                             var kuch = document.getElementById('btn');
                             kuch.onclick = function() {
@@ -200,6 +197,10 @@ function myfirstloadLogin() {
                                 request.open('GET', kum, true);
                                 request.send(null);
                             }; 
+                            var control1 = document.getElementById('control_btn');
+                            control1.onclick = function() {
+                                document.getElementById("input").innerHTML = inserthojao;
+                            }
                            var addition = document.getElementById('contribute_btn');
                                 addition.onclick = function() {
                                 var uploadhtml = `
