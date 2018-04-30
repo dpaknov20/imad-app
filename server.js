@@ -30,11 +30,15 @@ app.use(session({
     cookie: {maxAge: 1000*60*60*24*30}
 }));
 
-
 var count=0;
 app.get('/counter', function (req, res) {
   count=count+1;    
   res.send(count.toString());
+});
+
+var rent_value=8500;
+app.get('/rent', function (req, res) {
+  res.send(rent_value);
 });
 
 app.get('/robot_present_values', function (req, res) {
