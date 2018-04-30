@@ -43,7 +43,7 @@ app.get('/rent', function (req, res) {
 
 app.post('/robot_present_values', function (req, res) {
     var point=req.body.point;  
-  res.status(200).send("got the value");
+  res.status(200).send(alert("got the value"));
 });
 
 app.get('/myapp', function (req, res) {
