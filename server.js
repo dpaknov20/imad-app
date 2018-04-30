@@ -38,7 +38,7 @@ app.get('/counter', function (req, res) {
 
 var rent_value=8500;
 app.get('/rent', function (req, res) {
-  res.send(rent_value);
+  res.send(rent_value.toString());
 });
 
 app.get('/robot_present_values', function (req, res) {
