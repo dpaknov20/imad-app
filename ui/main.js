@@ -284,7 +284,6 @@ function myfirstloadLogin() {
             document.getElementById("ui_for_robot").innerHTML = inserthojao;
         }
         function move_control() {
-                alert("click me");
             if(document.getElementById('move_forward').checked) {
               point = 100;
             }else if(document.getElementById('move_left').checked) {
@@ -299,6 +298,9 @@ function myfirstloadLogin() {
             else if(document.getElementById('move_stop').checked) {
               point = 500;
             }
-            
-            document.getElementById("ui_status").innerHTML = point.toString(); 
+            document.getElementById("ui_status").innerHTML = point.toString();
+            var request = new XMLHttpRequest();
+            request.open('GET', 'http://adeepak269.imad.hasura-app.io/robot_present_values');
+            request.responseType = 'json';
+            request.send(JSON.stringify({"point": point}));
             }
