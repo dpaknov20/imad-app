@@ -283,6 +283,7 @@ function myfirstloadLogin() {
             <button onclick="move_control()">submit</button> `; 
             document.getElementById("ui_for_robot").innerHTML = inserthojao;
             function move_control() {
+                alert("click me");
             if(document.getElementById('move_forward').checked) {
               point = 100;
             }else if(document.getElementById('move_left').checked) {
