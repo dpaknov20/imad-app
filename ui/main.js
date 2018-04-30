@@ -145,11 +145,9 @@ function myfirstloadLogin() {
                             To control the robot click here:</h3>
                             <a href="/controlrobot">click me</a>
                             <h3>
-                            <h3>
                             New controls click here:</h3>
                             <button type="submit" id="control_btn">start controlling</button>
                             <h3>
-                            
                             Current status of robot:</h3>
                             <button onclick=checkrobotstatus()>Check status</button>
                             <div id="stoop"></div>
@@ -191,16 +189,7 @@ function myfirstloadLogin() {
                                 request.open('GET', kum, true);
                                 request.send(null);
                             }; 
-                            var control1 = document.getElementById('control_btn');
-                            control1.onclick = function() {
-                                var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />
-                            <input type="radio" name="movement" id="move_left" value="LeFT" />
-                            <input type="radio" name="movement" id="move_right" value="RIGHT" />
-                            <input type="radio" name="movement" id="move_back" value="BACK" />
-                            <button type="submit" id="move_control">submit</button>
-                            `;
-                                document.getElementById("input").innerHTML = inserthojao;
-                            };
+                            
                            var addition = document.getElementById('contribute_btn');
                                 addition.onclick = function() {
                                 var uploadhtml = `
