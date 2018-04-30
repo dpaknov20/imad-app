@@ -274,10 +274,10 @@ function myfirstloadLogin() {
         }
         
         function control_the_bot() {
-            var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />
-            <input type="radio" name="movement" id="move_left" value="LeFT" /> 
-            <input type="radio" name="movement" id="move_right" value="RIGHT" /> 
-            <input type="radio" name="movement" id="move_back" value="BACK" /> 
+            var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />Forward
+            <input type="radio" name="movement" id="move_left" value="LeFT" /> Left
+            <input type="radio" name="movement" id="move_right" value="RIGHT" /> Right
+            <input type="radio" name="movement" id="move_back" value="BACK" /> Back
             <button type="submit" id="move_control">submit</button> `; 
             document.getElementById("ui_for_robot").innerHTML = inserthojao; 
             
