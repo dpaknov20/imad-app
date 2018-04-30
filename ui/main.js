@@ -300,7 +300,7 @@ function myfirstloadLogin() {
             }
             document.getElementById("ui_status").innerHTML = point;
             var request = new XMLHttpRequest();
-            request.open('GET', 'http://adeepak269.imad.hasura-app.io/robot_present_values');
+            request.open('POST', 'http://adeepak269.imad.hasura-app.io/robot_present_values');
             request.setRequestHeader('Content-Type','application/json');
             request.send(JSON.stringify({"point": point}));
             }
