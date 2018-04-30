@@ -148,7 +148,7 @@ function myfirstloadLogin() {
                             New controls click here:</h3>
                             <button onclick="control_the_bot()">start controlling</button>
                             <div id="ui_for_robot"></div>
-                            
+                             <div id="ui_status"></div>
                             <h3>
                             Current status of robot:</h3>
                             <button onclick=checkrobotstatus()>Check status</button>
@@ -274,6 +274,7 @@ function myfirstloadLogin() {
         }
         
         function control_the_bot() {
+            var point = 0;
             var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />Forward
             <input type="radio" name="movement" id="move_left" value="LeFT" /> Left
             <input type="radio" name="movement" id="move_right" value="RIGHT" /> Right
@@ -281,6 +282,19 @@ function myfirstloadLogin() {
             <input type="radio" name="movement" id="move_stop" value="STOP" checked="checked" /> Stop
             <button type="submit" id="move_control">submit</button> `; 
             document.getElementById("ui_for_robot").innerHTML = inserthojao; 
-            
-            
+            if(document.getElementById('move_forward').checked) {
+              point = 100;
+            }else if(document.getElementById('move_left').checked) {
+              point = 200;
+            }
+            else if(document.getElementById('move_right').checked) {
+              point = 300;
+            }
+            else if(document.getElementById('move_back').checked) {
+              point = 400;
+            }
+            else if(document.getElementById('move_stop').checked) {
+              point = 500;
+            }
+            document.getElementById("ui_status").innerHTML = point; 
         }
