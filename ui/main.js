@@ -138,12 +138,6 @@ function myfirstloadLogin() {
                         if(request.status === 200 )
                         {
                             var detaildata = JSON.parse(this.responseText);
-                            var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />
-                            <input type="radio" name="movement" id="move_left" value="LeFT" />
-                            <input type="radio" name="movement" id="move_right" value="RIGHT" />
-                            <input type="radio" name="movement" id="move_back" value="BACK" />
-                            <button type="submit" id="move_control">submit</button>
-                            `;
                             var content = 
                             `<h3>To view your details: </h3>
                             <a href="/author/${detaildata[0].username}">${detaildata[0].username} DETAILS</a><br/><br/>
@@ -199,8 +193,14 @@ function myfirstloadLogin() {
                             }; 
                             var control1 = document.getElementById('control_btn');
                             control1.onclick = function() {
+                                var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />
+                            <input type="radio" name="movement" id="move_left" value="LeFT" />
+                            <input type="radio" name="movement" id="move_right" value="RIGHT" />
+                            <input type="radio" name="movement" id="move_back" value="BACK" />
+                            <button type="submit" id="move_control">submit</button>
+                            `;
                                 document.getElementById("input").innerHTML = inserthojao;
-                            }
+                            };
                            var addition = document.getElementById('contribute_btn');
                                 addition.onclick = function() {
                                 var uploadhtml = `
