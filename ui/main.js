@@ -138,6 +138,12 @@ function myfirstloadLogin() {
                         if(request.status === 200 )
                         {
                             var detaildata = JSON.parse(this.responseText);
+                            var inserthojao = `<input type="radio" name="movement" id="move_forward" value="FORWARD" />
+                            <input type="radio" name="movement" id="move_left" value="LeFT" />
+                            <input type="radio" name="movement" id="move_right" value="RIGHT" />
+                            <input type="radio" name="movement" id="move_back" value="BACK" />
+                            <button type="submit" id="move_control">submit</button>
+                            `;
                             var content = 
                             `<h3>To view your details: </h3>
                             <a href="/author/${detaildata[0].username}">${detaildata[0].username} DETAILS</a><br/><br/>
@@ -145,6 +151,15 @@ function myfirstloadLogin() {
                             To control the robot click here:</h3>
                             <a href="/controlrobot">click me</a>
                             <h3>
+                            <h3>
+                            New controls click here:</h3>
+                            <button type="submit" id="control_btn">start controlling</button>
+                            <h3>
+                            
+                            var control1 = document.getElementById('control_btn');
+                            control1.onclick = function() {
+                                document.getElementById("input").innerHTML = inserthojao;
+                            }
                             Current status of robot:</h3>
                             <button onclick=checkrobotstatus()>Check status</button>
                             <div id="stoop"></div>
