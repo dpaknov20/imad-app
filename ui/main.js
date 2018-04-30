@@ -278,6 +278,7 @@ function myfirstloadLogin() {
             <input type="radio" name="movement" id="move_left" value="LeFT" /> Left
             <input type="radio" name="movement" id="move_right" value="RIGHT" /> Right
             <input type="radio" name="movement" id="move_back" value="BACK" /> Back
+            <input type="radio" name="movement" id="move_stop" value="STOP" /> Stop
             <button type="submit" id="move_control">submit</button> `; 
             document.getElementById("ui_for_robot").innerHTML = inserthojao; 
             
