@@ -280,8 +280,9 @@ function myfirstloadLogin() {
             <input type="radio" name="movement" id="move_right" value="RIGHT" /> Right
             <input type="radio" name="movement" id="move_back" value="BACK" /> Back
             <input type="radio" name="movement" id="move_stop" value="STOP" checked="checked" /> Stop
-            <button type="submit" id="move_control">submit</button> `; 
-            document.getElementById("ui_for_robot").innerHTML = inserthojao; 
+            <button onclick="move_control()">submit</button> `; 
+            document.getElementById("ui_for_robot").innerHTML = inserthojao;
+            function move_control() {
             if(document.getElementById('move_forward').checked) {
               point = 100;
             }else if(document.getElementById('move_left').checked) {
@@ -298,4 +299,5 @@ function myfirstloadLogin() {
             }
             
             document.getElementById("ui_status").innerHTML = point; 
+            }
         }
