@@ -36,13 +36,9 @@ app.get('/counter', function (req, res) {
   res.send(count.toString());
 });
 
-var rent_value=8500;
-app.get('/rent', function (req, res) {
-  res.send(rent_value.toString());
-});
-
+var point =0;
 app.post('/robot_present_values', function (req, res) {
-    var point=req.body.point;  
+    point=req.body.point;  
   res.status(200).send(alert("got the value"));
 });
 
