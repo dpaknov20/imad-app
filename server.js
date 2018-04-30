@@ -37,7 +37,7 @@ app.get('/counter', function (req, res) {
   res.send(count.toString());
 });
 
-var point =0;
+var point = 0;
 app.get('/robot_present_values', function (req, res) {
     var point=req.body.point;  
   res.send(point.toString());
