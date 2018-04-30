@@ -298,7 +298,7 @@ function myfirstloadLogin() {
             else if(document.getElementById('move_stop').checked) {
               point = 500;
             }
-            document.getElementById("ui_status").innerHTML = point.toString();
+            document.getElementById("ui_status").innerHTML = point;
             var request = new XMLHttpRequest();
             request.open('GET', 'http://adeepak269.imad.hasura-app.io/robot_present_values');
             request.setRequestHeader('Content-Type','application/json');
