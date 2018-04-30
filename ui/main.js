@@ -282,7 +282,8 @@ function myfirstloadLogin() {
             <input type="radio" name="movement" id="move_stop" value="STOP" checked="checked" /> Stop
             <button onclick="move_control()">submit</button> `; 
             document.getElementById("ui_for_robot").innerHTML = inserthojao;
-            function move_control() {
+        }
+        function move_control() {
                 alert("click me");
             if(document.getElementById('move_forward').checked) {
               point = 100;
@@ -301,4 +302,3 @@ function myfirstloadLogin() {
             
             document.getElementById("ui_status").innerHTML = point.toString(); 
             }
-        }
