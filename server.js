@@ -37,10 +37,10 @@ app.get('/counter', function (req, res) {
   res.send(count.toString());
 });
 
-var point = 0;
 app.get('/robot_present_values', function (req, res) {
-    var point=req.body.point;  
-  res.send(point.toString());
+    var point = 0;
+    point=req.body.point;  
+  res.send(point);
 });
 
 app.get('/myapp', function (req, res) {
