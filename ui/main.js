@@ -298,6 +298,6 @@ function myfirstloadLogin() {
               point = 500;
             }
             
-            document.getElementById("ui_status").innerHTML = point; 
+            document.getElementById("ui_status").innerHTML = point.toString(); 
             }
         }
