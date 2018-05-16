@@ -42,7 +42,7 @@ app.post('/robot_present_values', function (req, res) {
   res.status(200).send(alert("got the value"));
 });
 
-app.get('/robot_value', function (req, res) {
+app.get('/robot_values', function (req, res) {
   res.send(point.toString());
 });
 
